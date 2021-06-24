@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 올리면 한 줄 색칠</title>
+
+    <style>
+        td {
+            border-color: black;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        tr:hover td {
+            /*가로로 한 줄 칠하기*/
+            /*tr에 마우스를 올리면 그 자식 태그인 td의 배경색을 바꾼다*/
+            background-color: coral;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="td1">번호</td>
+            <td class="td2">제목</td>
+            <td class="td3">글쓴이</td>
+        </tr>
+        <tr>
+            <td class="td1">1</td>
+            <td class="td2">노인과 바다</td>
+            <td class="td3">헤밍웨이</td>
+        </tr>
+        <tr>
+            <td class="td1">2</td>
+            <td class="td2">오만과 편견</td>
+            <td class="td3">제인 오스틴</td>
+        </tr>
+        <tr>
+            <td class="td1">3</td>
+            <td class="td2">개미</td>
+            <td class="td3">베르나르 베르베르</td>
+        </tr>
+        <tr>
+            <td class="td1">4</td>
+            <td class="td2">소년이 온다</td>
+            <td class="td3">한강</td>
+        </tr>
+    </table>
+</body>
+</html>

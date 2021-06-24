@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ol {
+            /*li앞에 기호(불릿)가 사라진다!*/
+            /* list-style: none; */
+            
+            /*li앞에 기호 대신 그림을 넣을 수도 있다!*/
+            /*이미지를 넣을 때는 반드시 url()안에 써야한다!!!*/
+            list-style-image: url("/img/v.png");
+
+            /*블릿을 모든 li앞에 붙이려면 
+            ul이나 ol에 적든가 li에 적든가 하면 된다
+            어차피 list-style 자체를 바꾸는 거라서
+            ol이든 ul이든 아무데나 상관없다!!!*/
+            
+            /*
+                list-style의 종류
+
+                disk - 검은색 채워진 원
+                circle - 비어있는 원
+                square - 사각형
+                decimal - 숫자 10진수
+                lower-alpha - 영어 소문자
+                upper-alpha - 영어 대문자
+                upper-roman - 로마 대문자
+                lower-roman - 로마 소문자
+
+                armenian - 아르메니아 숫자
+                georgian - 조지 왕조 숫자
+                decimal-leading-zero - 앞에 0이 붙는 숫자
+                lower-greek - 그리스 소문자
+                lower-latin - 라틴 소문자
+                upper-latin - 라틴 대문자
+                chk-ideographic - 한자 숫자
+                hebrew - 히브리 숫자
+                hiragana - 히라나가 숫자
+                hiragana-iroha - 히라가나 이로하 숫자
+                katakana - 카타카나 숫자
+                katakana-iroha - 카타카나 이로하 숫자
+            */ 
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+        <li>메뉴4</li>
+        <li>메뉴5</li>
+    </ol>
+</body>
+</html>

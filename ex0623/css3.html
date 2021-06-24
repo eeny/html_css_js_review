@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table {
+            /*테이블 바깥 테두리*/
+            border-width: 3px;
+            border-color: black;
+            border-style: dotted;
+        }
+
+        td {
+            /*테이블 내의 셀 테두리*/
+            border-width: 1px;
+            border-color: blueviolet;
+            border-style: solid;
+        }
+
+        td:nth-child(1) {
+            /*td중에서 첫번째 자식을 가져온다*/
+            /*만약 괄호 안에 숫자가 아닌 n을 하면 전체 적용
+            2n을 적으면 짝수번째에 적용이 되고 2n+1을 적으면 홀수번째에 적용된다!*/
+            color: red;
+        }
+
+        td:last-child {
+            /*td중에서 무조건 마지막 것*/
+            background-color: gold;
+        }
+
+        td:first-child {
+            /*td중에서 무조건 첫번째 것*/
+            background-color: skyblue;
+        }
+
+        table:hover td {
+            /*마우스를 올렸을 때 그 안에 있는 모든 td에 적용*/
+            border-color: orangered;
+        }
+
+        td:hover {
+            /*마우스를 올렸을 때 해당 td에만 적용*/
+            background-color: plum;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>번호</td>
+            <td>제목</td>
+            <td>글쓴이</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>노인과 바다</td>
+            <td>헤밍웨이</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>오만과 편견</td>
+            <td>제인 오스틴</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>개미</td>
+            <td>베르나르 베르베르</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>소년이 온다</td>
+            <td>한강</td>
+        </tr>
+    </table>
+</body>
+</html>

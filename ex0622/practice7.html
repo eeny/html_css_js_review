@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+</head>
+<body>
+    <h1 align="center">회원가입</h1>
+
+    <form>
+        <table border="1" cellspacing="0" align="center" bgcolor="Cornsilk">
+            <tr>
+                <td>아이디</td>
+                <td><input type="text" size="20">&nbsp;<input type="button" value="중복확인"></td>
+            </tr>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" size="20"></td>
+            </tr>
+            <tr>
+                <td>성별</td>
+                <td><input type="radio" name="gender">남<input type="radio" name="gender">여</td>
+            </tr>
+            <tr>
+                <td>암호</td>
+                <td><input type="password" size="20"></td>
+            </tr>
+            <tr>
+                <td>암호확인</td>
+                <td><input type="password" size="20"> *같은 암호를 입력하세요</td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td>
+                    <input type="text" size="20">&nbsp;@
+                    <input type="text" size="20">&nbsp;
+                    <select name="emailsel">
+                        <option value="naver">naver.com</option>
+                        <option value="daum">daum.net</option>
+                        <option value="google">gmail.com</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>주소</td>
+                <td><input type="text" size="20">&nbsp;<input type="button" value="주소찾기"></td>
+            </tr>
+            <tr>
+                <td>휴대폰</td>
+                <td>
+                    <input type="radio" name="tel">SKT&nbsp;
+                    <input type="radio" name="tel">KT&nbsp;
+                    <input type="radio" name="tel">LGU+<br>
+                    <select name="telsel">
+                        <option value="010">010</option>
+                        <option value="011">011</option>
+                        <option value="018">018</option>
+                    </select>
+                    -&nbsp;<input type="number">
+                    -&nbsp;<input type="number">
+                </td>
+            </tr>
+            <tr>
+                <td>관심</td>
+                <td>
+                    <input type="checkbox" name="hobby">쇼핑&nbsp;
+                    <input type="checkbox" name="hobby">게임&nbsp;
+                    <input type="checkbox" name="hobby">여행&nbsp;
+                    <input type="checkbox" name="hobby">기타
+                </td>
+            </tr>
+            <tr>
+                <td>자기소개</td>
+                <td><textarea name="intro"cols="65" rows="10"></textarea></td>
+            </tr>
+            <tr bgcolor="white">
+                <td colspan="2" align="center">
+                    <input type="submit" value="확인">
+                    <input type="reset" value="다시입력">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

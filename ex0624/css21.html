@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 500px;
+            height: 500px;
+            border: 1px solid;
+            background-color: pink;
+            padding: 50px;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            /*div 왼쪽에서 밀기*/
+            margin-left: 20px;
+            /*div 위에서 밀기*/
+            margin-top: 20px;
+            border: 3px solid;
+            /*가로로 배치*/
+            display: inline-block;
+        }
+        #wrap div:nth-child(1) {
+            background-color: red;
+        }
+        #wrap div:nth-child(2) {
+            background-color: blue;
+            border-radius: 50%;
+        }
+        #wrap div:nth-child(3) {
+            background-color: green;
+            /*왼쪽 상단부터 시계 방향으로 깎는다*/
+            border-radius: 0 25px 0 25px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>

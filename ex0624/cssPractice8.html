@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면 레이아웃 연습</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div, ul, li {
+            border: 1px solid black;
+        }
+        #wrap {
+            width: 1280px;
+            margin: 0 auto;
+            font-size: 0;
+            border-color: cyan;
+        }
+        #top {
+            width: 1024px;
+            height: 70px;
+            margin: 0 auto;
+        }
+        #top div {
+            height: 100%;
+            display: inline-block;
+        }
+        #top div:nth-child(1) {
+            width: 20%;
+            background-color: red;
+        }
+        #top div:nth-child(2) {
+            width: 40%;
+            background-color: blue;
+        }
+        #top div:nth-child(3) {
+            width: 40%;
+            background-color: yellow;
+        }
+        #menu {
+            width: 100%;
+            height: 35px;
+            background-color: cadetblue;
+        }
+        ul {
+            height: 100%;
+            list-style: none;
+            font-size: 25px;
+            text-align: center;
+        }
+        ul li {
+            height: 100%;
+            margin: 0 15px;
+            display: inline-block;
+        }
+        #left, #center, #right {
+            display: inline-block;
+        }
+        #left {
+            width: 128px;
+            height: 800px;
+            background-color: coral;
+            position: fixed;
+        }
+        #center {
+            width: 1024px;
+            height: 1500px;
+            background-color: darkkhaki;
+            margin-left: 128px;
+        }
+        #center div:nth-child(1) {
+            width: 100%;
+            height: 20%;
+            background-color: lightsalmon;
+        }
+        #center div:nth-child(2) {
+            width: 100%;
+            height: 20%;
+            background-color: lightskyblue;
+        }
+        #center div:nth-child(3) {
+            width: 100%;
+            height: 60%;
+            background-color: lightblue;
+        }
+        #right {
+            width: 128px;
+            height: 1500px;
+            background-color: darkgray;
+            position: absolute;         
+            top: 105px;
+        }
+        #righttop {
+            width: 100px;
+            height: 200px;
+            background-color: thistle;
+            position: fixed;
+            z-index: 1;
+        }
+        #righttop div:nth-child(1) {
+            width: 100%;
+            height: 20%;
+        }
+        #righttop div:nth-child(2) {
+            width: 100%;
+            height: 30%;
+            visibility: hidden;
+        }
+        #righttop div:nth-child(3) {
+            width: 100%;
+            height: 50%;
+        }
+        #rightbottom {
+            width: 100%;
+            height: 300px;
+            background-color: tomato;
+            position: absolute;
+            top: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <!--상단 검색창 부분-->
+        <div id="top">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <!--메인 메뉴 부분-->
+        <div id="menu">
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+                <li>메뉴5</li>
+                <li>메뉴6</li>
+                <li>메뉴7</li>
+                <li>메뉴8</li>
+                <li>메뉴9</li>
+            </ul>
+        </div>
+        <!--왼쪽 사이드 부분-->
+        <div id="left"></div>
+        <!--가운데 메인 부분-->
+        <div id="center">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <!--오른쪽 사이드 부분-->
+        <div id="right">
+            <div id="righttop">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div id="rightbottom"></div>
+        </div>
+    </div><!--wrap 끝-->
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+        div:nth-child(1) {
+            background-color: red;
+        }
+        div:nth-child(2) {
+            /*디자이너가 제일 좋아하는 16진수 방법*/
+            /*포토샵에서 지원하는 방식이 16진수라서 제일 익숙하다!*/
+            background-color: #FF0000;
+        }
+        div:nth-child(3) {
+            background-color: rgb(255, 0, 0);
+        }
+        div:nth-child(4) {
+            /*rgb값 뒤에 0~1값은 알파(투명도)다! 1은 불투명*/
+            /*투명도를 주면 뒤에 내용이 비친다!*/
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

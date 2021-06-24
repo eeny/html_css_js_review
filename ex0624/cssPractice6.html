@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면 배치 연습</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #wrap {
+            width: 1024px;
+            height: auto;
+            margin: 0 auto;
+            background-image: url("/img/dog1.jpg");
+            background-size: 256px auto;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        h1 {
+            background-color: pink;
+            text-shadow: 5px 5px 3px red;
+        }
+
+        ul li {
+            list-style-image: url("/img/v.png");
+            /*li앞에 불릿이 wrap 바깥으로 튀어나가서 안으로 넣기*/
+            /*불릿은 ul이나 li에 display속성을 주면 자동으로 삭제되는 버그?가 있다
+            그래서 정식으로 없애는 방법은 list-style: none을 해야한다!*/
+            margin-left: 50px;
+            font-size: 32px;
+        }
+
+        #contents {
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <h1>Title</h1>
+        
+        <h2>Contents</h2>
+        
+        <ul>
+            <li>content 1</li>
+            <li>content 2</li>
+            <li>content 3</li>
+            <li>content 4</li>
+            <li>content 5</li>
+            <li>content 6</li>
+            <li>content 7</li>
+            <li>content 8</li>
+        </ul>
+        
+        <div id="contents">
+            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+            </p>
+            <br>
+            <p>Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis,
+                ultricies nec, pellentesque eu, pretium quis, sem.</p>
+            <br>
+            <p>Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In
+                enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.</p>
+            <br>
+            <p>Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper
+                nisi. Aenean vulputate eleifend tellus.</p>
+            <br>
+            <p>Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in,
+                viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+            <br>
+            <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi.
+                Nam eget dui. Etiam rhoncus.</p>
+            <br>
+            <p>Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque
+                sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem.</p>
+            <br>
+            <p>Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis
+                ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
+                Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,</p>
+        </div>
+    </div>
+</body>
+
+</html>

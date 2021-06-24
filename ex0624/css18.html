@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            border: 1px solid black;
+        }
+        ul li {
+            /*가로로 배치*/
+            display: inline-block;
+            border: 1px solid black;
+            margin-left: 10px;
+            /*상하는 0 좌우는 5px*/
+            padding: 0 5px;
+            /*ul이나 ol에서 li앞에 타입 기호 없애기
+            (원래 있는데 뒤에 가려지는 거라서 아예 없애 놓아야한다!)*/
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul>
+            <li>메일</li>
+            <li>카페</li>
+            <li>블로그</li>
+            <li>지식iN</li>
+            <li>쇼핑</li>
+        </ul>
+    </div>
+</body>
+</html>

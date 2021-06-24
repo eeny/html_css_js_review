@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    오디오
+    <!--controls를 적어주면 화면에 출력도 되고 조절도 할 수 있다!-->
+    <!--loop는 무한반복 qutoplay는 자동실행-->
+    <!--자동실행은 브라우저에서 막아놓는 경우가 있다! 나중에 자바스크립트로 강제실행할 수도 있다!-->
+    <audio controls loop autoplay>
+        <!--첫번째 코드가 플레이되며 문제가 생기면 다음 코드가 플레이된다.-->
+        <source src="/media/song.mp3" type="audio/mpeg">
+        <source src="/media/song.mp3" type="audio/mpeg">
+    </audio>
+    
+    <br>
+
+    비디오
+    <!--muted를 적어주면 처음 동영상 실행시 음소거 상태로 재생된다!-->
+    <video width="300" height="300" controls autoplay muted>
+        <source src="/media/movie.mp4" type="video/mp4">
+        <source src="/media/movie.mp4" type="video/mp4">
+    </video>
+</body>
+</html>

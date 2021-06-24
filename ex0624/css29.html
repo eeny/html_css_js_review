@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 300px;
+            height: 100px;
+            background-color: blue;
+            font-size: 0;
+        }
+        .sub1 {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            display: inline-block;
+        }
+        .sub2 {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            display: inline-block;
+        }
+        .sub3 {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            display: inline-block;
+            font-size: 20px;
+            /*속성값 때문에 높이가 안맞을 때 사용하는 속성!!!*/
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="sub1"></div>
+        <div class="sub2"></div>
+        <div class="sub3">안녕</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        ul li {
+            /*모든 ul 밑에 있는 모든 li를 의미한다
+            따라서 모든 글자가 변한다*/
+            color: royalblue;
+        }
+
+        ul>li {
+            /*ul태그 바로 밑의 자식 li들을 선택해서 설정한다*/
+            /*태그 사이에 > 를 사용한다*/
+            color: tomato;
+        }
+
+        .title~li {
+            /*일반 형제 선택자*/
+            /*기준과 태그(아이디, 클래스 등)사이에 ~ 를 사용한다*/
+            /*본인은 포함하지 않는 형제노드*/
+            /*클래스가 title인 태그를 기준으로 형제들*/
+            color: violet;
+        }
+
+        .title+li {
+            /*인접 형제 선택자*/
+            /*형제 중에 같은 라인의 바로 밑에 있는 태그만 적용된다*/
+            color: yellowgreen;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>제목1</li>
+        <li>제목2</li>
+        <li>제목3
+            <ol><!--밑에 li의 입장에서는 부모-->
+                <!--ol의 입장에서 li는 자식 -->
+                <li class="title">소제목1</li>
+                <li>소제목2</li>
+                <li>소제목3</li>
+            </ol>
+        </li>
+    </ul>
+</body>
+</html>

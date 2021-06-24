@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도형 만들기</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #wrap {
+            width: 500px;
+            height: auto;
+            margin: 0 auto;
+            border: 5px solid;
+            font-size: 0;
+            text-align: center;
+            background-color: pink;
+        }
+        #wrap div {
+            border: 5px solid;
+            margin: 15px;
+            display: inline-block;
+        }
+        #square {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+        #circle {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            border-radius: 50%;
+        }
+        #roundedrectangle {
+            width: 200px;
+            height: 150px;
+            background-color: green;
+            border-top-right-radius: 10%;
+            border-bottom-left-radius: 10%;
+        }
+        #rectangle {
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="square">정사각형</div>
+        <div id="circle">동그라미</div>
+        <div id="roundedrectangle">귀퉁이 둥근 네모</div>
+        <div id="rectangle">비어있는 직사각형</div>
+    </div>
+</body>
+</html>

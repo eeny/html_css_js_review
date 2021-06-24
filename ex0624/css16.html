@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            /*1024px 또는 1280px 네이버는 1130px*/
+            width: 1024px;
+            /*무조건 가운데 정렬 - 상하는 0 좌우는 auto*/
+            margin: 0 auto;
+            /*border는 디자인할 때 크기 보려고(추후 삭제)*/
+            border: 1px solid black;
+            /*원래 wrap에는 font-size를 주면 안됨! 번거로우니까!*/
+            font-size: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+            /* display: inline;크기 없이 가로로 나온다 */
+            display: inline-block;/*옆으로 나란히 되면서 가로로 배치도 된다*/
+            /*근데 왜 마진 패딩 없앴는데 공간이 생기지?
+            HTML은 본디 문서작성을 위한 거라서 글자과 글자 사이의 공간이 있기 때문에!
+            글씨처럼 취급이 되므로 따라서 겉에 감싸는 부분에 font-size:0을 줘야한다!*/
+            font-size: 10px;
+            /*그런데 전체를 감싸는 부분에 font-size:0을 주면
+            안에 들어있는 부분들에 글자가 안보이기 때문에
+            다시 font-size를 줘야한다!*/
+        }
+        #box2 {
+            /*모습이 사라진다 visibility: hidden이랑 "유사하다"*/
+            /*hidden은 공간을 차지하고 none은 아예 없앤다!*/
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!--UI 전체를 감싸는 div가 필수!-->
+    <div id="wrap">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        <div class="box" id="box3"></div>
+    </div>
+</body>
+</html>
