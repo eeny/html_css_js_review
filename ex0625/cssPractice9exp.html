@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보노보노 PPT 풀이</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            border: 1px solid blue;
+        }
+        #wrap>div {
+            height: 100px;
+            margin-bottom: 10px;
+        }
+        .box1 {/*짱쉽다 동그라미, 글자, 보노보노 사진 전체 틀*/
+            position: relative;
+        }
+        .sub1 {/*짱쉽다 동그라미*/
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            top: 10px;
+            left: 50px;
+        }
+        .sub2 {/*보노보노 사진*/
+            width: 80px;
+            height: 80px;
+            right: 50px;
+            top: 10px;
+        }
+        .sub1>div {/*짱쉽다 글자*/
+            width: 100px;
+            top: 20px;
+            left: 50px;
+        }
+        .sub1, .sub2, .sub1>div {/*짱쉽다 동그라미, 글자, 보노보노 사진*/
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box1">
+            <div class="sub1">
+                <div>짱쉽다</div>
+            </div>
+            <div class="sub2">보노그림</div>
+        </div>
+        <div class="box2">발표전</div>
+        <div class="box3">ppt내</div>
+        <div class="box4">모두모두</div>
+    </div>
+</body>
+</html>

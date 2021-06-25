@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>보노보노 PPT 만들기</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #wrap {
+            width: 700px;
+            height: 600px;
+            margin: 0 auto;
+            background-image: linear-gradient(to top, purple, red, orange, yellow, green, blue, navy, purple);
+        }
+
+        #subWrap {
+            position: relative;
+        }
+
+        #circle {
+            width: 200px;
+            height: 200px;
+            border: 3px solid #1ca2d6;
+            background-image: linear-gradient(to bottom, #53b7df, white);
+            border-radius: 50%;
+            box-shadow: 10px 10px;
+            position: absolute;
+            left: 50px;
+            top: 30px;
+            z-index: 0;
+        }
+
+        span {
+            font-size: 50px;
+            font-style: italic;
+            color: white;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            z-index: 1;
+        }
+
+        img {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            display: block;
+        }
+
+        #subWrap p:nth-child(4) {/*subWrap 안의 자식 중 4번째 태그인 p*/
+            width: 650px;
+            font-size: 18px;
+            font-weight: bold;
+            position: absolute;
+            top: 250px;
+            left: 30px;
+        }
+        #subWrap p:nth-child(5) {/*subWrap 안의 자식 중 5번째 태그인 p*/
+            width: 650px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            position: absolute;
+            top: 430px;
+            left: 30px;
+        }
+        #subWrap p:last-child {
+            font-size: 35px;
+            font-weight: bold;
+            color: white;
+            -webkit-text-stroke-width: 3px;
+            -webkit-text-stroke-color: #3d3d88;
+            position: absolute;
+            top: 525px;
+            left: 170px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div id="subWrap">
+            <div id="circle"></div>
+            <span>PPT 짱쉽다</span>
+            <img src="/img/bono.png" alt="보노보노">
+            <p>
+                발표 전 ppt를 인쇄하여 청중께 드리세요! 센스있는 신입사원이 될 수 있습니다.<br><br>
+                애니메이션 기능은 최소화 해주세요.<br><br>
+                색은 되도록 3가지 이상 쓰지 마세요.<br><br>
+                영 디자인 감각이 없다면, 회사 공식 템플릿을 사용하세요
+            </p>
+            <p>PPT 내에 첨부된 영상 or 폰트 파일은 혹시 모르니 꼭 USB에 넣어가세요.<br><br>
+                텍스트는 페이지의 20% 정도로 맞춰주세요. 가독성이 좋아집니다.
+            </p>
+            <p>모두 모두 A+ 받으세요!!</p>
+        </div>
+    </div>
+</body>
+
+</html>

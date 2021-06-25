@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>지마켓 메인 UI 만들기</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #wrap {
+            width: 1024px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+        #top {
+            width: 100%;
+            background-color: yellowgreen;
+            font-size: 0;
+        }
+        #logo {
+            width: 15%;
+            height: 50px;
+            display: inline-block;
+            background-color: violet;
+            background-image: url("/img/gmarket.jpg");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        #search {
+            width: 60%;
+            height: 50px;
+            display: inline-block;
+            background-color: tomato;       
+            vertical-align: top;
+        }
+        #search>div {
+            width: 70%;
+            height: 40px;
+            margin-top: 2px;
+            padding-top: 3px;
+            padding-right: 15px;
+            border: 2px solid blue;
+            border-radius: 40px;
+            font-size: 20px;
+            color: blue;
+            text-align: right;
+        }
+        #icons {
+            width: 25%;
+            height: 50px;
+            display: inline-block;
+            background-color: turquoise;
+            vertical-align: top;
+        }
+        #icons>div {
+            width: 32%;
+            margin-top: 1px;
+            border: 1px solid black;
+            font-size: 35px;
+            text-align: center;
+            display: inline-block;
+        }
+        #menubar {
+            width: 100%;
+            background-color: coral;
+            font-size: 0;
+            vertical-align: top;
+        }
+        #allcategory {
+            width: 25%;
+            height: 40px;
+            background-color: darkcyan;
+            display: inline-block;
+            font-size: 20px;
+        }
+        #allcategory>i {
+            padding-top: 10px;
+            padding-left: 60px;
+        }
+        #menuleft {
+            width: 45%;
+            height: 40px;
+            background-color: darkgrey;
+            display: inline-block;
+            font-size: 20px;
+        }
+        #menuleft li {
+            padding-top: 5px;
+            list-style: none;
+            display: inline-block;
+        }
+        #menuright {
+            width: 30%;
+            height: 40px;
+            background-color: yellow;
+            display: inline-block;
+            font-size: 20px;
+        }
+        #menuright li {
+            padding-top: 5px;
+            list-style: none;
+            display: inline-block;
+        }
+        #centertop {
+            width: 100%;
+            background-color: violet;
+            font-size: 0;
+        }
+        #categories {
+            width: 25%;
+            height: 400px;
+            background-color: turquoise;
+            display: inline-block;
+            vertical-align: top;
+        }
+        #categories li {
+            list-style: none;
+            padding: 11px;
+            text-align: center;
+            font-size: 15px;
+            border: 1px solid black;
+        }
+        #mainbanner {
+            width: 75%;
+            height: 400px;
+            background-image: url("/img/gbanner.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgb(250, 238, 232);
+            display: inline-block;
+        }
+        #centermiddle {
+            width: 100%;
+            height: 80px;
+            font-size: 0;
+            position: relative;
+            background-color: wheat;
+        }
+        #cmLeft {
+            width: 30%;
+            height: 20px;
+            display: inline-block;
+            background-color: coral;
+            font-size: 15px;
+            position: absolute;
+            bottom: 0;
+        }
+        #cmRight {
+            width: 70%;
+            height: 20px;
+            display: inline-block;
+            background-color: cornflowerblue;
+            font-size: 15px;
+            text-align: right;
+            position: absolute;
+            left: 30%;
+            bottom: 0;
+        }
+        #centerbottom {
+            width: 100%;
+            height: 200px;
+            background-color: lightblue;
+            font-size: 0;
+        }
+        .imgbox1 {
+            width: 20%;
+            height: 100%;
+            background-color: yellow;
+            background-image: url("/img/wt1.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 1px solid blueviolet;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .imgbox2 {
+            width: 20%;
+            height: 100%;
+            background-color: yellow;
+            background-image: url("/img/wt2.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 1px solid blueviolet;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .imgbox3 {
+            width: 20%;
+            height: 100%;
+            background-color: yellow;
+            background-image: url("/img/wt3.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 1px solid blueviolet;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .imgbox4 {
+            width: 20%;
+            height: 100%;
+            background-color: yellow;
+            background-image: url("/img/wt4.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 1px solid blueviolet;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .imgbox5 {
+            width: 20%;
+            height: 100%;
+            background-color: yellow;
+            background-image: url("/img/wt5.png");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            border: 1px solid blueviolet;
+            border-radius: 50%;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="top">
+            <div id="logo"></div>
+            <div id="search">
+                <div><i class="fas fa-search"></i></div>
+            </div>
+            <div id="icons">
+                <div><i class="far fa-user"></i></div>
+                <div><i class="far fa-clone"></i></div>
+                <div><i class="fas fa-shopping-cart"></i></div>
+            </div>
+        </div>
+        <div id="menubar">
+            <div id="allcategory">
+                <i class="fas fa-bars"></i>전체카테고리
+            </div>
+            <div id="menuleft">
+                <ul>
+                    <li>베스트</li>
+                    <li>슈퍼딜</li>
+                    <li>쿠폰출첵</li>
+                    <li>스마일배송</li>
+                    <li>스마일클럽</li>
+                </ul>
+            </div>
+            <div id="menuright">
+                <ul>
+                    <li>로그인</li>
+                    <li>회원가입</li>
+                    <li>고객센터</li>
+                    <li>Global</li>
+                </ul>
+            </div>
+        </div>
+        <div id="centertop">
+            <div id="categories">
+                <ul>
+                    <li>브랜드패션</li>
+                    <li>패션의류/잡화/뷰티</li>
+                    <li>유아동</li>
+                    <li>식품/생필품</li>
+                    <li>홈데코/문구/취미/반려</li>
+                    <li>컴퓨터/디지털/가전</li>
+                    <li>스포츠/건강/렌탈</li>
+                    <li>자동차/공구</li>
+                    <li>여행/도서/티켓/e쿠폰</li>
+                </ul>
+            </div>
+            <div id="mainbanner"></div>
+        </div>
+        <div id="centermiddle">
+            <div id="cmLeft">지금 제일 잘 나가는 상품</div>
+            <div id="cmRight">전체보기</div>
+        </div>
+        <div id="centerbottom">
+            <div class="imgbox1"></div>
+            <div class="imgbox2"></div>
+            <div class="imgbox3"></div>
+            <div class="imgbox4"></div>
+            <div class="imgbox5"></div>
+        </div>
+    </div>
+</body>
+</html>

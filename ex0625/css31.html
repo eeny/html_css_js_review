@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+        .div1 {
+            /*다른 브라우저에서 안먹힐 경우를 대비해서 브라우저별로도 기재해놓은 것*/
+            background-image: radial-gradient(red, yellow, green);
+            background-image: -moz-radial-gradient(red, yellow, green);
+            background-image: -moz-radial-gradient(red, yellow, green);
+        }
+        .div2 {
+            /*다 합치면 80%인데 알아서 나머지 퍼센티지만큼 비벼준다...*/
+            /*만약 딱 떨어지게 하면 선(경계)이 생긴다!*/
+            background-image: radial-gradient(red 5%, yellow 15%, green 60%);
+        }
+        .div3 {
+                                            /*원*/
+            background-image: radial-gradient(circle, red, yellow, green)
+        }
+        /*
+            그라디언트 끝 모양
+            closest-side
+            끝모양이 그라디언트 중앙에서 가장 가까운 면으로 흐려짐
+            closest-corner
+            끝모양이 그라디언트 중앙에서 가장 가까운 모서리로 흐려짐
+            farthest-side
+            그라디언트 중앙에서 가장 먼 면으로 흐려짐
+            farthest-corner (기본값)
+            그라디언트 중앙에서 가장 먼 모서리로 흐려짐
+
+            at 10% 10%
+            어디서부터 시작할 건지 중심점 위치(x, y)를 지정한다!
+            (안적으면 자동으로 표현된다)
+        */
+        .div4 {
+                                                        
+            background-image: radial-gradient(closest-side, red, yellow, green)
+        }
+        .div5 {
+                                                            /*중심점 x, y좌표*/
+            background-image: radial-gradient(closest-corner at 10% 10%, red, yellow, green)
+        }
+        .div6 {
+                                                            /*중심점 x, y좌표*/
+            background-image: radial-gradient(closest-corner at 10% bottom, red, yellow, green)
+        }
+        .div7 {
+                                                /*타원*/
+            background-image: radial-gradient(ellipse, red, yellow, green)
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">div1</div>
+    <div class="div2">div2</div>
+    <div class="div3">div3</div>
+    <div class="div4">div4</div>
+    <div class="div5">div5</div>
+    <div class="div6">div6</div>
+    <div class="div7">div7</div>
+</body>
+</html>

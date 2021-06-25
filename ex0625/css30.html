@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            블록태그는 기본적으로 가로 길이를 안주면 무조건 100%다.
+            안에 내용이 있다면 좌우로 공간이 있으니 text-align이 가능하다.
+            인라인태그는 기본적으로 길이가 없으므로 무조건 pack(최소사이즈)사이즈다.
+            그러므로 text-align해도 티가 안난다!
+        */
+        div {
+            border: 1px solid black;
+            height: 50px;
+        }
+        .div1 {
+            /*그라데이션*/
+            background-image: linear-gradient(to right, yellow, red);   
+                                            /*방향, 시작색, 끝색*/
+        }
+        .div2 {
+            background-image: linear-gradient(to left, yellow, red);   
+                                            /*방향, 시작색, 끝색*/
+        }
+        .div3 {
+            background-image: linear-gradient(to top, yellow, red);   
+                                            /*방향, 시작색, 끝색*/
+        }
+        .div4 {
+            background-image: linear-gradient(to bottom, yellow, red);   
+                                            /*방향, 시작색, 끝색*/
+        }
+        .div5 {
+            background-image: linear-gradient(-45deg, yellow, red);   
+                                            /*방향(각도,대각선), 시작색, 끝색*/
+        }
+        .div6 {
+            background-image: linear-gradient(yellow, red);   
+                    /*(방향을 안주면 to bottom이 기본)시작색, 끝색*/
+        }
+        .div7 {
+                                                        /*무지개 색깔*/
+            background-image: linear-gradient(to right, red, orange, yellow, green, blue, navy, purple);   
+                                                /*방향, 시작색, 끝색*/
+        }
+        .div8 {
+            background-image: repeating-linear-gradient(to right, yellow 10%, green 20%);   
+                                                            /*방향, 시작색, 끝색*/
+        }
+        .div9 {
+            background-image: linear-gradient(to right, yellow 50%, green 50%);   
+                                                     /*방향, 시작색, 끝색*/
+        }
+    </style>
+</head>
+<body>
+    <div class="div1">div1</div>
+    <div class="div2">div2</div>
+    <div class="div3">div3</div>
+    <div class="div4">div4</div>
+    <div class="div5">div5</div>
+    <div class="div6">div6</div>
+    <div class="div7">div7</div>
+    <div class="div8">div8</div>
+    <div class="div9">div9</div>
+</body>
+</html>

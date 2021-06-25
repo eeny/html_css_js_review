@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+            화면 구성 및 배치에는 절대로 absolute 사용금지!!!
+            display만 사용!!!
+            position은 내부의 내용을 꾸밀 때 사용!
+        */
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 1024px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+        .banner {
+            width: 100%;/*border 계산이 된다면 사이즈를 직접 설정해도 된다!*/
+            height: 200px;
+            background-color: greenyellow;
+            margin-bottom: 5px;/*간격을 벌리고 싶을 때 공통적으로 주자!*/
+        }
+        .topmenu {
+            height: 70px;
+            background-color: skyblue;
+            margin-bottom: 5px;
+        }
+        .center {
+            font-size: 0;
+            margin-bottom: 5px;
+        }
+        .leftmenu {
+            width: calc(30% - 5px);/*margin 벌릴 만큼 width에서 빼기*/
+            margin-right: 5px;/*5px만큼 간격 벌리기*/
+            height: 500px;
+            background-color: pink;
+            display: inline-block;   
+            /*안에 ul이 밀리지 않도록 설정*/
+            /*ul을 쓰면 겉에 div가 내려가는 이유는? 버그다!
+            만약에 옆에 나란히 있는 div에도 내용을 넣게되면 다시 원위치된다!*/   
+            vertical-align: top;
+        }
+        .content {
+            width: 70%;
+            height: 500px;
+            background-color: hotpink;
+            display: inline-block;
+        }
+        .bottom {
+            height: 200px;
+            background-color: lawngreen;
+        }
+        .topul {
+            border: 1px solid red;
+            /*웬만해서는 bottom을 기준으로 사이즈 조절하지 말자!
+            앞으로 계속 밑으로 늘어날 거라서 나중에 밀릴 수도 있다!*/
+            padding-top: 20px;
+        }
+        .topul li {
+            border: 1px solid blue;
+            margin-left: 20px;
+            display: inline-block;
+        }
+        .leftul {
+            /*아까 위에서 font-size: 0을 해둬서 다시 글씨 보이게*/
+            font-size: 24px;
+            border: 1px solid red;
+        }
+        .leftul li {
+            border: 1px solid blue;
+            margin-bottom: 10px;
+            list-style: none;
+            /*글자를 왼쪽으로 조금 들어오게*/
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="banner">배너</div>
+        <div class="topmenu">
+            <ul class="topul">
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+            </ul>
+        </div>
+        <div class="center">
+            <div class="leftmenu">
+                <ul class="leftul">
+                    <li>메뉴1</li>
+                    <li>메뉴2</li>
+                    <li>메뉴3</li>
+                </ul>
+            </div>
+            <div class="content"></div>
+        </div>
+        <div class="bottom"></div>
+    </div>
+</body>
+</html>

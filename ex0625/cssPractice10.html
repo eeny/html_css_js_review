@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중고나라 UI틀 만들기</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div {
+            border: 1px solid black;
+        }
+        #wrap {
+            /*1024px 또는 1280px 네이버는 1130px*/
+            width: 1130px;
+            margin: 0 auto;
+        }
+        #wrap div:nth-child(1) {
+            width: 100%;
+            height: 100px;
+            background-color: burlywood;
+        }
+        #wrap div:nth-child(2) {
+            width: 100%;
+            height: 50px;
+            background-color: chartreuse;
+            margin: 5px 0;
+        }
+        #wrap div:nth-child(2) ul li {
+            list-style: none;
+            display: inline-block;
+            background-color: darksalmon;
+        }
+        #wrap div:nth-child(3) {
+            width: 122px;
+            height: 300px;
+            background-color: gold;
+            display: inline-block;
+            vertical-align: top;
+        }
+        #wrap div:nth-child(3) ul li {
+            width: 100%;
+            height: 50px;
+            background-color: darksalmon;
+            list-style: none;
+        }
+        #wrap div:nth-child(4) {
+            width: 1000px;
+            height: 300px;
+            background-color: hotpink;
+            display: inline-block;
+        }
+        #wrap div:nth-child(5) {
+            width: 100%;
+            height: 60px;
+            background-color: indigo;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div>메인상단배너</div>
+
+        <div><!--메인메뉴-->
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+            </ul>
+        </div>
+
+        <div><!--본문왼쪽메뉴-->
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+            </ul>
+        </div>
+
+        <div></div><!--본문오른쪽-->
+
+        <div></div><!--메인하단-->
+    </div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            width: 300px;
+            height: 400px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .menu{
+            width: 50px;
+            height: 50px;
+            border: 1px solid black;
+            position: absolute;
+        }
+        .main .menu:nth-child(1){
+            bottom: 0;
+            left: 10px;
+        }
+
+        .main .menu:nth-child(2){
+            bottom: 0;
+            left: 70px;
+        }
+
+        .main .menu:nth-child(3){
+            bottom: 0;
+            left: 130px;
+        }
+
+        .menu img{
+            width: 100%;
+            height: 100%;
+        }
+        .showbox{
+            width: 280px;
+            height: 300px;
+            border: 1px solid black;
+            margin: 0 auto;
+            position: relative;
+        }
+        .showbox img{
+            width: 100%;
+            height: 100%;
+            position: absolute;            
+        }
+
+        .showbox img:nth-child(1){
+            z-index: 2;
+        }
+
+        .showbox img:nth-child(2),.showbox img:nth-child(3){
+            z-index: 1;
+        }
+
+        /*
+            메인 안에 있는 메뉴들 중에서 첫번째에 마우스를 올리면
+            ~(형제노드) 중에서 showbox를 찾아서
+            그 안에 있는 첫번째 img의 z-index를 10으로 바꾼다
+        */
+        .menu:nth-child(1):hover ~ .showbox img:nth-child(1){
+            z-index: 10;
+        }
+        .menu:nth-child(2):hover ~ .showbox img:nth-child(2){
+            z-index: 10;
+        }
+        .menu:nth-child(3):hover ~ .showbox img:nth-child(3){
+            z-index: 10;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="main">
+        <div class="menu"><img src="/img/dog1.jpg" alt=""></div>
+        <div class="menu"><img src="/img/dog2.jpg" alt=""></div>
+        <div class="menu"><img src="/img/dog3.jpg" alt=""></div>
+        <div class="showbox">
+            <img src="/img/dog1.jpg" alt="">
+            <img src="/img/dog2.jpg" alt="">
+            <img src="/img/dog3.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

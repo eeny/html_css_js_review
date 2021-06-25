@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap, #wrap2, #wrap3 {
+            border: 1px solid blue;
+        }
+        #wrap2 {
+            position: relative;
+        }
+        #wrap3 {
+            position: absolute;
+        }
+        .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            /*
+                부모가 absolute, relative 가 아니라면
+                본인 또는 부모를 감싸고 있는
+                다른 absolute, relative를 기준으로 하고,
+                그것도 아니라면 <body>가 기준이 된다!
+            */
+        }
+        /*
+            - absolute 특징
+            공간을 차지하지 않는다.
+            왜? 부모태그의 크기에 영향을 받지 않는다!
+            그래서 부모요소 안에 absolute인 요소만 있으면
+            
+            실제로 부모요소 안에는 아무 요소가 없는 것과 같다!
+
+            부모요소는 좌표의 기준점을 지정해주는 것 뿐이다!
+
+            - relative 특징
+            기본적인 속성은 static(기본. 아무속성도 안적었을 때)이랑 같다!
+            다만, 자식이 absolute 또는 relative일 때 좌표의 기준점이 된다!
+            static + absolute이기 때문에 left, top 같은 좌표값이 적용된다.
+        */
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        기본 : static
+        <div class="box1" id="box1"></div>
+    </div>
+    <div id="wrap2">
+        속성 : relative
+        <div class="box1" id="box2"></div>
+    </div>
+    <div id="wrap3">
+        속성 :absolute
+        <div class="box1" id="box3"></div>
+    </div>
+</body>
+</html>
