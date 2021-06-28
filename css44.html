@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, html, body {
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            list-style: none;
+        }
+        .menu {
+            border: 1px solid black;
+        }
+        .sub {/*이게 ul*/
+            border: 1px solid black;
+            display: none;
+        }
+        /*menu 바로 밑에 있는 li에 올렸을 때 그 li의 밑에있는 .sub만 나타나라!*/
+        .menu>li:hover .sub {
+            display: block;
+        }
+        .sub li:hover {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        ul도 block태그다! 따라서 li를 가진 div라고 생각하면 된다!
+        <div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        이거랑 같다! 
+    -->
+    <ul class="menu">
+        <li>메뉴1
+            <ul class="sub">
+                <li>서브1</li>
+                <li>서브2</li>
+                <li>서브3</li>
+            </ul>
+        </li>
+        <li>메뉴2
+            <ul class="sub">
+                <li>서브4</li>
+                <li>서브5</li>
+                <li>서브6</li>
+            </ul>
+        </li>
+        <li>메뉴3</li>
+    </ul>
+</body>
+</html>

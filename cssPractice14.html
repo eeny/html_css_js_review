@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>옆으로 생기는 메뉴</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .menu {
+            width: 100px;
+            height: 300px;
+            float: left;
+            border: 1px solid blue;
+        }
+        .menu>li {
+            border: 1px solid red;
+            position: relative;
+        }
+        .sub1 {
+            width: 200px;
+            list-style: none;
+            border: 1px solid gold;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 100px;
+            display: none;
+        }
+        .sub1 li {
+            width: 50px;
+            border: 1px solid green;
+            display: inline-block;
+        }
+        .sub2 {
+            width: 200px;
+            list-style: none;
+            border: 1px solid gold;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            left: 100px;
+            display: none;
+        }
+        .sub2 li {
+            width: 50px;
+            border: 1px solid green;
+            display: inline-block;
+        }
+        .menu>li:hover ul {
+            display: block;
+        }
+        div {
+            width: 500px;
+            height: 300px;
+            float: left;
+            border: 1px solid green;
+        }
+    </style>
+</head>
+<body>
+    <ul class="menu">
+        <li>메뉴1
+            <ul class="sub1">
+                <li>서브1</li>
+                <li>서브2</li>
+            </ul>
+        </li>
+        <li>메뉴2
+            <ul class="sub2">
+                <li>서브3</li>
+                <li>서브4</li>
+            </ul>
+        </li>
+    </ul>
+    <div>
+        내용<br>내용<br>내용<br>내용
+    </div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 100%;
+            border: 1px solid black;
+        }
+        .top {
+            width: 100%;
+            height: 70px;
+            border: 1px solid red;
+            background-color: pink;
+        }
+        .content {
+            width: 100%;
+            height: 700px;
+            border: 1px solid blue;
+            background-color: skyblue;
+        }
+        .menu>li {/*.menu 밑에 있는 모든 li말고 바로 밑에 li만 적용되게*/
+            float: left;
+            padding: 20px;
+            padding-bottom: 30px;
+            list-style: none;
+        }
+        li div {
+            width: 100%;
+            height: 300px;
+            /*div가 li밖에 나가야하므로 li에 relative를 안한다!*/
+            position: absolute;
+            top: 70px;
+            left: 0;
+            border: 1px solid black;
+            background-color: white;
+            display: none;
+        }
+        .menu li:hover {
+            background-color: white;
+        }
+        /*반드시 div가 .menu li안에 있어야 한다!*/
+        .menu li:hover div {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="top">
+            <ul class="menu">
+                <li>메뉴1
+                    <div>
+                        <ol>
+                            <li>내용내용</li>
+                            <li>내용내용</li>
+                            <li>내용내용</li>
+                            <li>내용내용</li>
+                            <li>내용내용</li>
+                        </ol>
+                    </div>
+                </li>
+                <li>메뉴2
+                    <div>내용2</div>
+                </li>
+                <li>메뉴3
+                    <div>내용3</div>
+                </li>
+                <li>메뉴4
+                    <div>내용4</div>
+                </li>
+                <li>메뉴5
+                    <div>내용5</div>
+                </li>
+            </ul>
+        </div>
+        <div class="content"></div>
+    </div>
+</body>
+
+</html>

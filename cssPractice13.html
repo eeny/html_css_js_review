@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Learning HTML5! </title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #wrap {
+            width: 760px;
+            margin: 0 auto;
+            font-size: 0;
+        }
+        hgroup {
+            width: 100%;
+            height: 90px;
+            background-color: #3d3b3b;
+            padding-top: 20px;
+        }
+        hgroup h1 {
+            float: left;
+            color: white;
+            padding-left: 20px;
+            font-size: 30px;
+        }
+        hgroup h2 {
+            float: right;
+            color: #a5a2a2;
+            padding-right: 20px;
+            font-size: 20px;
+        }
+        hgroup::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        nav {
+            width: 100%;
+            height: 50px;
+            font-size: 20px;
+        }
+        nav li {
+            list-style: none;
+            float: left;
+            padding-left: 20px;
+        }
+        nav::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        section {
+            width: 67%;
+            height: 300px;
+            border: 1px solid grey;
+            display: inline-block;
+            font-size: 20px;
+        }
+        section article {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+        aside {
+            width: 30%;
+            height: 280px;
+            margin-left: 3%;
+            border: 1px solid grey;
+            display: inline-block;
+            font-size: 20px;
+            vertical-align: top;
+        }
+        aside p {
+            width: 90%;
+            height: 50%;
+            margin: 10px;
+            background-color: #ccc2c2;
+        }
+        aside ul {
+            margin-top: 40px;
+            margin-left: 10px;
+            list-style: none;
+        }
+        footer {
+            width: 100%;
+            height: 50px;
+            margin-top: 20px;
+            border: 1px solid grey;
+            font-size: 20px;
+            padding-top: 7px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header>
+            <hgroup>
+                <h1>Learning HTML5!</h1>
+                <h2>by choi</h2>
+            </hgroup>
+        </header>
+        <nav>
+            <ul>
+                <li><span>메뉴1</span></li>
+                <li><span>메뉴2</span></li>
+                <li><span>메뉴3</span></li>
+                <li><span>메뉴4</span></li>
+                <li><span>메뉴5</span></li>
+                <li><span>메뉴6</span></li>
+                <li><span>메뉴7</span></li>
+            </ul>
+        </nav>
+        <section>
+            <article>
+                <h1> 첫번째 본문의 제목 </h1>
+                <p> 첫번째 본문의 내용 </p>
+            </article>
+            <article>
+                <h1> 두번째 본문의 제목 </h1>
+                <p> 두번째 본문의 내용 </p>
+            </article>
+            <article>
+                <h1> 세번째 본문의 제목 </h1>
+                <p> 세번째 본문의 내용 </p>
+            </article>
+        </section>
+        <aside>
+            <p class="ad">광고</p>
+            <ul>
+                <li><b>html5강좌</b></li>
+                <li><b>html5강좌</b></li>
+                <li><b>html5강좌</b></li>
+            </ul>
+        </aside>
+        <footer>
+            <center>Copyright choi</center>
+        </footer>
+    </div>
+</body>
+
+</html>
