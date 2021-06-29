@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            animation-name: move;
+            animation-duration: 1s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;/*일정하게*/
+        }
+        /*총 걸리는 시간 1초를 0 ~ 100%로 나눈다*/
+        /* @keyframes rule */
+        @keyframes move {          
+            /* from {
+                left: 0;
+            }
+
+            to {
+                left: 300px;
+            }  */
+
+            0% { left: 0; }
+            50% { left: 150px; }/*0에서 0.5초*/
+            100% { left: 300px; }/*0.5초에서 1초*/
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

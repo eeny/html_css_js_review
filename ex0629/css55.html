@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            animation-name: move, fadeOut, changeColor;
+            animation-duration: 1s, 5s, 5s;/*따로 써도 되고*/
+            /* animation-duration: 1; 하나만 써도 된다! */
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes move {
+            from {
+                left: 0;
+            }
+
+            to {
+                left: 300px;
+            }
+        }
+
+        @keyframes fadeOut {
+            from {
+                opacity: 1;
+            }
+
+            to {
+                opacity: 0;
+            }
+        }
+
+        @keyframes changeColor {
+            from {
+                background-color: red;
+            }
+
+            to {
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>

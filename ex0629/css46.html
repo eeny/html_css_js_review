@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .top {
+            /* 네모상자 */
+            height: 100px;
+            background-color: pink;
+            transition: all 2s;
+            /*원본에다가 트랜지션을 줄 경우 시작과 끝 둘 다 적용*/
+        }
+
+        .content {
+            height: 500px;
+            background-color: skyblue;
+        }
+
+        .top:hover {
+            /* 네모상자에 마우스를 올렸을 때 */
+            height: 200px;
+            /* transition: all 2s; */
+            /*변형 이후에 줄 경우 시작에만 적용*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="top">상단메뉴바</div>
+        <div class="content">하단컨텐츠</div>
+    </div>
+</body>
+
+</html>

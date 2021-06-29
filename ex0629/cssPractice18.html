@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션 예제</title>
+    <style>
+        #wrap {
+            border: 1px solid black;
+            padding-left: 100px;
+            padding-top: 50px;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+        }
+        .box1, .box3 {
+            background-color: orangered;
+        }
+        .box2 {
+            background-color: steelblue;
+        }
+        .box3 {
+            position: absolute;
+            left: 215px;
+        }
+        #wrap:hover .box3 {
+            transform-origin: 0 0;
+            transform: rotate(-30deg);
+            transition: transform 1s;
+        }
+        .longbox {
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+            background-color: steelblue;
+        }
+        #wrap:hover .longbox {
+            width: 300px;
+            background-color: green;
+            transition: all 1s;
+        }
+        div img {
+            margin-top: 100px;
+        }
+        #wrap:hover div img {
+            transform: rotate(180deg) scale(1.5);
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+
+        <div class="longbox"></div>
+
+        <div><img src="/img/bono.png" alt=""></div>
+    </div>
+</body>
+</html>

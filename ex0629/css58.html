@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            /*name duration timing-function delay iteration-count direction fill-mode play-state*/
+            animation: move 5s infinite;
+        }
+
+        div:hover {
+            background: blue;
+            /*마우스를 올리면 멈춘다!*/
+            animation-play-state: paused;
+        }
+
+        /*애니메이션 움직이고 있을 때*/
+        div:active {
+            background: yellow;
+            /*계속 실행해라~*/
+            animation-play-state: running;
+        }
+
+        @keyframes move {
+            from {
+                left: 0px;
+            }
+
+            to {
+                left: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>animation-play-state</h1>
+    <div></div>
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>사진에 마우스 올리면 나타나는 여러가지 효과</title>
+    <style>
+        #wrap {
+            width: 100%;
+            height: 150px;
+            padding: 20px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .box {
+            width: 150px;
+            height: 150px;
+            position: absolute;
+        }
+        .box img {
+            width: 100%;
+            height: 100%;
+        }
+        .box1 {
+            left: 50px;
+        }
+        .cover1 {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            text-align: center;
+            font-size: 0;
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0);
+            position: absolute;
+            transition: all 0.5s;
+        }
+        #wrap:hover .cover1 {
+            background-color: rgba(0, 0, 100, 0.5);
+            color: white;
+            font-size: 30px;
+        }
+        .box2 {
+            left: 250px;
+        }
+        .cover2 {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0);
+            position: absolute;
+            transition: all 0.5s;
+        }
+        #wrap:hover .cover2 {
+            border: 10px solid red;
+            box-sizing: border-box;
+        }
+        .box3 {
+            left: 450px;
+        }
+        .box3 img {
+            position: absolute;
+            transition: all 0.5s;
+        }
+        .box3 img:nth-child(1) {
+            z-index: 1;
+        }
+        #wrap:hover .box3 img:nth-child(1) {
+            opacity: 0;
+        }
+        .box4 {
+            left: 650px;
+            position: relative;
+            overflow: hidden;
+        }
+        .round {
+            width: 150px;
+            height: 75px;
+            background-color: rgba(0, 0, 100, 0);
+            border-radius: 75px 75px 0 0;
+            position: absolute;
+            top: 50%;
+            transform-origin: center bottom;
+            transform: rotate(180deg);
+            transition: all 1s;
+        }
+        #wrap:hover .round {
+            background-color: rgba(0, 0, 100, 0.5);
+            transform: rotate(360deg);
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box box1">
+            <div class="cover1">보노보노</div>
+            <img src="/img/bono.png" alt="">
+        </div>
+        <div class="box box2">
+            <div class="cover2"></div>
+            <img src="/img/bono.png" alt="">
+        </div>
+        <div class="box box3">
+            <img src="/img/dog1.jpg" alt="">
+            <img src="/img/dog2.jpg" alt="">
+        </div>
+        <div class="box box4">
+            <div class="round"></div>
+            <img src="/img/bono.png" alt="">
+        </div>
+    </div>
+</body>
+</html>

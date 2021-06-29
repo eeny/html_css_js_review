@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform 트랜스폼 속성</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            background-color: pink;
+        }
+        .box1 {
+            /*회전시킨다*/
+            transform: rotate(20deg);/*deg = degree 각도*/
+        }
+        .box2 {
+            /*scale은 크기인데 1이면 그대로*/
+            /*1.2면 120% 커진다*/
+            transform: scale(1.2);
+        }
+        .box3 {
+            /*꼬기, 꺾기, 비스듬하게 (3D에서 회전하는 느낌...?)*/
+            transform: skew(20deg);
+        }
+        .box4 {
+            transform-origin: 100% 100%;
+            /*x, y좌표를 %로 준다(% 아니라도 됨)*/
+            /*left right center 이런식으로 중심을 설정할 수도 있다*/
+            transform: rotate(20deg);
+        }
+        .box5 {
+            transform: rotateY(60deg);
+            perspective: 1200px;/*원근감 깊이*/
+            /* transform-style: preserve-3d;3D로 원근감 지원 */
+            transform-style: flat;/*2D로 원금감 지원*/
+        }
+    </style>
+</head>
+<body>
+    transform 트랜스폼 (변형)
+    - 트랜스포머(변형된 것?)
+
+    <div class="box1"></div>
+    <div class="box4"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box5"></div>
+</body>
+</html>
