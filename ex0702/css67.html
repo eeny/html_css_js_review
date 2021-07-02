@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            /* height: 100%;이게 없으면 #wrap에 있는 높이가 안먹힌다! */
+        }
+        #wrap {
+            /* height: 100%;body 기준인데 안먹힌다 왜? */
+        }
+        .box {
+            width: 100%;
+            /* height: 100%; */
+
+            /*다른 방법*/
+            height: 100vh;
+            /*view height = vh, view width = vw*/
+            /*vh, vw는 눈에 보이는 창을 기준으로 한다!*/
+        }
+        .page1 {
+            background-color: red;
+        }
+        .page2 {
+            background-color: green;
+        }
+        .page3 {
+            background-color: blue;
+        }
+        .menu {
+            width: 100%;
+            height: 70px;
+            /*위에서 70px만큼을 덮고 있으므로 계산하고 아래쪽에 내용을 꾸며야한다!*/
+            position: fixed;
+            background-color: skyblue;
+            /*혹시 모르니까 이렇게 설정해두자!*/
+            left: 0;
+            top: 0;
+        }
+        .menu ul {
+            display: flex;
+            justify-content: space-around;
+        }
+        .menu ul li {
+            list-style: none;
+            padding-top: 10px;
+            /*fixed일 때는 padding을 줘도 요소의 크기가 커지지 않는다!*/
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="menu">
+            <ul>
+                <li>메뉴1</li>
+                <li>메뉴2</li>
+                <li>메뉴3</li>
+                <li>메뉴4</li>
+                <li>메뉴5</li>
+            </ul>
+        </div>
+        <div class="box page1"></div>
+        <div class="box page2"></div>
+        <div class="box page3"></div>
+    </div>
+</body>
+</html>

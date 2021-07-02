@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타임라인 만들기</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .timeline {
+            width: 800px;
+            height: 450px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+        }
+        .container {
+            width: 395px;
+            background-color: teal;
+        }
+        .left div:nth-child(1) {
+            background-color: white;
+            border-radius: 10px;
+            width: 350px;
+            height: 150px;
+            margin: 30px auto;
+            padding: 30px;
+            position: relative;
+        }
+        .left div:nth-child(1)::after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            position: absolute;
+            top: 10px;
+            right: 0;
+            transform: rotate(45deg);
+        }
+        .left div:nth-child(2) {
+            background-color: white;
+            border-radius: 10px;
+            width: 350px;
+            height: 120px;
+            margin: 30px auto;
+            margin-top: 100px;
+            padding: 30px;
+            position: relative;
+        }
+        .left div:nth-child(2)::after {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            position: absolute;
+            top: 10px;
+            right: 0;
+            transform: rotate(45deg);
+        }
+        .right div {
+            background-color: white;
+            border-radius: 10px;
+            width: 350px;
+            height: 100px;
+            margin: 30px auto;
+            margin-top: 180px;
+            padding: 30px;
+            position: relative;
+        }
+        .right div::before {
+            content: "";
+            width: 30px;
+            height: 30px;
+            background-color: white;
+            position: absolute;
+            top: 10px;
+            left: 0;
+            transform: rotate(45deg);
+        }
+        .circle {
+            width: 20px;
+            height: 20px;
+            border: 2px solid orange;
+            border-radius: 50%;
+            background-color: white;
+            position: fixed;
+        }
+        .circletop {
+            top: 47px;
+            left: 560px;
+        }
+        .circlecenter {
+            top: 195px;
+            left: 560px;
+        }
+        .circlebottom {
+            top: 295px;
+            left: 560px;
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <h2>2017</h2>
+                <p>Lorem ipsum..</p>
+            </div>
+            <div class="content">
+                <h2>2015</h2>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+
+        <div class="container right">
+            <div class="content">
+                <h2>2016</h2>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+        <div class="circle circletop"></div>
+        <div class="circle circlecenter"></div>
+        <div class="circle circlebottom"></div>
+    </div>
+</body>
+</html>

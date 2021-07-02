@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /*box-sizing을 안하면 외곽선 때문에 스크롤이 생긴다*/
+        }
+        #wrap {
+            width: 100%;
+            height: 100vh;
+            border: 1px solid black;
+        }
+        .banner {
+            width: 100%;
+            /*height는 설정하면 안됨!*/
+            background-color: pink;
+            text-align: center
+        }
+        .banner img {
+            /*무조건 50% 사이즈가 되어라~*/
+            width: 50%;
+            /*height는 설정하면 안됨!*/
+        }
+        /*
+            @media 란?
+            일종의 if문이다.
+            조건이 창의 크기만 따진다!
+            min-width 의미? "크다면" 이라는 뜻.
+            max-width 의미? "작다면" 이라는 뜻.
+        */
+        @media (min-width:768px) {
+            .banner img {
+                width: 25%;
+            }
+            /*창의 크기가 768px보다 크다면 img를 25%크기로 바꿔라~*/
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="banner">
+            <img src="/img/banner.png" alt="">
+        </div>
+    </div>
+</body>
+</html>

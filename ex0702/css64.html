@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            background-color: pink;
+        }
+        li {
+            background-color: skyblue;
+        }
+        /*
+            <고전적인 방법>
+
+            1) li에다가 display: inline-block
+                - 단점 : 양쪽 정렬 불가
+                - center 정렬 + margin을 통해서 정렬함
+                - 가로로 배치하기 위해서가 아닌 부가 기능으로 가로 배치가 되는 것
+                - 그래서 공간이 없으면 자동으로 다음 라인으로 내려간다.
+
+            2) li에다가 float: left
+                - 단점 : 반드시 clear: both로 공간을 줘야함
+                - 공간이 없으면 다음 라인으로 내려간다.
+
+            HTML5 + CSS3 부터는~
+            새로운 속성 출현!
+            <display: flex>
+            - 무조건 가로 배치! 공간이 부족하면 알아서 크기를 줄여서 가로배치!
+        */
+        /*고전 방법 1 - 밑으로 내려간다*/
+        /* li {
+            display: inline-block;
+            width: 40%;
+        } */
+        /*고전 방법 2 - 밑으로 내려간다*/
+        /* li {
+            float: left;
+            width: 40%;
+        } */
+        /*flex 방법 - 정렬할 요소를 감싸는 요소에게 적용한다!
+        안내려간다! 알아서 크기조절됨!*/
+        ul {
+            width: 100%;
+            padding: 0;
+            display: flex;
+
+            /*flex-direction: row;가로로 배치하라*/
+            /*flex-wrap: wrap;공간이 부족하면 내려가라*/
+            /*두 개 합친 버전*/
+            /*반응형으로 작성할 때 필수 기능이다!*/
+            flex-flow: row wrap;
+
+            /*이렇게 하면 10% 공간이 비는데 정렬하려면~*/
+            justify-content: space-around;
+            /*
+                flex-start 왼쪽, flex-end 오른쪽
+                space-around 각 요소 양쪽에 공간(남은 공간을 똑같이 나눠서 양쪽 정렬)
+                space-between 요소 사이에만 공간(양쪽 끝을 꽉 채우고 양쪽 정렬)
+                space-evenly 각 요소 양쪽 공간들이 동일 크기(잘안씀)
+            */
+        }
+        li {
+            width: 30%;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>메뉴1</li>
+        <li>메뉴2</li>
+        <li>메뉴3</li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 사용하기</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 768px;
+            margin: 0 auto;
+            background-color: gainsboro;
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+            text-align: center;
+        }
+        header {
+            width: 100%;
+            height: 150px;
+            background-color: gray;
+        }
+        nav {
+            width: 100%;
+            height: 50px;
+            background-color: hotpink;
+            margin-top: 10px;
+        }
+        aside {
+            width: 35%;
+            height: 500px;
+            background-color: cadetblue;
+            float: left;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        section {
+            width: 63.5%;
+            height: 500px;
+            background-color: olivedrab;
+            float: right;
+            margin-top: 10px;
+        }
+        article {
+            width: 90%;
+            height: 200px;
+            background-color: royalblue;
+            margin: 20px auto;
+        }
+        footer {
+            clear: both;
+            width: 100%;
+            height: 50px;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>HEADER</header>
+        <nav>NAVIGATION</nav>
+        <aside>SIDEBAR</aside>
+        <section>MAIN CONTENT
+            <article>ARTICLE</article>
+            <article>ARTICLE</article>
+        </section>
+        <footer>FOOTER</footer>
+    </div>
+</body>
+</html>

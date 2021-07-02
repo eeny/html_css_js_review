@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .timeline {
+            position: relative;
+            width: 700px;
+            background-color: gray;
+            margin: 0 auto;
+        }
+        /*HTML에 div태그를 만들거나 가상의 div를 만들거나!*/
+        .timeline::after {
+            content: "";
+            position: absolute;
+            width: 6px;
+            height: 100%;
+            background-color: white;
+            top: 0;
+            left: 50%;/*정가운데로*/
+            transform: translate(-50%);/*정가운데로*/
+        }
+        .container {
+            /*padding 좌우로 40px을 줘서 튀어나온거 없애기*/
+            width: calc(50% - 80px);
+            padding: 10px 40px;
+            position: relative;
+            /* background-color: red; */
+        }
+        .container::after {
+            content: "";
+            width: 25px;
+            height: 25px;
+            background-color: white;
+            border: 4px solid orange;
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            right: -17px;
+            z-index: 1;
+        }
+        .left {
+            left: 0;
+        }
+        .left::before {/*삼각형 만들기*/
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 22px;
+            right: 30px;
+            border: medium solid white;
+            /*상우하좌 방향 두께*/
+            /*왜 선을 없애나? div에 붙어서 안보여야하니까!*/
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent white;
+        }
+        .right {
+            left: 50%;
+        }
+        .right::before {/*삼각형 만들기*/
+            content: "";
+            width: 0;
+            height: 0;
+            position: absolute;
+            top: 22px;
+            left: 30px;
+            border: medium solid white;
+            /*상우하좌 방향 두께*/
+            border-width: 10px 10px 10px 0;
+            border-color: transparent white transparent transparent;
+        }
+        .right::after {/*가상으로 만든 동그라미div를 의미*/
+            left: -16px;
+        }
+        .content {
+            padding: 20px 30px;
+            background-color: white;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <div class="timeline">
+        <div class="container left">
+            <div class="content">
+                <h2>2017</h2>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+        <div class="container right">
+            <div class="content">
+                <h2>2016</h2>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+        <div class="container left">
+            <div class="content">
+                <h2>2015</h2>
+                <p>Lorem ipsum..</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
