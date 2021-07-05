@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .container div {
+            min-width: 150px;
+            min-height: 150px;
+        }
+        .c1, .c2, .c3 {
+            /*혹시 몰라서 확실하게 설정*/
+            width: 100%;
+        }
+        .c1 {
+            background-color: red;
+            color: white;
+        }
+        .c2 {
+            background-color: green;
+        }
+        .c3 {
+            background-color: blue;
+        }
+        @media (min-width: 600px) {
+            /*order 순서대로 배치가 된다*/
+            .c1 {
+                width: 60%;
+                order: 2;
+            }
+            .c2 {
+                width: 40%;
+                order: 1;
+            }
+            .c3 {
+                order: 3;
+            }
+        }
+        @media (min-width: 800px) {
+            .c2 {
+                width: 20%;
+            }
+            .c3 {
+                width: 20%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="c1">
+            열 끌어놓기(column Drop)<br>
+            전체가 꽉 차면 수직으로 쌓인다.
+            안에 있는 객체의 위치를 바꿀 수 있다.
+            유동형 + 객체의 순서 바꿈
+        </div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+    </div>
+</body>
+</html>

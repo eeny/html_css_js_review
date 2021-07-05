@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면을 줄이면 사진이 나타나게 만들기</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 768px;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        header {
+            width: 100%;
+            height: 150px;
+            background-color: red;
+            text-align: right;
+        }
+        header i {
+            color: white;
+            font-size: 40px;
+            visibility: hidden;      
+        }
+        aside {
+            width: 28.5%;
+            height: 400px;
+            background-color: blue;
+            margin-top: 10px;
+        }
+        section {
+            width: 70%;
+            height: 400px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        article {
+            width: 100%;
+            height: 25%;
+            background-color: yellow;
+            border: 1px solid black;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            display: none;
+        }
+        footer {
+            width: 100%;
+            height: 100px;
+            background-color: green;
+        }
+        @media (max-width: 800px) {
+            .container {
+                width: 800px;
+            }
+            aside {
+                width: 100%;
+                height: 50px;
+            }
+            section {
+                width: 100%;
+                height: 500px;
+                display: flex;
+                flex-flow: row wrap;
+            }
+            article {
+                width: 50%;
+                height: 50%;
+                text-align: center;
+            }
+            img {
+                display: block;
+                margin: 30px auto;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 600px;
+            }
+            header i {
+                visibility: visible;
+                margin: 50px;
+            }
+            aside {
+                display: none;
+            }
+            section {
+                width: 100%;
+                height: 2000px;
+            }
+            article {
+                width: 100%;
+                height: 500px;
+                color: transparent;
+            }
+            img {
+                width: 90%;
+                height: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header><i class="fas fa-bars"></i></header>
+        <aside></aside>
+        <section>
+            <article>
+                <img src="/img/wt1.png" alt="">
+                흐림
+            </article>
+            <article>
+                <img src="/img/wt2.png" alt="">
+                무지개
+            </article>
+            <article>
+                <img src="/img/wt3.png" alt="">
+                눈
+            </article>
+            <article>
+                <img src="/img/wt4.png" alt="">
+                맑음
+            </article>
+        </section>
+        <footer></footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> css41 웹페이지 반응형으로 바꾸기 </title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 760px;
+            margin: 0 auto;
+        }
+        header {
+            background-color: grey;
+            color: white;
+            padding: 20px;
+        }
+        hgroup h1 {
+            float: left;
+            font-size: 18px;
+        }
+        hgroup h2 {
+            float: right;
+            font-weight: normal;
+            font-size: 13px;
+        }
+        hgroup i {
+            float: right;
+            font-size: 23px;
+            margin: 5px;
+            visibility: hidden;
+        }
+        hgroup::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        nav li {
+            float: left;
+            /*display 속성을 쓰면 자동으로 사라지지만 float라서 안사라짐*/
+            list-style: none;
+        }
+        nav ul::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        section {
+            width: 518px;
+            float: left;
+            border: 1px solid black;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            padding: 10px;
+            line-height: 30px;
+        }
+        aside {
+            width: 163px;
+            float: right;
+            border: 1px solid black;
+            margin-right: 10px;
+            padding: 10px;
+        }
+        aside li {
+            list-style: none;
+        }
+        aside .ad {
+            height: 100px;
+            background-color: grey;
+            margin-bottom: 15px;
+        }
+        footer {
+            width: 720px;
+            padding: 10px;
+            margin: 0 auto;
+            clear: both;
+            border: 1px solid black;
+        }
+        @media (max-width: 600px) {
+            #wrap {
+                width: 500px;
+            }
+            hgroup h1 {
+                font-size: 30px;
+            }
+            hgroup h2 {
+                display: none;
+            }
+            hgroup i {
+                font-size: 30px;
+                visibility: visible;
+            }
+            nav {
+                margin: 10px auto;
+            }
+            nav li {
+                display: none;
+            }
+            section {
+                width: 478px;
+                margin: 0 auto;
+            }
+            aside {
+                width: 478px;
+                margin: 10px auto;
+                display: flex;
+                justify-content: space-between;
+            }
+            aside .ad {
+                width: 200px;
+                margin: 10px auto;
+            }
+            aside ul {
+                width: 278px;
+                text-align: center;
+                margin: 10px auto;
+            }
+            footer {
+                width: 478px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header><!--html5 태그(div랑 동일)-->
+            <hgroup>
+                <h1>Learning HTML5!</h1>
+                <h2>by choi</h2>
+                <i class="fas fa-bars"></i>
+            </hgroup>
+        </header>
+        <nav>
+            <ul>
+                <li><span>메뉴1</span></li>
+                <li><span>메뉴2</span></li>
+                <li><span>메뉴3</span></li>
+                <li><span>메뉴4</span></li>
+                <li><span>메뉴5</span></li>
+                <li><span>메뉴6</span></li>
+                <li><span>메뉴7</span></li>
+            </ul>
+        </nav>
+        <section>
+            <article>
+                <h1> 첫번째 본문의 제목 </h1>
+                <p> 첫번째 본문의 내용 </p>
+            </article>
+            <article>
+                <h1> 두번째 본문의 제목 </h1>
+                <p> 두번째 본문의 내용 </p>
+            </article>
+            <article>
+                <h1> 세번째 본문의 제목 </h1>
+                <p> 세번째 본문의 내용 </p>
+            </article>
+        </section>
+        <aside>
+            <p class="ad">광고</p>
+            <ul>
+                <li><b>html5강좌</b></li>
+                <li><b>html5강좌</b></li>
+                <li><b>html5강좌</b></li>
+            </ul>
+        </aside>
+        <footer>
+            <center>Copyright choi</center>
+        </footer>
+    </div>
+</body>
+
+</html>

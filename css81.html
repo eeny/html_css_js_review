@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-size: 14px;
+            text-align: center;
+            background-color: orangered;
+        }
+        div {
+            /* font-size: 1.2em;크기가 다르다 */
+            font-size: 1.2rem;/*크기가 똑같다*/
+            color: palegreen;
+            font-weight: bold;
+            padding: 2em;
+        }
+    </style>
+</head>
+<body>
+    <!-- css 의 단위.
+    
+            body에 기본 사이즈를 정의 하면 em을 통해 폰트사이즈를 지정시 
+            모든 자식노드는 영향을 받는다.
+            
+            rem(root em) - 최상위(body)에서 정의 한 크기를 기준으로
+            em - 자기를 감싸고 있는 부모의 크기를 상속받아서 계산한 크기 -->
+
+
+    <div>
+        Test (14 * 1.2 = 16.8px)
+        <div>
+            Test (16.8 * 1.2 = 20.16px)
+            <div>
+                Test (20.16 * 1.2 = 24.192px)
+            </div>
+        </div>
+    </div>
+
+    <!-- vh & vw (vertical heigth, view height)
+            반응형일 경의 %의 값을 상당히 자주 사용한다.
+            하지만 %로 처리시 자기를 감싸고 있는 부모의 크기를 기준으로 한다는
+            점이 있어 창을 기준으로 정의 하지 못한다.
+            그래서 나온 단위이다.(창을 기준으로 한다.)
+            높이값을 900px로 정의 한다면, 이때 1vh의 값은 9px이 된다.
+            넓이값이 750px 이라면 1vw는 7.5px이 된다. -->
+
+    <!-- ex & ch
+            ch는 기준이 현재 폰트에서 0의 크기 기준으로 넓이값을 정의 한다.
+            ex는 현재 폰트의 x높이 또는 현재 정의한 em의 절반크기 -->
+
+</body>
+</html>
