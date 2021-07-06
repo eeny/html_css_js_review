@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>숫자 맞추기 게임</title>
+</head>
+<body>
+    <script>
+        var com = Math.floor(Math.random() *100) + 1;
+        var num = prompt("1~100사이의 숫자를 입력하세요", "1");
+
+        while (true) {
+            if (com < num) {
+                num = prompt("입력 숫자: "+ num + " 더 작은 숫자를 입력하세요");
+            } else if (com > num) {
+                num = prompt("입력 숫자: "+ num + " 더 큰 숫자를 입력하세요");
+            } 
+            
+            if(com == num) {
+                var ans = confirm("정답: " +com+ "\n정답입니다!\n계속 하시겠습니까?");
+                if (ans == false) {
+                    break;
+                } else {
+                    com = Math.floor(Math.random() *100) + 1;
+                    num = prompt("1~100사이의 숫자를 입력하세요", "1");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

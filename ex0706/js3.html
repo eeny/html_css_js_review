@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var v1 = 10;
+        var v11 = 10;
+        var v2 = '10';
+        var v3 = "10";
+        
+        // 비교 연산자 설명
+        // == 2개는 값만 비교한다! 알아서 형변환이 적용된다.
+        document.write(v1 == v2, "<br>");// true
+        document.write(v1 == v3, "<br>");// true
+        document.write(v2 == v3, "<br>");// true
+        
+        // === 3개는 값 + 타입 비교한다!
+        document.write(v1 === v11, "<br>");// true
+        document.write(v1 === v2, "<br>");// false
+
+        // 삼항 조건 연산자 설명
+        // if문의 축약식이라고 볼 수 있다.
+        var result = v1 > v11 ? "같다" : "틀리다";
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt로 값 받아서 div 생성하기</title>
+</head>
+<body>
+    <script>
+        var cnt = prompt("개수는?", "0");
+        var width = prompt("가로 길이는?", "0");
+        var height = prompt("세로 길이는?", "0");
+        var layout = prompt("배치는?(가로/세로)", "가로");
+
+        if (cnt <= 0 || width <= 0 || height <= 0) {
+            alert("생성할 수 없습니다.");
+            location.reload();
+        } else {
+            if (layout == "가로") {
+                document.write(cnt + "개 / 크기: " + width + " * " + height + " / 배치 : " + layout + "<br>");
+                for(var i = 0; i < cnt; i++) {
+                    document.write("<div style=\"width: " + width + "px;height: " + height + "px;display: inline-block;border: 1px solid black;\"></div>");
+                }
+            } else if (layout == "세로") {
+                document.write(cnt + "개 / 크기: " + width + " * " + height + " / 배치 : " + layout + "<br>");
+                for(var i = 0; i < cnt; i++) {
+                    document.write("<div style=\"width: " + width + "px;height: " + height + "px;border: 1px solid black;\"></div>");
+                }
+            } else {
+                alert("생성할 수 없습니다.");
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>

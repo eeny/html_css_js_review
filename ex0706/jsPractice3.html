@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p58 평균 판매량의 이상/미달 값 출력하기</title>
+</head>
+<body>
+    <script>
+        var sales1 = 1200;
+        var sales2 = 1300;
+        var sales3 = 1000;
+        var sales4 = prompt("4분기 판매량을 입력하세요");
+
+        var avg = Number(sales1 + sales2 + sales3) / 3;
+        var result = sales4 - avg;
+
+        document.write("평균 판매량은 " + avg.toFixed(2) + "<br>");
+        document.write("4분기 판매량은 " + sales4 + "<br>");
+
+        if (result > 0) {
+            document.write("판매량이 평균 이상입니다.");
+        } else {
+            document.write("판매량이 평균 미달입니다.");
+        }
+
+    </script>
+</body>
+</html>
