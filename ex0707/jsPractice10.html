@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상하좌우 버튼으로 움직이는 박스 만들기</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .btns {
+            width: 500px;
+            text-align: center;
+            margin-top: 200px;
+        }
+        input {
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <div class="btns">
+        <input type="button" value="↑" id="upBtn" onclick="up()">
+        <br>
+        <input type="button" value="←" id="leftBtn" onclick="left()">
+        <input type="button" value="↓" id="downBtn" onclick="down()">
+        <input type="button" value="→" id="rightBtn" onclick="right()">
+    </div>
+
+    <script>
+        var box = document.getElementById("box");
+        var x = 0;
+        var y = 0;
+
+        function up() {
+            x -= 10;
+            box.style.top = x + "px";
+        }
+        function left() {
+            y -= 10;
+            box.style.left = y + "px";
+        }
+        function down() {
+            x += 10;
+            box.style.top = x + "px";
+        }
+        function right() {
+            y += 10;
+            box.style.left = y + "px";
+        }      
+    </script>
+</body>
+</html>

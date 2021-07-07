@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="result"></div>
+
+    <script>
+        //addNum(10, 20);// 30
+        //addNum(10);// NaN = None A Number 숫자가 아니다
+        //addNum("aa", "bb");// aabb
+        //addNum("aa");// aaundefined
+        //addNum("aa", 10);// aa10
+        addNum("aa", 10, 30);// aa10 <= 문법적으로 오류가 없다!
+
+        // 자바스크립트에서는 오버로딩(메서드의 매개변수 개수, 타입이 다르면 다른 메서드로 취급)이 없다!
+        // 하나만 만들면 모든 타입을 다 이용할 수 있다!
+        // 왜? 자바스크립트의 모든 변수 타입은 var 밖에 없다.
+
+        function addNum(a, b) {
+            document.querySelector("#result").innerHTML = (a + b + "**");
+        }
+        function addNum(a, b, c) {
+            document.querySelector("#result").innerHTML = (a + b + c);
+        }
+        // 자바스크립트에서 똑같은 이름의 메서드가 있다면 마지막에 작성한 함수로 덮어씌워진다!
+        // 자바스크립트는 같은 이름의 메서드를 가지지 않는다!
+    </script>
+</body>
+</html>

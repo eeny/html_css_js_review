@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var ran = Math.floor(Math.random() * 10) + 1;// 1 ~ 10 랜덤
+        while (true) {
+            var myNum = prompt("숫자를 입력하세요(1 ~ 10)");
+            if (myNum > ran) {
+                alert("더 작은 수를 입력하세요");
+            } else if (myNum < ran) {
+                alert("더 큰 수를 입력하세요");
+            } else {
+                var re = confirm("계속 하시겠습니까?");
+                if (re) {// re == true
+                    location.reload();// F5 새로고침이랑 같다
+                    break;// 우선 while문을 빠져나가서 새로 시작해야 한다!
+                } else {
+                    break;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

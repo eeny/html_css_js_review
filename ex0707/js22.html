@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>+, -, *, / 버튼 만들기</title>
+    <style>
+        #result {
+            width: 80px;
+            height: 80px;
+            border: 1px solid black;
+            font-size: 50px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <p>1) 10과 5의 더한 값, 뺀 값, 곱한 값, 나눈 값을 출력 하는 버튼을 각각 만들자.(4개)<br>(onclick 이벤트 사용하기)</p>
+    <input type="button" id="plus" value="더하기" onclick="plus(10, 5)">
+    <!-- <input type="button" id="plus" value="더하기" onclick="plus()"> 이렇게 해도 된다! -->
+    <input type="button" id="minus" value="빼기" onclick="minus(10, 5)">
+    <input type="button" id="multiply" value="곱하기" onclick="multiply(10, 5)">
+    <input type="button" id="division" value="나누기" onclick="division(10, 5)">
+    
+    <p>2) input 2개 만들어서 입력받은 값으로 계산하기</p>
+    첫번째 입력값<input type="text" id="first">
+    두번째 입력값<input type="text" id="last">
+    <br>
+    <input type="button" id="plus" value="더하기" onclick="plus()">
+    <input type="button" id="minus" value="빼기" onclick="minus()">
+    <input type="button" id="multiply" value="곱하기" onclick="multiply()">
+    <input type="button" id="division" value="나누기" onclick="division()">
+    
+    <div id="result"></div>
+
+    <script>
+        function plus(a, b) {
+            //document.querySelector("#result").innerHTML = (a + b);
+
+            var fir = Number(document.querySelector("#first").value);// 문자를 숫자로 변경
+            var las = Number(document.querySelector("#last").value);// 문자를 숫자로 변경
+            document.querySelector("#result").innerHTML = (fir + las);
+        }
+        // function plus() {// 이렇게 해도 된다!
+        //     document.querySelector("#result").innerHTML = (10 + 5);
+        // }
+
+        function minus(a, b) {
+            //document.querySelector("#result").innerHTML = (a - b);
+
+            var fir = Number(document.querySelector("#first").value);
+            var las = Number(document.querySelector("#last").value);
+            document.querySelector("#result").innerHTML = (fir - las);
+        }
+
+        function multiply(a, b) {
+            //document.querySelector("#result").innerHTML = (a * b);
+
+            var fir = Number(document.querySelector("#first").value);
+            var las = Number(document.querySelector("#last").value);
+            document.querySelector("#result").innerHTML = (fir * las);
+        }
+
+        function division(a, b) {
+            //document.querySelector("#result").innerHTML = (a / b);
+
+            var fir = Number(document.querySelector("#first").value);
+            var las = Number(document.querySelector("#last").value);
+            document.querySelector("#result").innerHTML = (fir / las);
+        }
+    </script>
+</body>
+</html>

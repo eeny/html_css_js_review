@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p style="background-color: yellow;">안녕</p>
+    </div>
+
+    <script>
+        // 태그에 스타일 속성 부여하기
+        document.querySelector("div").style.width="100px";
+        document.querySelector("div").style.height="100px";
+        document.querySelector("div").style.background="red";
+
+        var pbox = document.querySelector("p");
+
+        // 화면에서 객체 지우기
+        document.querySelector("div").removeChild(pbox);
+    </script>
+</body>
+</html>

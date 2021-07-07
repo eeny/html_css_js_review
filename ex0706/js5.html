@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         var price1 = prompt("교통비", "0");// prompt 에서 ("보여줄 글씨", "초기값");
@@ -13,17 +15,17 @@
         var price3 = prompt("음료비", "0");
         var result = Number(price1) + Number(price2) + Number(price3);
 
-        // alert(result);// messageDialog 랑 같음
+        alert(result);// messageDialog 랑 같음
         // 자바스크립트는 위에서 부터 밑으로 한줄씩 실행됨. 에러가 있다면 그줄이후로는 실행이 안됩니다.
         // 에러가 없는부분 까지는 실행됨.
 
-        // if(result > 10000){
-        //     document.write((result-10000) + "초과");
-        // }else{
-        //     document.write("돈 관리 잘 했어요!");
-        // }
-
-        document.write(result > 10000 ? (result - 10000) + "초과" : "돈 관리 잘 했어요!");
+        if (result > 10000) {
+            document.write((result - 10000) + "초과<br>");
+        } else {
+            document.write("돈 관리 잘 했어요!<br>");
+        }
+        // 삼항 연산자 사용한 경우
+        // document.write(result > 10000 ? (result - 10000) + "초과" : "돈 관리 잘 했어요!");
 
         var first = 1200;
         var sceond = 1300;
@@ -34,4 +36,5 @@
         document.write(average <= fourth ? "판매량이 평균 이상입니다." : "판매량이 평균 미달입니다.");
     </script>
 </body>
+
 </html>

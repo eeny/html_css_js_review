@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        //document.write("<div>내용</div>");
+        // 내가 실제로 키보드로 이 문서에 직접 쓰는 것과 같은 효과
+        // 그냥 화면에 내용을 지우고 쓰는 것으로 이전에 있던 태그를 무시해버린다!
+
+        var eleTag = document.createElement("div");// 코드로 태그를 생성
+        var txtNode = document.createTextNode("내용");
+        eleTag.appendChild(txtNode);// 눈에는 안보이지만 가상으로 만들어진 상태
+        document.body.appendChild(eleTag);// 화면에 붙이기
+    </script>
+</body>
+</html>

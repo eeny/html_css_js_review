@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>헤더1</h1>
+    <h1>헤더2</h1>
+
+    <div id="result"></div>
+
+    <script>
+        // document.getElementById(아이디);는 Element 단수형
+        // document.getElementsByTagName(태그명);는 Elements 복수형
+        // document.getElementsByClassName(클래스명);는 Elements 복수형
+
+        var h1 = document.getElementsByTagName("h1");
+        // 가져올 때 여러개라서 배열로 가져온다.
+        // h1의 값은 배열이다.
+
+        var box = document.getElementById("result");
+
+        box.innerHTML += h1[0].innerHTML;
+        box.innerHTML += h1[1].innerHTML;
+    </script>
+</body>
+</html>

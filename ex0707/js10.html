@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var cnt = prompt("몇 개?");
+        var size = prompt("크기?");
+        var wh = prompt("가로 세로?");
+        var dis = "";
+        
+        if (wh == "가로") {
+            dis = "display: inline-block;"
+        }
+        for(var i = 0; i < cnt; i++) {
+            document.write("<div style='width: " + size + "px;height: " + size + "px;" + dis + "'></div>");
+        }
+    </script>
+</body>
+</html>

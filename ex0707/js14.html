@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var data = "<div></div>";
+        
+        //document.body.innerHTML = data;
+        // 네모난 div가 출력됨
+        // innerHTML은 태그 형태로 값을 가져오거나 넣을 수 있다.
+        
+        document.body.textContent = data;
+        // <div></div>가 출력됨
+        // textContent는 문자열 형태로 값을 가져오거나 넣을 수 있다.
+
+        // document.body.appendChild(data);
+        // 불가능하다! data는 문자열이지 객체가 아니다!
+        // 즉 create로 만든 것은 객체이고, appendChild는 객체를 자식으로 붙이는 기능이다. 
+    </script>
+</body>
+</html>

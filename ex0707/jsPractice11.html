@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가로 세로 x축 y축 입력 받아서 세가지 색상 박스 생성하기</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #wrap {
+            width: 500px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+        .txt {
+            text-align: center;
+            margin: 10px auto;
+        }
+        .txt input {
+            width: 41%;
+        }
+        .btn {
+            text-align: center;
+        }
+        .btn input {
+            width: 60px;
+            height: 40px;
+            border: none;
+            cursor: pointer;
+            color: white;
+        }
+        .btn input:nth-child(1) {
+            background-color: red;
+        }
+        .btn input:nth-child(2) {
+            background-color: blue;
+        }
+        .btn input:nth-child(3) {
+            background-color: green;
+        }
+        #result {
+            width: 90%;
+            height: 300px;
+            margin: 10px auto;
+            border: 1px solid black;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="txt">
+            가로 <input type="text" id="wid">
+            세로 <input type="text" id="hei">
+            X <input type="text" id="topX">
+            Y <input type="text" id="leftY">
+        </div>
+        
+        <div class="btn">
+            <input type="button" value="생성" onclick="newBox('red')">
+            <input type="button" value="생성" onclick="newBox('blue')">
+            <input type="button" value="생성" onclick="newBox('green')">
+        </div>
+
+        <div id="result"></div>
+
+        <script>
+            function newBox(color) {
+                var box = document.createElement("div");
+                var w = document.querySelector("#wid").value;
+                var h = document.querySelector("#hei").value;
+                var x = document.querySelector("#topX").value;
+                var y = document.querySelector("#leftY").value;
+                
+                box.style.position = "absolute";
+                box.style.width= w + "px";
+                box.style.height= h + "px";
+                box.style.left = x + "px";
+                box.style.top = y + "px";
+                box.style.background = color;
+
+                document.querySelector("#result").appendChild(box);
+            }
+        </script>
+    </div>
+</body>
+</html>

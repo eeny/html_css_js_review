@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <img src="/img/bono.png" alt="" width="300px" height="300px"> -->
+
+    파일<input type="file" name="file" class="box" id="boxid"><br>
+
+    <script>
+        var img = document.createElement("img");
+        img.setAttribute("src", "/img/bono.png");
+        img.setAttribute("width", 300);
+        img.setAttribute("height", 300);
+        document.body.appendChild(img);
+    </script>
+
+    <!--이런 방법을 쓰는 이유는? 크기를 그때 그때 수정할 수가 있다는 점!-->
+</body>
+</html>
