@@ -31,13 +31,14 @@
 
             // 선생님 풀이
             idx++;
-            var inputFile = document.createElement("input");
-            inputFile.setAttribute("type", "file");
-            inputFile.setAttribute("id", "num" + idx);// num1, num2
+            //var inputFile = document.createElement("input");
+            //inputFile.setAttribute("type", "file");
+            //inputFile.setAttribute("id", "num" + idx);// num1, num2
 
             // 첫번째 방법
             // appendChild로 넣을 거면 객체를 생성해서 추가해야 한다!
             //document.querySelector("#result").appendChild(inputFile);
+            
             // 두번째 방법
             //document.getElementById("result").appendChild(inputFile);
             
@@ -46,10 +47,9 @@
             // 문자형태의 태그를 객체로 바꿔서 넣는 기능
             // 그래서 create로 만든 것은 문자가 아닌 객체이므로
             // 변형이 안돼서 그 생성 타입이 입력된다!
-            document.getElementById("result").innerHTML = inputFile;
 
-            var inputFile = "<input type='file' id='num" + idx + "''>"
-            document.getElementById("result").innerHTML += file;
+            var inputFile = "<input type='file' id='num" + idx + "'>";
+            document.getElementById("result").innerHTML += inputFile;
         }
         function delInput() {
             // alert("삭제");
@@ -60,6 +60,7 @@
             
             // 첫번째 방법
             //var lastBox = document.getElementById("num" + idx);
+            
             // 두번째 방법
             var lastBox = document.querySelector("#num" + idx);
 
