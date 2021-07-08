@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <span onmouseover="mouseOver()" onmouseout="mouseOut()">내게 마우스를 올려!</span>
+
+    <script>
+        function mouseOver() {
+            document.querySelector("span").style.color = "red";
+        }
+        function mouseOut() {
+            document.querySelector("span").style.color = "black";
+        }
+        // CSS와 차이는?
+        // CSS는 무조건 위에서 아래, 부모에서 자식만 가능하지만
+        // 자바스크립트는 어디서든지 접근을 할 수 있다는 점이다!
+    </script>
+</body>
+
+</html>

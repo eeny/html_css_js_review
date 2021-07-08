@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상하좌우 버튼으로 움직이는 박스 만들기v2</title>
+    <style>
+        #box {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .btns {
+            width: 300px;
+            text-align: center;
+            margin-top: 250px;
+        }
+        input {
+            width: 25px;
+            height: 25px;
+        }
+        input[type=text] {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <div class="btns">
+        <input type="button" value="↑" id="upBtn">
+        <br>
+        <input type="button" value="←" id="leftBtn">
+        <input type="button" value="↓" id="downBtn">
+        <input type="button" value="→" id="rightBtn">
+    </div>
+
+    <input type="text" onkeydown="move(event)">
+
+    <script>
+        var box = document.getElementById("box");
+        var x = 0;
+        var y = 0;
+
+        function move(e) {
+            if (e.keyCode == 38) {
+                x -= 10;
+                box.style.top = x + "px";
+            } else if (e.keyCode == 37) {
+                y -= 10;
+                box.style.left = y + "px";
+            } else if (e.keyCode == 40) {
+                x += 10;
+                box.style.top = x + "px";
+            } else if (e.keyCode == 39) {
+                y += 10;
+                box.style.left = y + "px";
+            }
+        }     
+    </script>
+</body>
+</html>

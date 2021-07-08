@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form name="myForm" method="POST">
+        Name: <input type="text" name="fname">
+        Name: <input type="text" name="fpw">
+        Name: <input type="text" name="fid">
+
+        <!-- <input type="submit" value="전송"> -->
+        <!--무조건 페이지가 넘어가버리게 된다-->
+        <input type="button" value="전송" onclick="sub()">
+    </form>
+    
+    <a href="js35.html?fname=bbb&fpw=ccc&fid=exexex">35번 파일로 가기</a>
+    <!--
+        링크의 경우에는 직접 뒤에 값까지 주소에 같이 적어줘야 한다
+        이렇게 주소줄에 붙여서 보내는 방법은 보안이 위험하다! 다 보이니까!
+    -->
+    
+    <!--
+        form의 기본은 method GET 방식이다.(다 보임)
+        form의 method를 POST로 하면 값을 숨겨서 넘길 수 있다! 안전하다!
+    -->
+
+    <!--
+        form 속성 중에서 action은 submit 버튼을 누르면 이동할 페이지이다!
+        a href와의 차이는? 값을 가지고 가는가 아닌가의 차이
+    -->
+
+    <script>
+        function sub() {
+            if (document.myForm.fname.value == "") {
+                alert("아이디는 필수입니다.");
+                document.myForm.fname.focus();// 포커스 주기
+            } else {
+                // 만약 action이 없으면 submit하면 자기 자신 페이지로 간다
+                // 따라서 action은 거의 필수 속성이다!
+                document.myForm.action = "js39.html";// 주소도 따로 설정할 수 있다.
+                document.myForm.submit();// 전송하기
+            }
+        }
+    </script>
+</body>
+
+</html>

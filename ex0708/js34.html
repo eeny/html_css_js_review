@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="data"></div>
+
+    <script>
+        // 문자열의 길이를 가져온다. (회원가입 등에 사용)
+        var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var sln = txt.length;// 26
+        
+        // 문자의 위치를 가져온다.
+        var str1 = "Please locate where 'locate' occurs!";
+        var pos = str1.indexOf("locate");// 7
+        
+        // 문자의 위치를 뒤에서 가져온다.
+        var str2 = "Please locate where 'locate' occurs!";
+        var pos2 = str2.lastIndexOf("locate");// 21
+        
+        // 문자의 위치를 특정위치에서부터 찾는다.
+        var str3 = "Please locate where 'locate' occurs!";
+        var pos3 = str3.indexOf("locate",15);// 21
+        
+        // 문자를 자른다. (시작위치, 끝위치)
+        var str4 = "Apple, Banana, Kiwi";
+        var res = str4.slice(7, 13);// Banana
+        
+        // 문자를 자른다. (시작위치, 끝위치)
+        var str5 = "Apple, Banana, Kiwi";
+        var res2 = str5.substring(7, 13);// Banana
+        
+        // 문자를 특정위치에서부터 개수만큼 가져온다.
+        var str6 = "Apple, Banana, Kiwi";
+        var res3 = str6.substr(7, 6);// Banana
+        
+        // 글자 바꾸기(첫 번째 것만 바꿈)
+        var str7 = "Please visit Microsoft!";
+        var n = str7.replace("Microsoft", "W3Schools");// Please visit W3Schools!
+        
+        // 글자 바꾸기(전체 다 바꿈) - 정규식 사용
+        var str8 = "Please visit Microsoft and Microsoft!";
+        var n2 = str8.replace(/Microsoft/g, "W3Schools");// Please visit W3Schools and W3Schools!
+        
+        // 대소문자를 구별한다.
+        var str9 = "Please visit Microsoft!";
+        var n3 = str9.replace("MICROSOFT", "W3Schools");// Please visit Microsoft!
+        
+        // 대소문자 구별 안함. - 정규식 사용
+        var str10 = "Please visit Microsoft!";
+        var n4 = str10.replace(/MICROSOFT/i, "W3Schools");// Please visit W3Schools!
+        
+        // 소문자로 변경
+        var text1 = "Hello World!";// Hello World!
+        var text2 = text1.toLowerCase();// hello world!
+        
+        // 대문자로 변경
+        var text3 = "Hello World!";// Hello World!
+        var text4 = text3.toUpperCase();// HELLO WORLD!
+        
+        // 글자 합치기
+        var text5 = "Hello";
+        var text6 = "World";
+        var text7 = text5.concat(" ", text6);// Hello World
+        
+        // 글자 합치기
+        var text8 = "Hello" + " " + "World!";// Hello World!
+        var text9 = "Hello".concat(" ", "World!");// Hello World!
+        
+        // 특정위치 한 개의 글자 가져오기
+        var str11 = "HELLO WORLD";
+        str11.charAt(0);// H
+        
+        // 특정위치 글자의 KeyCode 가져오기
+        var str12 = "HELLO WORLD";
+        str12.charCodeAt(0);// 72
+        
+        // 특정위치 한 개의 글자 가져오기
+        var str13 = "HELLO WORLD";
+        str13[0];// H
+        
+        // 글자 특정 문자 기준으로 나누기
+        var txt2 = "a,b,c,d,e";
+        txt2.split(",");// a,b,c,d,e
+        txt2.split(" ");// a,b,c,d,e
+        txt2.split("|");// a,b,c,d,e
+        
+        //글자를 하나씩 나누기
+        var txt3 = "Hello";
+        txt3.split("");// H,e,l,l,o
+        
+        document.getElementById("data").innerHTML = txt3.split("");
+    </script>
+</body>
+</html>

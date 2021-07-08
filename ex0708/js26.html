@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko
+">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Select a new car from the list.</p>
+
+    <!--select가 id나 name을 가지고, option은 value만 가져야 한다-->
+    <select id="mySelect" onchange="myFunction()">
+        <option value="Audi">Audi
+        <option value="BMW">BMW
+        <option value="Mercedes">Mercedes
+        <option value="Volvo">Volvo
+    </select>
+
+    <p>When you select a new car, a function is triggered which outputs the value of
+        the selected car.</p>
+
+    <p id="demo"></p>
+    
+    <script>
+        function myFunction() {
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("demo").innerHTML = "You selected: " + x;
+        }
+    </script>
+</body>
+
+</html>

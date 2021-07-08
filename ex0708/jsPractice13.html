@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드롭다운 메뉴 만들기</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 150px;
+            height: 20px;
+            margin: 0 auto;
+            border: 2px solid black;
+        }
+        #menubar {
+            list-style: none;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+        }
+        #submenu1, #submenu2 {
+            list-style: none;
+            border: 2px solid red;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul id="menubar">
+            <li onmouseover="showMenu(1)" onmouseout="hideMenu(1)">
+                메뉴1
+                <ul id="submenu1">
+                    <li>서브1</li>
+                    <li>서브2</li>
+                </ul>
+            </li>
+            <li onmouseover="showMenu(2)" onmouseout="hideMenu(2)">
+                메뉴2
+                <ul id="submenu2">
+                    <li>서브3</li>
+                    <li>서브4</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <script>
+        var submenu;
+        
+        function showMenu(num) {
+            // if (num ==1) {
+            //     submenu = document.querySelector("#submenu1");
+            // } else if (num ==2) {
+            //     submenu = document.querySelector("#submenu2");
+            // }
+            // 짧게 고친 버전
+            submenu = document.querySelector("#submenu" + num);
+            submenu.style.display = "block";
+        }
+        function hideMenu(num) {
+            // if (num ==1) {
+            //     submenu = document.querySelector("#submenu1");
+            // } else if (num ==2) {
+            //     submenu = document.querySelector("#submenu2");
+            // }
+            // 짧게 고친 버전
+            submenu = document.querySelector("#submenu" + num);
+            submenu.style.display = "none";
+        }
+    </script>
+</body>
+</html>

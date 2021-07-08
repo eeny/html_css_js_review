@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부모창 자식창 값 전달하기 - 자식</title>
+</head>
+<body>
+    <form name="myForm">
+        이름<input type="text" name="fname">
+        확인<input type="text" name="fname">
+        <input type="button" value="전송" onclick="goParents()">
+    </form>
+
+    <script>
+        function goParents() {
+            window.open("jsPractice16.html", "_blank", "width = 400, height = 400");
+        }
+    </script>
+</body>
+</html>

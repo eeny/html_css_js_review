@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="text">abcd abcd abcd</div>
+
+    <script>
+        // id = text의 값을 전부 들고와라
+        var txt = document.getElementById("text").innerHTML;
+        // 가져온 글자에서 abcd를 찾아서 zzz로 바꾸고
+        // 그걸 다시 txt에 담아라
+        txt = txt.replace(/abcd/g, "zzzz");
+        // 내용이 바뀐 txt의 값을 id = text에 넣어라
+        document.getElementById("text").innerHTML = txt;
+    </script>
+</body>
+</html>

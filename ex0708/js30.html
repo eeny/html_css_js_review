@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        #wrap {
+            border: 1px solid black;
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+
+        .box {/*만들어질 상자인데 공통인 부분을 미리 만들어둔다!*/
+            border: 1px solid black;
+            position: absolute;
+            z-index: -1;/*상자 안겹치게 처리*/
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap" onmousedown="down(event)" onmousemove="move(event)" onmouseup="up(event)"></div>
+    <div id="wh"></div>
+    <script>
+        var box;// 만들어질 상자
+        var width;// 가로
+        var height;// 세로
+        var x;// x좌표
+        var y;// y좌표
+        var isDown;// 마우스를 뗐을 때 눌렀을 때 확인 - move 때문에
+
+        function down(e) {
+            x = e.offsetX;
+            y = e.offsetY;
+
+            box = document.createElement("div");
+
+            box.setAttribute("class", "box");
+
+            box.style.left = x + "px";
+            box.style.top = y + "px";
+
+            document.getElementById("wrap").appendChild(box);
+
+            isDown = true;
+        }
+        function move(e) {// 마우스를 움직이는 상태
+            if (isDown) {// 마우스를 뗐을 때만 작동하도록
+                // 크기를 찍은 좌표 기준으로 내가 움직인 거리만큼 상자를 늘린다
+                box.style.width = (e.offsetX - x) + "px";
+                box.style.height = (e.offsetY - y) + "px";
+                // 좌표 출력(없어도 됨)
+                document.getElementById("wh").innerHTML = (box.style.width + ":" + box.style.height);
+            }
+        }
+        function up(e) {
+            isDown = false;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스이벤트로 상자 만들기</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            border: 1px solid black;
+            position: relative;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap" onmousemove="myFunction(event)" onmousedown="makeBox(event)" onmouseup="completeBox(event)"></div>
+    <p id="location"></p>
+
+    <script>
+        var x1;
+        var y1;
+        var x2;
+        var y2;
+        
+        function myFunction(e) {
+            var x = e.offsetX;
+            var y = e.offsetY;
+            var coor = "coordinate: (" + x + "," + y + ")";
+            document.getElementById("location").innerHTML = coor;
+        }
+        function makeBox(e) {
+            x1 = e.offsetX;
+            y1 = e.offsetY;
+        }
+        function completeBox(e) {
+            x2 = e.offsetX;
+            y2 = e.offsetY;
+            var newBox = document.createElement("div");
+
+            if (x2 < x1) {/*왼쪽에서 오른쪽 방향으로 만들 때*/
+                newBox.style.width = (x1 - x2) + "px";
+                newBox.style.height = (y1 - y2) + "px";
+                newBox.style.top = y2 + "px";
+                newBox.style.left = x2 + "px";
+            } else {/*오른쪽에서 왼쪽 방향으로 만들 때*/
+                newBox.style.width = (x2 - x1) + "px";
+                newBox.style.height = (y2 - y1) + "px";
+                newBox.style.top = y1 + "px";
+                newBox.style.left = x1 + "px";
+            }
+
+            newBox.style.position = "absolute";
+            newBox.style.border = "1px solid red";
+            // 생성된 div 위에서는 이벤트가 안돼서 맨 뒤로 보내기
+            newBox.style.zIndex = "-1";
+            
+            document.getElementById("wrap").appendChild(newBox);
+        }
+    </script>
+</body>
+</html>
