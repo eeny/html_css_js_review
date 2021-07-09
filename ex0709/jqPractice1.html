@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리로 드롭다운 메뉴 만들기</title>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .mainmenu {
+            width: 300px;
+            height: 50px;
+            border: 1px solid black;
+            display: flex;
+            list-style: none;
+        }
+        .mainmenu>li {
+            padding-top: 15px;
+            padding-left: 15px;
+        }
+        .submenu {
+            list-style: none;
+            border: 1px solid red;
+            margin-top: 15px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <ul class="mainmenu">
+        <li class="sub1">메뉴1
+            <ul class="submenu">
+                <li>서브1</li>
+                <li>서브2</li>
+            </ul>
+        </li>
+        <li class="sub2">메뉴2
+            <ul class="submenu">
+                <li>서브3</li>
+                <li>서브4</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(document).ready(
+            function() {
+                $(".sub1").hover(
+                    function(){
+                        $(".sub1 ul").slideToggle();
+                    }
+                );
+                $(".sub2").hover(
+                    function(){
+                        $(".sub2 ul").slideToggle();
+                    }
+                );
+            }
+        );
+    </script>
+</body>
+</html>

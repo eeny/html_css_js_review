@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제이쿼리 CDN 방식</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <!--항상 최신버전 링크로 가져오는 CDN-->
+    <!--무조건 실행코드가 있는 script 태그보다는 위에 있어야 한다!!!-->
+</head>
+<body>
+
+    <div>하이1</div>
+    <div>하이2</div>
+
+    <script>
+        /*
+        $(document).ready(
+            function(){
+                //$("div:nth-child(2)").hide(3000);
+                // 이렇게 쓰는 것 보다
+                $("div").eq(1).hide(3000);
+                // 이렇게 제이쿼리 자체 선택자를 쓰는 게 보기 좋다!
+
+            }
+        );
+        */
+        // 위의 ready 구문을 줄인 버전
+        $(function(){
+
+        });
+    </script>
+</body>
+</html>

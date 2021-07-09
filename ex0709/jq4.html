@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            width: 500px;
+            height: 300px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <p>이것은 내용 내용 내용</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="fadeOut">FadeOut</button>
+    <button id="slideUp">SlideUp</button>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        /*
+            - hide() / show() 문법
+            $(selector).hide(speed,callback);
+            $(selector).show(speed,callback);
+            $(selector).toggle(speed,callback);
+
+            - fadeIn()/fadeOut()/fadeToggle()/fadeTo() 문법
+            $(selector).fadeIn(speed,callback);
+            $(selector).fadeOut(speed,callback);
+            $(selector).fadeToggle(speed,callback);
+            $(selector).fadeTo(speed,opacity,callback);
+            $(selector).slideDown(speed,callback);
+            $(selector).slideUp(speed,callback);
+            $(selector).slideToggle(speed,callback);
+        */
+
+        $(document).ready(function () {
+            $("#hide").click(function () {
+                //$("p").hide();
+                //$("p").hide("slow");
+                //$("p").hide("fast");
+                //$("p").hide(1000);// 1000 = 1초
+                $("p").toggle(1000);
+            });
+            $("#show").click(function () {
+                $("p").show();
+            });
+            $("#fadeOut").click(function () {
+                $("p").fadeToggle(1000);
+            });
+            $("#slideUp").click(function () {
+                $("p").slideToggle(1000);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입창 만들기 - register</title>
+</head>
+<body>
+    <form name="mainForm" action="jsPractice16-3.html">
+        ID <input type="text" name="fid"> <input type="button" value="Check ID"><br>
+        (영문, 숫자, _로만 아이디를 작성하세요)<hr>
+        Password <input type="password" name="fpw"> 확인 <input type="password" name="fpw2"><hr>
+        Name <input type="text" name="fname"><hr>
+        E-mail <input type="email" name="fmail"> <input type="checkbox" name="fmailChk"> 공개<hr>
+        Homepage <input type="text" name="fhome"> <input type="checkbox" name="fhomeChk"> 공개<hr>
+        ICQ <input type="text" name="ficq"> <input type="checkbox" name="ficqChk"> 공개<hr>
+        Mailling List <input type="checkbox" name="fmailling"> 메일링 가입<hr> 
+        자기소개서 <textarea name="fintro" cols="50" rows="5"></textarea><br>
+        <input type="checkbox" name="fintroChk"> 공개<hr>
+        개인정보 공개 <input type="checkbox" name="fprivacyChk"> 정보 공개<hr>
+
+        <input type="button" value="회원가입" onclick="goSuccess()">
+        <input type="button" value="취소" onclick="cancel()">
+    </form>
+
+    <script>
+        // 비밀번호 정규표현식 - 6~12자 이하, 반드시 숫자와 영문 혼합
+        var pwReg = /^(?=.*[a-zA-z])(?=.*[0-9]).{6,12}$/;
+
+        // 이메일 정규표현식
+        var mailReg = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+
+        function goSuccess() {
+            if (document.mainForm.fid.value == "") {
+                alert("ID를 입력하세요");
+                document.mainForm.fid.focus();
+            } else if (document.mainForm.fid.value.length > 8) {
+                alert("ID는 8자 이하입니다.")    
+                document.mainForm.fid.focus();
+            } else if (document.mainForm.fpw.value == "") {
+                alert("비밀번호를 입력하세요");
+                document.mainForm.fpw.focus();
+            } else if (pwReg.test(document.mainForm.fpw.value) === false) {
+                alert("비밀번호는 6~12자 내로 숫자와 영문이 혼합되어야 합니다!");
+                document.mainForm.fpw.focus();
+            } else if (document.mainForm.fpw2.value == "") {
+                alert("비밀번호 확인을 입력하세요");
+                document.mainForm.fpw2.focus();
+            } else if (document.mainForm.fpw.value != document.mainForm.fpw2.value) {
+                alert("비밀번호가 일치하지 않습니다.");
+                document.mainForm.fpw2.focus();
+            } else if (document.mainForm.fname.value == "") {
+                alert("이름을 입력하세요");
+                document.mainForm.fname.focus();
+            } else if (document.mainForm.fmail.value == "") {
+                alert("이메일을 입력하세요");
+                document.mainForm.fmail.focus();
+            } else if (mailReg.test(document.mainForm.fmail.value) === false) {
+                alert("이메일 형식이 바르지 않습니다.");
+                document.mainForm.fmail.focus();
+            } else if (document.mainForm.fhome.value == "") {
+                alert("홈페이지를 입력하세요");
+                document.mainForm.fhome.focus();
+            } else if (document.mainForm.ficq.value == "") {
+                alert("ICQ를 입력하세요");
+                document.mainForm.ficq.focus();
+            } else if (document.mainForm.fintro.value == "") {
+                alert("자기소개서를 입력하세요");
+                document.mainForm.fintro.focus();
+            } else {
+                alert("아이디 : " + document.mainForm.fid.value +
+                        "\n비밀번호 : " + document.mainForm.fpw.value +
+                        "\n이름 : " + document.mainForm.fname.value +
+                        "\n이메일 : " + document.mainForm.fmail.value +
+                        "\n홈페이지 : " + document.mainForm.fhome.value +
+                        "\nICQ : " + document.mainForm.ficq.value +
+                        "\n자기소개서 : " + document.mainForm.fintro.value);
+                document.mainForm.submit();
+            }
+        }
+        function cancel() {
+            location.replace("jsPractice16-1.html");
+            // 이렇게 안하고 input type=reset 하는 게 편하다~
+        }
+    </script>
+</body>
+</html>

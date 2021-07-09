@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시작할 때마다 랜덤박스 10개 생성하기</title>
+</head>
+<body>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        // border-color로 줄 값들
+        var colors = ["red", "pink", "blue", "green", "purple"];
+        
+        $(document).ready(function() {
+            // div 10개 만들고 box1 ~ box10 클래스 속성 추가 
+            for(var i=1; i<11; i++) {
+                var box = document.createElement("div");
+                box.setAttribute("class", "box" + i);
+                document.body.appendChild(box);
+            }
+            // div에 랜덤 속성 추가
+            for(var i=1; i<11; i++) {
+                var w = Math.floor(Math.random() * 100) + 1;// 1~ 100
+                var h = Math.floor(Math.random() * 100) + 1;// 1~ 100
+                var bw = Math.floor(Math.random() * 10) + 1;// 1~ 10
+                var t = Math.floor(Math.random() * 300) + 1;// 1~ 300
+                var l = Math.floor(Math.random() * 300) + 1;// 1~ 300
+                var bc = Math.floor(Math.random() * 5);// 0 ~ 4
+                
+                $(".box" + i).css("position", "absolute");
+                $(".box" + i).css("border-style", "solid");
+                $(".box" + i).css("width", w +"px");
+                $(".box" + i).css("height", h +"px");
+                $(".box" + i).css("border-width", bw +"px");
+                $(".box" + i).css("top", t + "px");
+                $(".box" + i).css("left", l + "px");
+                $(".box" + i).css("border-color", colors[bc]);
+            }
+        });
+    </script>
+</body>
+</html>

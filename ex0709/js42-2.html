@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="getParents()">
+    <form name="childForm">
+        이름<input type="text" name="cname"><br>
+        확인<input type="text" name="result"><br>
+        <input type="button" value="전송" onclick="setParents()">
+    </form>
+
+    <script>
+        function getParents(){// 부모창에서 받아오기
+            //alert(opener.document.myForm.fname.value);
+            document.childForm.cname.value = opener.document.myForm.fname.value;
+        }
+        function setParents() {// 부모창으로 보내기
+            opener.document.myForm.result.value = document.childForm.result.value;
+            self.close();
+        }
+    </script>
+</body>
+</html>

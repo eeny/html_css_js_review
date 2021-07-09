@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자동차 움직이기, 미사일 발사하기</title>   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        #wrap {
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+            position: relative;
+        }
+        .car {
+            font-size: 50px;
+            background-color: white;
+            position: absolute;
+            top: 50px;
+            left: 20px;
+        }
+        .bullet {
+            font-size: 20px;
+            position: absolute;
+            top: 0px;
+            left: 15px;
+            z-index: -1;
+        }
+        input {
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            bottom: 0;
+        }
+        #up {
+            left: 30px;
+            bottom: 30px;
+        }
+        #down {
+            left: 30px;
+        }
+        #right {
+            left: 60px;
+        }
+        #shoot {
+            left: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="car">
+            <i class="fas fa-car-side"></i>
+            <div class="bullet">
+                <i class="fas fa-space-shuttle"></i>
+            </div>
+        </div>
+        
+        <input type="button" value="↑" id="up">
+        <input type="button" value="←" id="left">
+        <input type="button" value="↓" id="down">
+        <input type="button" value="→" id="right">
+        <input type="button" value="발사" id="shoot">
+    </div>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function(){
+            $("#up").click(function(){
+                $(".car").animate({
+                    top: '-=20px'
+                }, 100);
+            });
+            $("#left").click(function(){
+                $(".car").animate({
+                    left: '-=20px'
+                }, 100);
+            });
+            $("#down").click(function(){
+                $(".car").animate({
+                    top: '+=20px'
+                }, 100);
+            });
+            $("#right").click(function(){
+                $(".car").animate({
+                    left: '+=20px'
+                }, 100);
+            });
+
+            // 이 방법은 검색해서 콜백함수 사용했다!
+            /*
+            $("#shoot").click(function (){
+                $(".bullet").animate({
+                    left: '200px'
+                }, 200, function(){
+                    $(".bullet").css("left", "15px");
+                });
+            });
+            */
+
+           // 이 방법은 우리가 배운 요소 생성하기를 사용했다!
+            $("#shoot").click(function (){
+                var icon = "<i class='fas fa-space-shuttle'></i>";
+                var bull = document.createElement("div");
+                bull.setAttribute("class", "bullet");
+                bull.innerHTML = icon;
+                document.querySelector(".car").appendChild(bull);
+
+                $(".bullet").animate({
+                    left: '300px',
+                    opacity: '0'
+                }, 500);
+            });
+        });
+    </script>
+</body>
+</html>
