@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        .boxred {
+            background-color: red;
+        }
+
+        .boxblue {
+            background-color: blue;
+        }
+
+        .boxgreen {
+            background-color: green;
+        }
+
+        button {
+            margin-top: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxred"></div>
+    <div class="boxblue"></div>
+    <div class="boxgreen"></div>
+    <button>클릭</button>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                // $(".boxred").animate({
+                //     left:"300px"
+                // },1000);
+
+                // $(".boxblue").animate({
+                //     left:"300px"
+                // },1000);
+
+                // $(".boxgreen").animate({
+                //     left:"300px"
+                // },1000);
+
+                $(".boxred").animate({
+                    left: "300px"
+                }, 1000, function() {
+                    $(".boxblue").animate({
+                        left: "300px"
+                    }, 1000, function() {
+                        $(".boxgreen").animate({
+                            left: "300px"
+                        }, 1000, function() {
+                            $(".boxgreen").animate({
+                                left: "0px"
+                            }, 1000, function() {
+                                $(".boxblue").animate({
+                                    left: "0px"
+                                }, 1000, function() {
+                                    $(".boxred").animate({
+                                        left: "0px"
+                                    }, 1000);
+                                });
+                            });
+                        });
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

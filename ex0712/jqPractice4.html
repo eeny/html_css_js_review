@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배너 만들기</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #wrap {
+            width: 500px;
+            height: 500px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+        .imgbox {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+            border: 1px solid red;
+            position: relative;
+            overflow: hidden;
+        }
+        .imgbox div {
+            width: 650px;
+            height: 200px;
+            font-size: 0;
+            position: absolute;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            display: inline-block;
+        }
+        input {
+            width: 100px;
+            height: 30px;
+            margin-left: 210px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="imgbox">
+            <div>
+                <img src="/img/wt1.png" alt="">
+                <img src="/img/wt2.png" alt="">
+                <img src="/img/wt3.png" alt="">
+            </div>
+        </div>
+        <input type="button" value="클릭">
+    </div>
+
+    <script>
+        $(function() {
+            $("input").click(function() {
+                $(".imgbox div").animate({
+                    left: "-=200px"
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

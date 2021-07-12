@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <button>Hide</button>
+    <p>This is a paragraph with little content.</p>
+
+    <script>
+        $(document).ready(function () {
+            // 동시에 실행된다.
+            // 하지만 우리가 원하는 것은 순서대로 실행되는 것!
+            // 
+            /*
+            $("button").click(function () {
+                $("p").hide("slow", function () {
+                    alert("문단이 사라진다!");
+                });
+            });
+            */
+
+            $("button").click(function() {// 콜백 메서드의 매개변수로 함수 사용
+                // 우선 메서드가 실행되고 이후에 콜백 메서드가 실행된다!
+                $("p").hide(1000, function() {
+                    alert("문단이 사라진다!");
+                });
+            });
+        });
+    </script>
+</body>
+</html>

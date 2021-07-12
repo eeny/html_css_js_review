@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>detach로 슬라이드 만들기</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #wrap {
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+        .showbox {
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            position: relative;
+            /*overflow: hidden;*/
+        }
+        .imgbox {
+            width: 600px;
+            height: 200px;
+            display: flex;
+            position: absolute;
+            left: 0;
+        }
+        .imgbox img {
+            width: 200px;
+            height: 200px;
+        }
+        button {
+            width: 50px;
+            height: 50px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="showbox">
+            <div class="imgbox">
+                <img src="/img/wt1.png" alt="">
+                <img src="/img/wt2.png" alt="">
+                <img src="/img/wt3.png" alt="">
+            </div>
+        </div>
+        <button class="left">◀</button>
+        <button class="right">▶</button>
+    </div>
+
+    <script>
+        $(function() {
+            var tags;
+
+            $(".left").click(function() {               
+                $(".imgbox").animate({
+                    left: "-200px"
+                }, 1000, function() {
+                    tags = $("img:first-of-type").detach();
+                    $(".imgbox").append(tags);
+                    $(".imgbox").css("left", "0px");
+                });
+            });
+            // 오른쪽 뭔가 이상하다
+            // 샘 코드 보고 고침
+            $(".right").click(function() {
+                tags = $("img:last-of-type").detach();
+                $(".imgbox").prepend(tags);
+                $(".imgbox").css("left", "-200px"); 
+                
+                $(".imgbox").animate({
+                    left: "0px"
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

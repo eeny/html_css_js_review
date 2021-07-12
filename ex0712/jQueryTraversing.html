@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        div,
+        p {
+            float: left;
+            margin: 10px;
+            background-color: #FFF;
+        }
+
+        div#sub {
+            width: 80px;
+            height: 80px;
+            border: #000 thin solid;
+        }
+
+        p {
+            width: 50px;
+            height: 50px;
+            border: #000 thin solid;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="sub">
+            <p>div p</p>
+        </div>
+        <p id="part1">p</p>
+        <p>p</p>
+        <p>p</p>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            //$("div#container").children("p").css("background-color", "yellow");
+            //$("div#container").find("p").css("background-color", "yellow");
+            //$("div#container").children().prev("div").css("background-color", "yellow");
+            //$("div#container").children("div").next().next().css("background-color", "yellow");
+            //$("div#container").children("div").next().siblings().css("background-color", "yellow");
+            $("div#container").children().parent().css("background-color", "yellow");
+
+            // 윗줄을 수정하면 원하는 문제를 풀 때 결과를 얻을 수 있습니다. 
+        });
+    </script>
+</body>
+
+</html>

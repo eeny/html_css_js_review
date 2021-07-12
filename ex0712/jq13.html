@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        $(function() {
+            $("div").animate({
+                left: "200px"
+            }, 1000);
+
+            // 커졌다가 사라지는 애니메이션
+            $("div").animate({
+                width: "300px",
+                height: "300px"
+            }, 1000, function() {
+                $("div").css("opacity", "0");
+            });
+
+            // 애니메이션은 무조건 순서대로 움직인다!
+            // $("div").animate({
+            //     top: "200px"
+            // }, 1000);
+            // $("div").animate({
+            //     left: "0px"
+            // }, 1000);
+            // $("div").animate({
+            //     top: "0px"
+            // }, 1000);
+        });
+    </script>
+</body>
+</html>

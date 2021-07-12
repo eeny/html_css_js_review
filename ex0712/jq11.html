@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <div></div>
+    <button class="go">고</button>
+    <button class="stop">스톱</button>
+    <script>
+        var flag = true;// 누르면 계속 빨라지는 거 방지하기 위해서
+        
+        function tmp() {
+            $("div").append("하이");
+        }
+
+        var inter = setInterval(tmp, 500);// 메서드명에서 ()를 제외하고 작성한다.
+
+        $(".go").click(function() {
+            if(flag == false) {
+                inter = setInterval(tmp, 500);
+                // 일시 정지 후 다시 실행
+                flag = true;
+            }
+        });
+        $(".stop").click(function() {
+            clearInterval(inter);
+            flag = false;
+        });
+    </script>
+</body>
+</html>

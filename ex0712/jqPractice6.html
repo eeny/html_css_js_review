@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력받은 개수로 랜덤 박스 생성하기</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <input type="text"> <button>생성</button>
+
+    <script>       
+        $(document).ready(function() {
+            // background-color로 줄 값들
+            var colors = ["red", "pink", "blue", "green", "purple", "yellow"];
+            
+            $("button").click(function() {
+                // 초기화
+                $("div").remove();
+
+                // 생성할 개수
+                var cnt = $("input").val();
+
+                // div 10개 만들고 box1 ~ box(cnt) 클래스 속성 추가 
+                for(var i=0; i<cnt; i++) {
+                    var box = document.createElement("div");
+                    box.setAttribute("class", "box" + i);
+                    $("body").append(box);
+                }
+                // div에 랜덤 속성 추가
+                for(var i=0; i<cnt; i++) {
+                    var w = Math.floor(Math.random() * 100) + 1;// 1 ~ 100
+                    var h = Math.floor(Math.random() * 100) + 1;// 1 ~ 100
+                    var t = Math.floor(Math.random() * 300) + 50;// 50 ~ 300
+                    var l = Math.floor(Math.random() * 300) + 50;// 50 ~ 300
+                    var bc = Math.floor(Math.random() * 6);// 0 ~ 5
+                    
+                    $(".box" + i).css("position", "absolute");
+                    $(".box" + i).css("width", w +"px");
+                    $(".box" + i).css("height", h +"px");
+                    $(".box" + i).css("top", t + "px");
+                    $(".box" + i).css("left", l + "px");
+                    $(".box" + i).css("background-color", colors[bc]);
+                }               
+            });
+
+        });
+    </script>
+</body>
+</html>

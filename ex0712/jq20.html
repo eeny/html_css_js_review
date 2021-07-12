@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        *,
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .showbox {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            border: 1px solid red;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .movebox {
+            width: 300px;
+            height: 100px;
+            border: 1px solid blue;
+            position: absolute;
+            display: flex;
+        }
+
+        .img {
+            width: 100px;
+            height: 100px;
+        }
+
+        .img img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="showbox">
+        <div class="movebox">
+            <div class="img">
+                <img src="/img/dog2.jpg">
+            </div>
+            <div class="img">
+                <img src="/img/dog3.jpg">
+            </div>
+            <div class="img">
+                <img src="/img/dog4.jpg">
+            </div>
+        </div>
+    </div>
+
+    <button id="lbtn">왼쪽</button>
+    <button id="rbtn">오른쪽</button>
+    <script>
+        // setInterval로 자동 반복하기
+        setInterval(function() {
+            $(".movebox").animate({
+                left: "-100px"
+            }, 1000, function() {
+                var x = $(".movebox .img:first-child").detach();
+                $(".movebox").css("left", "0");
+                $(".movebox").append(x);
+            });
+        }, 3000);
+
+        // 왼쪽 버튼 클릭시
+        $("#lbtn").click(function() {
+            $(".movebox").animate({
+                left: "-100px"
+            }, 1000, function() {
+                var x = $(".movebox .img:first-child").detach();
+                $(".movebox").css("left", "0");
+                $(".movebox").append(x);
+            });
+        });
+        // 오른쪽 버튼 클릭시
+        $("#rbtn").click(function() {
+            var x = $(".movebox .img:last-child").detach();
+            $(".movebox").prepend(x);
+            $(".movebox").css("left", "-100px");
+            $(".movebox").animate({
+                left: "0"
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>
