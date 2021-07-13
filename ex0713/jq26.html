@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 50px;
+            font-size: 24px;
+            border: 1px solid black;
+        }
+
+        button {
+            widows: 100px;
+            height: 30px;
+        }
+
+        .fontColor {
+            color: red;
+        }
+
+        .bgColor {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div>안녕하세요</div><br><br>
+    <button>addClass(bg)</button>
+    <button>addClass(font)</button>
+    <button>remove addClass</button>
+    <button>toggle addClass</button>
+    <button>has addClass</button>
+    <script>
+        $(function () {
+            $("button").eq(0).click(function () {
+                // 어차피 class만 가능하므로 .(점 dot)이 없다!
+                $("div").addClass("bgColor");
+                // class = "bgColor"와 같은 의미 
+            });
+
+            $("button").eq(1).click(function () {
+                $("div").addClass("fontColor");
+                // class = "bgColor fontColor"와 같은 의미
+            });
+
+            $("button").eq(2).click(function () {
+                // 해당 클래스 삭제
+                $("div").removeClass("bgColor");
+            });
+
+            $("button").eq(3).click(function () {
+                $("div").toggleClass("bgColor");
+            });
+            
+            $("button").eq(4).click(function () {
+                // 해당 요소가 해당 클래스를 가지고 있는가? true/false
+                $("div").text($("div").hasClass("fontColor"));
+            });
+        });
+    </script>
+</body>
+
+</html>

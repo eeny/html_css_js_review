@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>컴퓨터랑 가위바위보 게임</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        #wrap {
+            width: 700px;
+            height: 400px;
+            border: 1px solid black;
+            text-align: center;
+            display: flex;
+            flex-flow: row wrap;
+            font-size: 24px;
+        }
+
+        #wrap>div {
+            width: 50%;
+        }
+
+        #wrap>.result {
+            width: 100%;
+        }
+
+        #wrap>.choose {
+            width: 100%;
+        }
+
+        button {
+            margin-right: 20px;
+        }
+
+        button img {
+            width: 50px;
+            height: 50px;
+        }
+
+        div>img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div>
+            <div>컴퓨터</div>
+            <div class="computer"><img alt=""></div>
+        </div>
+        <div>
+            <div>유저</div>
+            <div class="user"><img alt=""></div>
+        </div>
+        <div class="result">결과는?</div>
+        <div class="choose">
+            <button><img src="/img/math_img_1.png"></button>
+            <button><img src="/img/math_img_2.png"></button>
+            <button><img src="/img/math_img_3.png"></button>
+        </div>
+    </div>
+
+    <script>
+        $(function() {
+            // usernum = 1 가위 2 바위 3 보
+            $("button").eq(0).click(function() {
+                var comran = Math.floor(Math.random() * 3) + 1;// 1 ~ 3
+                $(".computer img").attr({
+                    "src": "/img/math_img_" + comran +".png"
+                });
+                $(".user img").attr({
+                    "src": "/img/math_img_1.png"
+                });
+                
+                if(comran == 1) {
+                    $(".result").text("비겼다!");
+                } else if(comran == 2) {
+                    $(".result").text("졌다!");
+                } else {
+                    $(".result").text("이겼다!");
+                }
+            });
+            $("button").eq(1).click(function() {
+                var comran = Math.floor(Math.random() * 3) + 1;// 1 ~ 3
+                $(".computer img").attr({
+                    "src": "/img/math_img_" + comran +".png"
+                });
+                $(".user img").attr({
+                    "src": "/img/math_img_2.png"
+                });
+
+                if(comran == 1) {
+                    $(".result").text("이겼다!");
+                } else if(comran == 2) {
+                    $(".result").text("비겼다!");
+                } else {
+                    $(".result").text("졌다!");
+                }
+            });
+            $("button").eq(2).click(function() {
+                var comran = Math.floor(Math.random() * 3) + 1;// 1 ~ 3
+                $(".computer img").attr({
+                    "src": "/img/math_img_" + comran +".png"
+                });
+                $(".user img").attr({
+                    "src": "/img/math_img_3.png"
+                });
+
+                if(comran == 1) {
+                    $(".result").text("졌다!");
+                } else if(comran == 2) {
+                    $(".result").text("이겼다!");
+                } else {
+                    $(".result").text("비겼다!");
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
