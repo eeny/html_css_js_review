@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        #wrap {
+            width: 100%;
+        }
+        .page {
+            width: 100%;
+            height: 100%;
+        }
+        .red {
+            background-color: red;
+        }
+        .green {
+            background-color: green;
+        }
+        .blue {
+            background-color: blue;
+        }
+        .info {
+            width: 100%;
+            height: 100px;
+            font-size: 24px;
+            position: fixed;
+            top: 0%;
+            left: 0;
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="info"></div>
+        <div class="page red"></div>
+        <div class="page green"></div>
+        <div class="page blue"></div>
+    </div>
+
+    <script>
+        $(function() {
+            $(".page").on("mousewheel DOMMouseScroll", function(e) {
+                e.preventDefault();
+                // 브라우저 자체의 애니메이션 효과를 없애기 위한 코드
+                // 이걸 추가 안하면 스크롤하면서 주춤주춤거릴 수도 있다.
+
+                var E = e.originalEvent;
+                var delta = 0;
+                $(".info").text(E.detail);
+                if(E.detail) {
+                    delta = E.detail * -40;
+                } else {
+                    delta = E.wheelDelta;
+                    if(window.opera) {
+                        delta = -delta;
+                    }
+                }
+
+                $(".info").text(delta + ":" + $(this).offset().top);
+
+                var moveTop = 0;// offset().top을 가질 변수
+                if(delta < 0) {// 마우스 휠을 밑으로 굴렸을 때
+                    if($(this).next() != undefined) {// this는 .page를 뜻한다. 
+                        // 현재 기준으로 다음 페이지가 있다면~
+
+                        $("html, body").stop().animate({
+                            scrollTop: $(this).next().offset().top + "px"
+                        }, 1000);
+                        //$("this").next().offset().top;
+                    }
+                } else {
+                    if($(this).next() != undefined) {
+
+                        $("html, body").stop().animate({
+                            scrollTop: $(this).prev().offset().top + "px"
+                        }, 1000);
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

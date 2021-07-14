@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+    <!-- 라디오 <input type="radio" checked><br>
+    체크박스 <input type="checkbox" checked><br>
+    <select>
+        <option>==선택==</option>
+        <option>메뉴1</option>
+        <option selected>메뉴2</option>
+    </select> -->
+
+    <!--이렇게 checked, selected라고 쓰던 것을 제이쿼리로 바꿀 수 있다!-->
+
+    라디오 <input type="radio"><br>
+    체크박스 <input type="checkbox"><br>
+    <select>
+        <option>==선택==</option>
+        <option>메뉴1</option>
+        <option>메뉴2</option>
+    </select>
+    <p></p>
+
+    <script>
+        $(function() {
+            // 체크박스 체크하기
+            $("input[type=radio]").prop("checked", "true");
+            // 체크 되었는지 여부 확인 true/false 반환
+            $("p").text($("input[type=checkbox]").prop("checked"));
+            // select 옵션 선택하기
+            $("select option").eq(2).prop("selected", "true");
+            // 선택된 옵션이 몇번째인지 인덱스 확인
+            $("select").change(function() {
+                alert($("select").prop("selectedIndex"));
+            });
+        });
+    </script>
+</body>
+</html>

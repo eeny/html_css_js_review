@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+        }
+        .boxgroup {
+            position: relative;
+            width: 100%;
+            cursor: pointer;
+            white-space: nowrap;/*공백 없애기 - nowrap은 줄바꿈 없애기*/
+            overflow-x: scroll;/*x좌표로 크기가 넘어가면 스크롤을 만들어라*/
+        }
+        .boxgroup.active {/*클릭 효과를 주기 위해서*/
+            background-color: rgba(0, 0, 0, 0.3);
+            cursor: grabbing;
+        }
+        .box {
+            width: 400px;
+            height: 250px;
+            background-color: skyblue;
+            /*inline-block은 flex랑 달리 내 크기를 유지하면서 옆으로 배열된다*/
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxgroup">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+    <p></p>
+    <p></p>
+    <p></p>
+
+    <script>
+        $(function() {
+            var isDown = false;// 마우스 누름 여부
+            var startX = 0;// 마우스 클릭한 곳의 x좌표
+            var scrollLeft = 0;// x 스크롤바의 좌표
+
+            $(".boxgroup").mousedown(function(e) {
+                isDown = true;
+
+                $(".boxgroup").addClass("active");
+
+                startX = e.pageX;// 내가 클릭시 마우스 x좌표
+                scrollLeft = $(".boxgroup").scrollLeft();
+
+                $("p").eq(0).text("마우스의 위치 : " + startX);
+                $("p").eq(1).text("스크롤의 위치 : " + scrollLeft);
+            });
+
+            $(".boxgroup").mousemove(function(e) {
+                if(!isDown) {// isDown == false
+                    return;// 해당 메서드 중지
+                }
+
+                e.preventDefault();
+
+                var x = e.pageX;
+                // 움직인 거리 계산 - 움직일 때 현재 마우스 좌표는 x이다.
+                // 곱하는 숫자로 속도 조절 가능(클수록 빠르다)
+                var walk = (x - startX) * 10;
+                $(".boxgroup").scrollLeft(scrollLeft - walk);
+
+                $("p").eq(2).text("마우스 무빙일 때 위치 : " + x);
+            });
+
+            $(".boxgroup").mouseup(function() {
+                isDown = false;
+                $(".boxgroup").removeClass("active");
+            });
+
+            $(".boxgroup").mouseleave(function() {
+                isDown = false;
+                $(".boxgroup").removeClass("active");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        #wrap {
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+        .choose {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .choose>div {
+            width: 30%;
+        }
+
+        .choose>div div {
+            width: 100%;
+            height: 250px;
+        }
+
+        .choose>div div img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .choose>div input {
+            width: 30px;
+            height: 30px;
+        }
+
+        button {
+            width: 100%;
+            height: 50px;
+        }
+
+        .result {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .result img {
+            width: 200px;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <div class="choose">
+            <div>
+                <div><img src="/img/wt1.png" class="chk1"></div>
+                <input type="checkbox" class="chk1">
+            </div>
+            <div>
+                <div><img src="/img/wt3.png"></div>
+                <input type="checkbox">
+            </div>
+            <div>
+                <div><img src="/img/wt5.png"></div>
+                <input type="checkbox">
+            </div>
+        </div>
+        <button>확인</button>
+        <div class="result">
+            <img><img><img>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $("button").click(function () {
+                // if($(".choose div").eq(0).children("input").prop("checked") == true) {
+                //     $(".result img").eq(0).attr("src", "/img/wt1.png");
+                // }
+
+                // 위의 형태를 줄인 버전
+                // if($("input").eq(0).prop("checked") == true) {
+                //     $(".result img").eq(0).attr("src", "/img/wt1.png");
+                // }
+
+                // 위의 형태를 class로 더 줄인 버전
+                // if($(".chk1").prop("checked") == true) {
+                //     $(".result img").eq(0).attr("src", "/img/wt1.png");
+                // }
+
+                // 선택자로 요소 찾기 방법1
+                // if($(".chk1").prop("checked") == true) {
+                //     $(".result img").eq(0).attr("src",$(".chk1").parent().find("img").attr("src")); 
+                // }
+
+                // 선택자로 요소 찾기 방법2 - class 추가
+                if($(".chk1").eq(1).prop("checked")==true){
+                        $(".result img").eq(0).attr("src",$(".chk1").eq(0).attr("src")); 
+                }
+
+            });
+        });
+    </script>
+</body>
+
+</html>

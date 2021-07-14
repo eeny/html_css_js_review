@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>유튜브 섬네일 목록 만들기</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+        }
+        #wrap {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .iframes iframe {
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            z-index: 6;
+            display: none;
+        }
+        .layer {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 5;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        https://youtu.be/g47RK-4M39o
+        https://youtu.be/4dt4R7ho_Wk
+        https://youtu.be/UgyCuojOfVw
+        https://youtu.be/SBYHOJAPXXY
+        https://youtu.be/khMkt-pbh9w
+        https://youtu.be/7nTLYKd66Ek
+    -->
+    <div id="wrap">
+        <div>귀여운 고양이 동영상 1 2 3 4 5 6</div>
+        <div class="thumbnails">
+            <img src="https://img.youtube.com/vi/g47RK-4M39o/mqdefault.jpg">
+            <img src="https://img.youtube.com/vi/4dt4R7ho_Wk/mqdefault.jpg">
+            <img src="https://img.youtube.com/vi/UgyCuojOfVw/mqdefault.jpg">
+            <img src="https://img.youtube.com/vi/SBYHOJAPXXY/mqdefault.jpg">
+            <img src="https://img.youtube.com/vi/khMkt-pbh9w/mqdefault.jpg">
+            <img src="https://img.youtube.com/vi/7nTLYKd66Ek/mqdefault.jpg">
+        </div>
+        <div class="iframes">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/g47RK-4M39o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/4dt4R7ho_Wk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/UgyCuojOfVw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/SBYHOJAPXXY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/khMkt-pbh9w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/7nTLYKd66Ek" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>       
+        </div>
+        <div class="layer"></div>
+    </div>
+
+    <script>
+        $(function() {
+            $(".thumbnails img").eq(0).click(function() {
+                $(".layer").fadeIn(300, function() {
+                    $(".iframes iframe").eq(0).fadeIn(200);
+                });
+            });
+            $(".thumbnails img").eq(1).click(function() {
+                $(".layer").fadeIn(300, function() {
+                    $(".iframes iframe").eq(1).fadeIn(200);
+                });
+            });
+            $(".thumbnails img").eq(2).click(function() {
+                $(".layer").fadeIn(300, function() {
+                    $(".iframes iframe").eq(2).fadeIn(200);
+                });
+            });
+            $(".thumbnails img").eq(3).click(function() {
+                $(".layer").fadeIn(300, function() {
+                    $(".iframes iframe").eq(3).fadeIn(200);
+                });
+            });
+            $(".thumbnails img").eq(4).click(function() {
+                $(".layer").fadeIn(300, function() {
+                    $(".iframes iframe").eq(4).fadeIn(200);
+                });
+            });
+            $(".thumbnails img").eq(5).click(function() {
+                $(".layer").fadeIn(300, function() {
+                    $(".iframes iframe").eq(5).fadeIn(200);
+                });
+            });
+
+            $(".layer").click(function() {
+                $(".layer").css("display", "none");
+                $(".iframes iframe").css("display", "none");
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        내용 내용
+    </div>
+
+    <script>
+        $(function() {
+            // 마우스 이벤트 2개 버전
+            /*
+            $("div").mouseenter(function() {
+                $("div").css("background-color", "pink");
+            });
+            
+            $("div").mouseleave(function() {
+                $("div").css("background-color", "transparent");
+            });
+            */
+
+            // 마우스 이벤트 hover 버전은 function이 2개!
+            $("div").hover(
+                function() {// in
+                    $("div").css("background-color", "pink");
+                },
+                function() {// out
+                    $("div").css("background-color", "transparent");
+                }
+            );
+        });
+    </script>
+</body>
+</html>
