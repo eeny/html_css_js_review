@@ -24,6 +24,18 @@
         #wrap {
             height: 100%;
         }
+        a {
+            text-decoration: none;
+            color: black;
+        }
+        .emptybox {
+            width: 100%;
+            height: 60px;
+            background-color: white;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+        }
         header {
             width: 100%;
             height: 100%;
@@ -53,7 +65,7 @@
             color: white;
             display: table;
         }
-        header div:nth-child(3).bar {/* 중간 흰색 바 모양 */
+        header div:nth-child(3).middlebar {/* 중간 흰색 바 모양 */
             width: 70px;
             height: 2px;
             background-color: white;
@@ -82,7 +94,7 @@
             color: white;
             display: table;
         }
-        header div:nth-child(6).scroll_down {/*밑으로 표시 모양*/
+        header div:nth-child(6).scroll_down {/*밑으로 표시 박스*/
             width: 30px;
             height: 50px;
             border: 1px solid white;
@@ -113,19 +125,73 @@
         nav .small_nav {
             width: 100%;
             height: 60px;
-            background-color: rgba(255, 255, 255, 1);
+            background-color: rgba(255, 255, 255, 0.9);
             position: fixed;
             top: 0;
             left: 0;
+            font-size: 30px;
+            color: rgb(50, 207, 50);
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            z-index: 2;
+        }
+        .small_nav img {
+            height: 40px;/*가로 비율은 알아서*/
+            margin: 10px 20px;
+            cursor: pointer;
+        }
+        .small_nav i {
+            margin: 15px 20px;
+            cursor: pointer;
         }
         nav .big_nav {
             width: 100%;
-            height: 130px;
-            background-color: rgba(255, 255, 255, 0.7);
+            height: 110px;
+            background-color: rgba(255, 255, 255, 0.9);
             position: fixed;
             top: 0;
             left: 0;
             display: none;
+        }
+        .big_nav img {
+            width: 200px;
+            margin: 28px 20px;
+            border: 1px solid white;
+        }
+        .big_nav ul {
+            width: 740px;
+            height: 90px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-around;
+            position: absolute;
+            top: 10px;
+            left: 30%;
+            border: 1px solid blue;
+        }
+        .big_nav ul li {
+            list-style: none;
+            margin-top: 15px;
+            font-size: 20px;
+            border: 1px solid red;
+        }
+        .big_nav ul li span.under {
+            width: 10px;
+            height: 10px;
+            border-radius: 10px 10px 10px 10px;
+            display: block;
+            margin: 12px auto;
+            background-color: rgb(50, 207, 50);
+        }
+        .big_nav a:nth-child(3) {
+            font-size: 25px;
+            color: gray;
+            position: absolute;
+            left: 97%;
+        }
+        .big_nav a:nth-child(3):hover {
+            color: rgb(50, 207, 50);
         }
         section {
             width: 100%;
@@ -147,15 +213,35 @@
             background-color: green;
         }
         .sec6 {
-            background-color: brown;
+            background-color: purple;
         }
         footer {
             width: 100%;
             height: 300px;
             background-color: rgb(32, 23, 23);
         }
-
-        @media (min-width: 950px) {
+        .goTop {/*맨위로 가는 화살표*/
+            width: 50px;
+            height: 50px;
+            border: 1px solid rgb(50, 207, 50);
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            text-align: center;
+            font-size: 30px;
+            color: rgb(50, 207, 50);
+            
+        }
+        .goTop:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+        }
+        
+        /*반응형*/
+        @media (min-width: 1000px) {
+            .emptybox {
+                display: none;
+            }
             nav .small_nav {
                 display: none;
             }
@@ -164,7 +250,8 @@
             }
         }
 
-        @keyframes down {/*마우스 굴리는 애니메이션*/
+        /*마우스 굴리는 애니메이션*/
+        @keyframes down {
             from {
                 top: 10px;
             }
@@ -177,35 +264,81 @@
 </head>
 <body>
     <div id="wrap">
-        <header>
+        <div class="emptybox"></div>
+        <header class="page">
             <div class="logo"><img src="/imgProject/logo_white.png" alt="logo"></div>
             <div><p class="header_p">더 나은 가치에 대해 고민합니다.</p></div>
-            <div class="bar"></div>
+            <div class="middlebar"></div>
             <div><p class="header_p">작은 울타리가 아닌 더 <br>넓은 세상에서 우리의 꿈을 펼칠 수 있도록, <br>INIT의 IT기술과 무한한 상상력으로 <br>세상의 변화를 이끌어 갑니다.</p></div>
             <div><p class="header_p">Innovation Business Partner</p></div>
             <div class="scroll_down"><div></div></div>
         </header>
         <nav>
             <div class="small_nav">
-                <img src="/imgProject/logo_white.png" alt="logo">
+                <img src="/imgProject/logo_black.png" alt="logo">
                 <i class="fas fa-bars"></i>
+                <!--메뉴 넣기-->
             </div>
-            <div class="big_nav"></div>
+            <div class="big_nav">
+                <img src="/imgProject/logo_black.png" alt="logo">
+                <ul>
+                    <li><a href=""><span>회사소개</span><span class="under"></span></a></li>
+                    <li><a href=""><span>프로젝트</span><span class="under"></span></a></li>
+                    <li><a href=""><span>솔루션</span><span class="under"></span></a></li>
+                    <li><a href=""><span>공지사항</span><span class="under"></span></a></li>
+                    <li><a href=""><span>문의</span><span class="under"></span></a></li>
+                </ul>
+                <a href="UIProject_login.html"><i class="fas fa-user-circle"></i></a>
+            </div>
         </nav>
-        <section class="sec1"></section>
-        <section class="sec2"></section>
-        <section class="sec3"></section>
-        <section class="sec4"></section>
-        <section class="sec5"></section>
-        <section class="sec6"></section>
-        <footer></footer>
+        <section class="page sec1"></section>
+        <section class="page sec2"></section>
+        <section class="page sec3"></section>
+        <section class="page sec4"></section>
+        <section class="page sec5"></section>
+        <section class="page sec6"></section>
+        <footer class="page"></footer>
+        <div class="goTop"><i class="fas fa-arrow-up"></i></div>
     </div>
 
     <script>
         $(function() {
+            // 스크롤 한번으로 한페이지씩 넘기기
+            $(".page").on("mousewheel DOMMouseScroll", function(e) {
+                e.preventDefault();
+
+                var E = e.originalEvent;
+                var delta = 0;
+
+                if(E.detail) {
+                    delta = E.detail * -40;
+                } else {
+                    delta = E.wheelDelta;
+                    if(window.opera) {
+                        delta = -delta;
+                    }
+                }
+
+                var moveTop = 0;// offset().top을 가질 변수
+                if(delta < 0) {// 마우스 휠을 아래로
+                    if($(this).next() != undefined) {// this는 .page
+                    // 현재 기준으로 다음 페이지가 있다면~
+                        $("html, body").stop().animate({
+                            scrollTop: $(this).next().offset().top + "px"
+                        }, 1000);
+                    }
+                } else {
+                    if($(this).next() != undefined) {
+                        $("html, body").stop().animate({
+                            scrollTop: $(this).prev().offset().top + "px"
+                        }, 1000);
+                    }
+                }
+            });
 
 
 
+            
             
         });
     </script>
