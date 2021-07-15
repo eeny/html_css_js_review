@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI프로젝트 메인화면</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        #wrap {
+            height: 100%;
+        }
+        header {
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0,0.7)), url("/imgProject/header.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        header .logo {
+            width: 200px;
+            border: 1px solid white;
+            margin: 0 auto;
+            /*padding-top: 50px;큰 화면일 때*/
+            padding-top: 120px;
+        }
+        header div:nth-child(2) {
+            width: 70%;
+            height: 130px;
+            border: 1px solid white;
+            margin: 0 auto;
+            margin-top: 30px;
+            text-align: center;
+            font-size: 40px;
+            line-height: 1.2;
+            font-weight: bold;
+            color: white;
+            display: table;
+        }
+        header div:nth-child(3).bar {/* 중간 흰색 바 모양 */
+            width: 70px;
+            height: 2px;
+            background-color: white;
+            margin: 10px auto;
+        }
+        header div:nth-child(4) {
+            width: 60%;
+            height: 120px;
+            border: 1px solid white;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 18px;
+            letter-spacing: -2px;
+            word-spacing: 3px;
+            color: white;
+            display: table;
+        }
+        header div:nth-child(5) {
+            width: 60%;
+            height: 50px;
+            border: 1px solid white;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 15px;
+            word-spacing: 3px;
+            color: white;
+            display: table;
+        }
+        header div:nth-child(6).scroll_down {/*밑으로 표시 모양*/
+            width: 30px;
+            height: 50px;
+            border: 1px solid white;
+            border-radius: 30px 30px 30px 30px;
+            position: absolute;
+            left: calc(50% - 25px);
+            bottom: 50px;
+        }
+        .scroll_down div {/*안에서 움직이는 동그라미*/
+            width: 7px;
+            height: 7px;
+            border-radius: 7px 7px 7px 7px;
+            background-color: white;
+            position: absolute;
+            left: calc(50% - 3.5px);
+            animation: down 1s infinite;
+        }
+        .header_p {
+            display: table-cell;
+            vertical-align: middle;
+        }
+        .logo img {
+            width: 100%;
+        }
+        nav {
+            width: 100%;
+        }
+        nav .small_nav {
+            width: 100%;
+            height: 60px;
+            background-color: rgba(255, 255, 255, 1);
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        nav .big_nav {
+            width: 100%;
+            height: 130px;
+            background-color: rgba(255, 255, 255, 0.7);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        section {
+            width: 100%;
+            height: 100%;
+        }
+        .sec1 {
+            background-color: rebeccapurple;
+        }
+        .sec2 {
+            background-color: red;
+        }
+        .sec3 {
+            background-color: yellow;
+        }
+        .sec4 {
+            background-color: pink;
+        }
+        .sec5 {
+            background-color: green;
+        }
+        .sec6 {
+            background-color: brown;
+        }
+        footer {
+            width: 100%;
+            height: 300px;
+            background-color: rgb(32, 23, 23);
+        }
+
+        @media (min-width: 950px) {
+            nav .small_nav {
+                display: none;
+            }
+            nav .big_nav {
+                display: block;
+            }
+        }
+
+        @keyframes down {/*마우스 굴리는 애니메이션*/
+            from {
+                top: 10px;
+            }
+            to {
+                top: 30px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header>
+            <div class="logo"><img src="/imgProject/logo_white.png" alt="logo"></div>
+            <div><p class="header_p">더 나은 가치에 대해 고민합니다.</p></div>
+            <div class="bar"></div>
+            <div><p class="header_p">작은 울타리가 아닌 더 <br>넓은 세상에서 우리의 꿈을 펼칠 수 있도록, <br>INIT의 IT기술과 무한한 상상력으로 <br>세상의 변화를 이끌어 갑니다.</p></div>
+            <div><p class="header_p">Innovation Business Partner</p></div>
+            <div class="scroll_down"><div></div></div>
+        </header>
+        <nav>
+            <div class="small_nav">
+                <img src="/imgProject/logo_white.png" alt="logo">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="big_nav"></div>
+        </nav>
+        <section class="sec1"></section>
+        <section class="sec2"></section>
+        <section class="sec3"></section>
+        <section class="sec4"></section>
+        <section class="sec5"></section>
+        <section class="sec6"></section>
+        <footer></footer>
+    </div>
+
+    <script>
+        $(function() {
+
+
+
+            
+        });
+    </script>
+</body>
+</html>
