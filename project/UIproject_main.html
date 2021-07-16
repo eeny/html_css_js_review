@@ -46,10 +46,9 @@
         }
         header .logo {
             width: 200px;
-            border: 1px solid white;
             margin: 0 auto;
-            /*padding-top: 50px;큰 화면일 때*/
             padding-top: 120px;
+            display: none;
         }
         header .header_p_wrap {
             width: 100%;
@@ -62,17 +61,18 @@
         header .header_p_wrap div:nth-child(1) {
             width: 70%;
             height: 35%;
-            border: 1px solid white;
             margin: 0 auto;
             text-align: center;
             font-size: 40px;
             line-height: 1.2;
             font-weight: bold;
             color: white;
+            word-break: keep-all;
             display: table;
         }
         .middlebar {/* 중간 흰색 바 모양 */
-            width: 70px;
+            /* width: 70px; */
+            width: 1px;
             height: 2px;
             background-color: white;
             margin: 3% auto;
@@ -80,19 +80,18 @@
         header .header_p_wrap div:nth-child(3) {
             width: 60%;
             height: 35%;
-            border: 1px solid white;
             margin: 0 auto;
             text-align: center;
             font-size: 18px;
             letter-spacing: -2px;
             word-spacing: 3px;
+            word-break: keep-all;
             color: white;
             display: table;
         }
         header .header_p_wrap div:nth-child(4) {
             width: 60%;
             height: 16%;
-            border: 1px solid white;
             margin: 0 auto;
             text-align: center;
             font-size: 15px;
@@ -108,6 +107,7 @@
             position: absolute;
             left: calc(50% - 25px);
             bottom: 50px;
+            display: none;
         }
         .scroll_down div {/*안에서 움직이는 동그라미*/
             width: 7px;
@@ -163,7 +163,6 @@
         .big_nav img {
             width: 200px;
             margin: 28px 20px;
-            border: 1px solid white;
         }
         .big_nav ul {
             width: 740px;
@@ -174,13 +173,11 @@
             position: absolute;
             top: 10px;
             left: 30%;
-            border: 1px solid blue;
         }
         .big_nav ul li {
             list-style: none;
             margin-top: 15px;
             font-size: 20px;
-            border: 1px solid red;
         }
         .big_nav ul li span.under {/*초록색 동그라미*/
             width: 10px;
@@ -210,7 +207,7 @@
         }
         .big_nav a:nth-child(3) {/*로그인 아이콘*/
             font-size: 25px;
-            color: gray;
+            color: rgba(156, 163, 154, 0.3);
             position: absolute;
             left: 97%;
         }
@@ -227,21 +224,24 @@
             background-repeat: no-repeat;
             background-size: cover;
             padding: 20px 0;
-        }.sec1 article {
+        }
+        .sec1 article {
             width: 90%;
             margin: 0 auto;
             padding: 20px 0;
             color: white;
             font-size: 14px;
             text-align: center;
+            word-break: keep-all;
         }
         .sec1 article:first-child {
             font-size: 27px;
             line-height: 1.2;
+            word-break: keep-all;
             position: relative;
         }
         .sec1atc2, .sec1atc3 {
-            border-bottom: 1px solid white;
+            border-bottom: 1px solid rgba(172, 172, 172, 0.541);
         }
         .num {
             font-size: 50px;
@@ -255,47 +255,61 @@
             color: black;
         }
         .sec2 .sec2atc1 {
-            font-size: 40px;
+            font-size: 45px;
+            margin-top: 3%;
         }
         .sec2 .sec2atc2 {
-            font-size: 27px;
+            font-size: 23px;
+            margin-top: 1%;
+            margin-bottom: 2%;
         }
         .sec2atc3 {
-            width: 100%;
-            display: flex;
+            width: 95%;
+            margin: 0 auto;
+            margin-bottom: 5%;
+            color: white;
+            font-size: 14px;
+            text-align: center;
         }
-        .sec2 .sec2atc3 div {
-            width: 20%;
-            height: 300px;
+        .sec2atc3 div {
+            width: 100%;
+            height: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        .sec2atc3 i {
+            font-size: 35px;
+            margin: 2%;
+        }
+        .sec2atc3 p {
+            margin: 1%;
+        }
+        .sec2atc3 b {
+            font-size: 16px;
+        }
+        .sec2atc3>div div {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
         .sec2atc3 div.sec2atc3img1 {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0,0.3)), url("/imgProject/sec2_bg1.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            color: white;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0,0.4)), url("/imgProject/sec2_bg1.jpg");
         }
         .sec2atc3 div.sec2atc3img2 {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0,0.3)), url("/imgProject/sec2_bg2.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0,0.4)), url("/imgProject/sec2_bg2.jpg");
         }
         .sec2atc3 div.sec2atc3img3 {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0,0.3)), url("/imgProject/sec2_bg3.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0,0.4)), url("/imgProject/sec2_bg3.jpg");
         }
         .sec2atc3 div.sec2atc3img4 {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0,0.3)), url("/imgProject/sec2_bg4.jpg");
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0,0.4)), url("/imgProject/sec2_bg4.jpg");
         }
         .sec3 {
-            width: 100%;
-            height: 500px;/*수정해야함*/
             background-color: yellow;
         }
         .sec4 {
@@ -309,24 +323,25 @@
         }
         footer {
             width: 100%;
-            /* height: 300px; */
+            height: 300px;
             background-color: rgb(199, 231, 19);
         }
         .goTop {/*맨위로 가는 화살표*/
             width: 50px;
             height: 50px;
-            border: 1px solid rgb(50, 207, 50);
+            border: 1px solid rgba(172, 172, 172, 0.541);
             background-color: transparent;
             position: fixed;
             bottom: 10px;
             right: 10px;
             text-align: center;
             font-size: 30px;
-            color: rgb(50, 207, 50);
+            color: rgba(172, 172, 172, 0.541);
             display: none;
         }
         .goTop:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            background-color: rgba(50, 207, 50, 0.2);
             cursor: pointer;
             display: none;
         }
@@ -345,6 +360,18 @@
             nav .small_nav {
                 display: none;
             }
+            header .logo {
+                padding-top: 50px;
+            }
+            header .header_p_wrap div:nth-child(1) {
+                font-size: 65px;
+            }
+            header .header_p_wrap div:nth-child(3) {
+                font-size: 25px;
+            }
+            header .header_p_wrap div:nth-child(4) {
+                font-size: 23px;
+            }
             .sec1 {
                 display: flex;
                 flex-flow: row wrap;
@@ -359,12 +386,75 @@
             }
             .sec1 article:first-child {
                 width: 100%;
-                margin-bottom: 30px;
-                font-size: 40px;
+                margin-bottom: 50px;
+                font-size: 45px;
             }
             .sec1atc2, .sec1atc3 {
                 border-bottom: 0;
-                border-right: 1px solid white;
+                border-right: 1px solid rgba(172, 172, 172, 0.541);
+            }
+            .sec2atc2 {
+                color: rgba(0, 0, 0, 0.644);
+            }
+            .sec2atc3 {
+                width: 70%;
+                height: 65vh;
+                font-size: larger;
+                word-break: keep-all;
+                position: relative;
+            }
+            .sec2atc3 div {
+                width: 25%;
+                height: 500px;
+                position: absolute;
+            }
+            .sec2atc3 div.sec2atc3img1 {
+                background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/imgProject/sec2_bg1.jpg");
+            }
+            .sec2atc3 div.sec2atc3img1:hover {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imgProject/sec2_bg1.jpg");
+            }
+            .sec2atc3 div.sec2atc3img2 {
+                background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/imgProject/sec2_bg2.jpg");
+                left: 25.5%;
+            }
+            .sec2atc3 div.sec2atc3img2:hover {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imgProject/sec2_bg2.jpg");
+            }
+            .sec2atc3 div.sec2atc3img3 {
+                background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/imgProject/sec2_bg3.jpg");
+                left: 51%;
+            }
+            .sec2atc3 div.sec2atc3img3:hover {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imgProject/sec2_bg3.jpg");
+            }
+            .sec2atc3 div.sec2atc3img4 {
+                background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/imgProject/sec2_bg4.jpg");
+                left: 76.5%;
+            }
+            .sec2atc3 div.sec2atc3img4:hover {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imgProject/sec2_bg4.jpg");
+            }
+            .sec2atc3 i {
+                font-size: 50px;
+                color: white;
+                margin: 10%;
+            }
+            .sec2atc3 p {
+                margin: 3%;
+            }
+            .sec2atc3 b {
+                font-size: larger;
+            }
+            .hide_p {
+                opacity: 0;
+                transition: all 1s;
+            }
+            .sec2atc3 div:hover .hide_p {
+                opacity: 1;
+            }
+            .sec2atc3 div.upDiv:hover i {
+                color: rgb(50, 207, 50);
             }
         }
 
@@ -398,23 +488,23 @@
                     <li><a href=""><span>공지사항</span><span class="under"></span></a></li>
                     <li><a href=""><span>문의</span><span class="under"></span></a></li>
                 </ul>
-                <a href="UIProject_login.html"><i class="fas fa-user-circle"></i></a>
+                <a href="UIProject_login.html"><i class="fab fa-keycdn"></i></a>
             </div>
         </nav>
 
         <header class="page">
             <div class="logo"><img src="/imgProject/logo_white.png" alt="logo"></div>
             <div class="header_p_wrap">
-                <div><p class="header_p">더 나은 가치에 대해 <br>고민합니다.</p></div>
+                <div><p class="header_p">더 나은 가치에 대해 고민합니다.</p></div>
                 <div class="middlebar"></div>
-                <div><p class="header_p">작은 울타리가 아닌 더 <br>넓은 세상에서 우리의 꿈을 펼칠 수 있도록, <br>INIT의 IT기술과 무한한 상상력으로 <br>세상의 변화를 이끌어 갑니다.</p></div>
+                <div><p class="header_p">작은 울타리가 아닌 더 넓은 세상에서 우리의 꿈을 펼칠 수 있도록, <br>INIT의 IT기술과 무한한 상상력으로 세상의 변화를 이끌어 갑니다.</p></div>
                 <div><p class="header_p">Innovation Business Partner</p></div>
             </div>
             <div class="scroll_down"><div></div></div>
         </header>
 
         <section class="page sec1">
-            <article class="sec1atc1"><p>완벽한 구축과제 수행, <br>철저한 유지관리로 이루어낸 성과<br>INIT의 기술력은 숫자로 증명됩니다.</p></article>
+            <article class="sec1atc1"><p>완벽한 구축과제 수행, 철저한 유지관리로 이루어낸 성과<br>INIT의 기술력은 숫자로 증명됩니다.</p></article>
             <article class="sec1atc2">
                 <div class="num"><p class="plus800">0</p></div>
                 <div class="middlebar"></div>
@@ -436,29 +526,42 @@
         </section>
 
         <section class="page sec2">
-            <article class="sec2atc1"><p>사업분야</p></article>
+            <article class="sec2atc1"><p><b>사업분야</b></p></article>
             <article class="sec2atc2"><p>INIT 핵심 사업분야를 소개합니다.</p></div>
             <article class="sec2atc3">
-                <div class="sec2atc3img1">
-                    <i class="fas fa-network-wired"></i>
-                    <p>통합 IT 인프라 구축</p>
-                    <p>다양한 시장 경험을 토대로 고객고유의 환경에 대한<br>단 하나의 카운셀링 서비스를 제공합니다.</p>
+                <div class="sec2atc3img1 upDiv">
+                    <div>
+                        <i class="fas fa-network-wired"></i>
+                        <p class="hide_p hide_p1"><b>통합 IT 인프라 구축</b></p>
+                        <p class="hide_p hide_p1">다양한 시장 경험을 토대로 고객고유의 환경에 대한<br>단 하나의 카운셀링 서비스를 제공합니다.</p>
+                    </div>
                 </div>
-                <div class="sec2atc3img2">
-                    <i class="fas fa-edit"></i>
-                    <p>IT 기술 컨설팅</p>
-                    <p>다양한 시장 경험을 토대로 고객고유의 환경에 대한<br>단 하나의 카운셀링 서비스를 제공합니다.</p>
+                <div class="sec2atc3img2 upDiv">
+                    <div>
+                        <i class="fas fa-edit"></i>
+                        <p class="hide_p hide_p2"><b>IT 기술 컨설팅</b></p>
+                        <p class="hide_p hide_p2">다양한 시장 경험을 토대로 고객고유의 환경에 대한<br>단 하나의 카운셀링 서비스를 제공합니다.</p>
+                    </div>
                 </div>
-                <div class="sec2atc3img3">
-                    <i class="far fa-chart-bar"></i>
-                    <p>엔드포인트 IT 자산 운영</p>
-                    <p>IT 인프라와 엔드포인트 IT를 하나의 시각으로<br>바라봄으로써 최적의 비용 효율을 도출합니다.</p>
+                <div class="sec2atc3img3 upDiv">
+                    <div>
+                        <i class="far fa-chart-bar"></i>
+                        <p class="hide_p hide_p3"><b>엔드포인트 IT 자산 운영</b></p>
+                        <p class="hide_p hide_p3">IT 인프라와 엔드포인트 IT를 하나의 시각으로<br>바라봄으로써 최적의 비용 효율을 도출합니다.</p>
+                    </div>
                 </div>
-                <div class="sec2atc3img4">
-                    <i class="fas fa-cogs"></i>
-                    <p>INNO-CARE 서비스</p>
-                    <p>IT의 궁극적인 목적은 원활한 IT 서비스의 유지입니다.<br>진단부터 장애대응, 운영/관리까지 이노비스가 One-Stop으로 케어합니다.</p>
+                <div class="sec2atc3img4 upDiv">
+                    <div>
+                        <i class="fas fa-cogs"></i>
+                        <p class="hide_p hide_p4"><b>INIT-CARE 서비스</b></p>
+                        <p class="hide_p hide_p4">IT의 궁극적인 목적은 원활한 IT 서비스의 유지입니다.<br>진단부터 장애대응, 운영/관리까지 INIT이 One-Stop으로 케어합니다.</p>
+                    </div>
                 </div>
+            </article>
+            <article class="sec2atc4">
+                <div><p>문의하기</p></div>
+                <div><p>문의사항을 남겨주시면 빠른 시일내에 답변드리겠습니다.</p></div>
+                <div>문의 바로가기</div>
             </article>
         </section>
 
@@ -474,6 +577,11 @@
 
     <script>
         $(function() {
+            // 메인 헤더 애니메이션
+            $("header .logo").fadeIn(2000);
+            $(".middlebar").animate({width: "70px"}, 1000);
+            $(".scroll_down").fadeIn(3000);
+
             // 스크롤 관련 이벤트
             $(window).scroll(function() {
                 // 스크롤 위치 출력
@@ -537,10 +645,24 @@
                     $(".emptybox").css("display", "none");
                 }
 
+                // sec2 이벤트 화면크기별 추가 제거
                 if(win_width > 1000) {
-                    
+                    $(".upDiv").hover(
+                        function() {// 올렸을 때
+                            $(this).stop().animate({
+                                bottom: "5%"
+                            }, 300);
+                        },
+                        function() {// 나갔을 때
+                            $(this).stop().animate({
+                                bottom: "0"
+                            }, 300);
+                        }
+                    );
                 } else {
+                    $(".upDiv").off();
                 }
+
             });
 
             // 페이지 맨 위로 가는 버튼
@@ -549,6 +671,28 @@
                     scrollTop: 0
                 }, 400);
             });
+
+            // sec2 이벤트
+            $(".upDiv").hover(
+                function() {// 올렸을 때
+                    $(this).stop().animate({
+                        bottom: "5%"
+                    }, 300);
+                },
+                function() {// 나갔을 때
+                    $(this).stop().animate({
+                        bottom: "0"
+                    }, 300);
+                }
+            );
+            // $(".sec2atc3img1").hover(
+            //     function() {
+            //         $(".hide_p1").fadeIn();
+            //     },
+            //     function() {
+            //         $(".hide_p1").fadeout();
+            //     }
+            // );
 
             
         });
