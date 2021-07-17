@@ -255,18 +255,17 @@
             color: black;
         }
         .sec2 .sec2atc1 {
-            font-size: 45px;
-            margin-top: 3%;
+            font-size: 30px;
+            margin-top: 5%;
         }
         .sec2 .sec2atc2 {
-            font-size: 23px;
-            margin-top: 1%;
-            margin-bottom: 2%;
+            font-size: 14px;
+            margin-top: 2%;
+            margin-bottom: 5%;
         }
         .sec2atc3 {
             width: 95%;
             margin: 0 auto;
-            margin-bottom: 5%;
             color: white;
             font-size: 14px;
             text-align: center;
@@ -393,52 +392,54 @@
                 border-bottom: 0;
                 border-right: 1px solid rgba(172, 172, 172, 0.541);
             }
-            .sec2atc2 {
+            .sec2atc1 b {
+                font-size: 45px;
+            }
+            .sec2 .sec2atc2 {
+                font-size: 20px;
                 color: rgba(0, 0, 0, 0.644);
             }
             .sec2atc3 {
-                width: 70%;
-                height: 65vh;
+                width: 100%;
+                height: 500px;
                 font-size: larger;
                 word-break: keep-all;
                 position: relative;
             }
             .sec2atc3 div {
                 width: 25%;
-                height: 500px;
+                height: 100%;
                 position: absolute;
             }
             .sec2atc3 div.sec2atc3img1 {
                 background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/imgProject/sec2_bg1.jpg");
             }
             .sec2atc3 div.sec2atc3img1:hover {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imgProject/sec2_bg1.jpg");
+                background-image: linear-gradient(rgba(50, 207, 50, 0.9), rgba(50, 207, 50, 0.9)), url("/imgProject/sec2_bg1.jpg");
             }
             .sec2atc3 div.sec2atc3img2 {
                 background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/imgProject/sec2_bg2.jpg");
                 left: 25.5%;
             }
             .sec2atc3 div.sec2atc3img2:hover {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imgProject/sec2_bg2.jpg");
+                background-image: linear-gradient(rgba(50, 207, 50, 0.9), rgba(50, 207, 50, 0.9)), url("/imgProject/sec2_bg2.jpg");
             }
             .sec2atc3 div.sec2atc3img3 {
                 background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/imgProject/sec2_bg3.jpg");
                 left: 51%;
             }
             .sec2atc3 div.sec2atc3img3:hover {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imgProject/sec2_bg3.jpg");
+                background-image: linear-gradient(rgba(50, 207, 50, 0.9), rgba(50, 207, 50, 0.9)), url("/imgProject/sec2_bg3.jpg");
             }
             .sec2atc3 div.sec2atc3img4 {
                 background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("/imgProject/sec2_bg4.jpg");
                 left: 76.5%;
             }
             .sec2atc3 div.sec2atc3img4:hover {
-                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/imgProject/sec2_bg4.jpg");
+                background-image: linear-gradient(rgba(50, 207, 50, 0.9), rgba(50, 207, 50, 0.9)), url("/imgProject/sec2_bg4.jpg");
             }
             .sec2atc3 i {
                 font-size: 50px;
-                color: white;
-                margin: 10%;
             }
             .sec2atc3 p {
                 margin: 3%;
@@ -446,15 +447,12 @@
             .sec2atc3 b {
                 font-size: larger;
             }
-            .hide_p {
+            .upDiv div {
                 opacity: 0;
-                transition: all 1s;
+                transition: all 0.5s;
             }
-            .sec2atc3 div:hover .hide_p {
+            .upDiv:hover div {
                 opacity: 1;
-            }
-            .sec2atc3 div.upDiv:hover i {
-                color: rgb(50, 207, 50);
             }
         }
 
@@ -532,29 +530,29 @@
                 <div class="sec2atc3img1 upDiv">
                     <div>
                         <i class="fas fa-network-wired"></i>
-                        <p class="hide_p hide_p1"><b>통합 IT 인프라 구축</b></p>
-                        <p class="hide_p hide_p1">다양한 시장 경험을 토대로 고객고유의 환경에 대한<br>단 하나의 카운셀링 서비스를 제공합니다.</p>
+                        <p><b>통합 IT 인프라 구축</b></p>
+                        <p>다양한 시장 경험을 토대로 고객고유의 환경에 대한<br>단 하나의 카운셀링 서비스를 제공합니다.</p>
                     </div>
                 </div>
                 <div class="sec2atc3img2 upDiv">
                     <div>
                         <i class="fas fa-edit"></i>
-                        <p class="hide_p hide_p2"><b>IT 기술 컨설팅</b></p>
-                        <p class="hide_p hide_p2">다양한 시장 경험을 토대로 고객고유의 환경에 대한<br>단 하나의 카운셀링 서비스를 제공합니다.</p>
+                        <p><b>IT 기술 컨설팅</b></p>
+                        <p>다양한 시장 경험을 토대로 고객고유의 환경에 대한<br>단 하나의 카운셀링 서비스를 제공합니다.</p>
                     </div>
                 </div>
                 <div class="sec2atc3img3 upDiv">
                     <div>
                         <i class="far fa-chart-bar"></i>
-                        <p class="hide_p hide_p3"><b>엔드포인트 IT 자산 운영</b></p>
-                        <p class="hide_p hide_p3">IT 인프라와 엔드포인트 IT를 하나의 시각으로<br>바라봄으로써 최적의 비용 효율을 도출합니다.</p>
+                        <p><b>엔드포인트 IT 자산 운영</b></p>
+                        <p>IT 인프라와 엔드포인트 IT를 하나의 시각으로<br>바라봄으로써 최적의 비용 효율을 도출합니다.</p>
                     </div>
                 </div>
                 <div class="sec2atc3img4 upDiv">
                     <div>
                         <i class="fas fa-cogs"></i>
-                        <p class="hide_p hide_p4"><b>INIT-CARE 서비스</b></p>
-                        <p class="hide_p hide_p4">IT의 궁극적인 목적은 원활한 IT 서비스의 유지입니다.<br>진단부터 장애대응, 운영/관리까지 INIT이 One-Stop으로 케어합니다.</p>
+                        <p><b>INIT-CARE 서비스</b></p>
+                        <p>IT의 궁극적인 목적은 원활한 IT 서비스의 유지입니다.<br>진단부터 장애대응, 운영/관리까지 INIT이 One-Stop으로 케어합니다.</p>
                     </div>
                 </div>
             </article>
