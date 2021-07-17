@@ -874,13 +874,30 @@
             </article>
         </section>
 
-        <section class="page sec4"></section>
+        <section class="page sec4">
+            <article>파트너</article>
+            <article>INIT은 성공적인 파트너쉽으로 인정받고 있습니다.</article>
+            <article class="partners">
+                <div class="pt1"><img src="/imgProject/sec4_img1.png" alt=""></div>
+                <div class="pt2"><img src="/imgProject/sec4_img2.png" alt=""></div>
+                <div class="pt3"><img src="/imgProject/sec4_img3.png" alt=""></div>
+                <div class="pt4"><img src="/imgProject/sec4_img4.png" alt=""></div>
+                <div class="pt5"><img src="/imgProject/sec4_img5.png" alt=""></div>
+                <div class="pt6"><img src="/imgProject/sec4_img6.png" alt=""></div>
+                <div class="pt7"><img src="/imgProject/sec4_img7.png" alt=""></div>
+                <div class="pt8"><img src="/imgProject/sec4_img8.png" alt=""></div>
+                <div class="pt9"><img src="/imgProject/sec4_img9.png" alt=""></div>
+                <div class="pt10"><img src="/imgProject/sec4_img10.png" alt=""></div>
+                <div class="pt11"><img src="/imgProject/sec4_img11.png" alt=""></div>
+                <div class="pt12"><img src="/imgProject/sec4_img12.png" alt=""></div>
+            </article>
+        </section>
         <section class="page sec5"></section>
         <section class="page sec6"></section>
         <footer class="page">
             <div class="logo"><img src="/imgProject/logo_white.png" alt="logo"></div>
             <div class="companyInfo">
-                <p>(주)이닛시스템</p>
+                <p>(주)INIT</p>
                 <p>부산광역시 부산진구 중앙대로 749, 혜도빌딩 4층&nbsp;&nbsp;&nbsp;Tel.051-912-1000</p>
                 <p>COPYRIGHT INNOVIS SYSTEM ALL RIGHS RESERVED.</p>
             </div>
@@ -1008,7 +1025,7 @@
                 $(".upDiv").off();
             }
 
-            // sec3 이벤트 - 슬라이드 애니메이션
+            // sec3 이벤트 - 슬라이드 애니메이션(수동, 자동)
             $("#prevbtn").click(function() {
                 $(".movebox").stop().animate({
                     left: "-100%"
@@ -1027,6 +1044,16 @@
                     left: "0"
                 }, 1000);
             });
+
+            setInterval(function() {
+                $(".movebox").animate({
+                    left: "-100%"
+                }, 1000, function() {
+                    var x = $(".movebox>div").eq(0).detach();
+                    $(".movebox").css("left", "0");
+                    $(".movebox").append(x);
+                });
+            }, 3000);
             
         });
     </script>
