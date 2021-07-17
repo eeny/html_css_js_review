@@ -358,10 +358,9 @@
             display: none;
         }
         .sec3 {
-            background-color: yellow;
+            position: relative;
         }
         .sec3atc1 {
-            border: 1px solid red;
             text-align: center;
             font-size: 14px;
         }
@@ -374,7 +373,84 @@
             margin: 5%;
             word-break: keep-all;
         }
-        
+        .sec3atc2 {
+            width: 100%;
+            height: 550px;
+            position: relative;
+            overflow: hidden;
+        }
+        .sec3atc2>div.movebox {
+            width: 400%;
+            height: 100%;
+            display: flex;
+            position: absolute;
+        }
+        .movebox>div {
+            width: 100%;
+        }
+        .sec3atc2img {
+            width: 300px;
+            height: 300px;
+            border-radius: 70%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 3% auto;
+        }
+        .sec3atc2img1 {
+            background-image: url("/imgProject/sec3_bg1.jpg");
+        }
+        .sec3atc2img2 {
+            background-image: url("/imgProject/sec3_bg2.jpg");
+        }
+        .sec3atc2img3 {
+            background-image: url("/imgProject/sec3_bg3.jpg");
+        }
+        .sec3atc2img4 {
+            background-image: url("/imgProject/sec3_bg4.jpg");
+        }
+        .movebox p {
+            margin: 3%;
+            font-size: 14px;
+        }
+        .movebox b {
+            font-size: 20px;
+        }
+        .movebox a {
+            width: 100px;
+            height: 40px;
+            margin: 3%;
+            display: block;
+            border: 1px solid rgb(50, 207, 50);
+            border-radius: 50px;
+            color: rgb(50, 207, 50);
+            font-size: 15px;
+            text-align: center;
+            line-height: 37px;
+        }
+        .sec3atc3 {
+            width: 100%;
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+        }
+        .sec3atc3 button {
+            width: 40px;
+            height: 40px;
+            margin-right: 3%;
+            margin-bottom: 5%;
+            border: 1px solid rgba(66, 66, 66, 0.541);
+            color: rgba(66, 66, 66, 0.541);
+            font-size: 25px;
+            border-radius: 70%;
+            background-color: transparent;
+            cursor: pointer;
+        }
+        .sec3atc3 button:hover {
+            border-color: rgb(50, 207, 50);
+            color: rgb(50, 207, 50);
+        }
+
         .sec4 {
             background-color: pink;
         }
@@ -556,29 +632,76 @@
                 opacity: 1;
             }
              .sec2atc4 b {
-                 font-size: 40px;
+                font-size: 40px;
              }
              .sec2atc4 p {
-                 font-size: 17px;
-                 letter-spacing: normal;
-                 word-spacing: normal;
+                font-size: 17px;
+                letter-spacing: normal;
+                word-spacing: normal;
              }
              .sec2atc4 div:nth-child(1) {
-                 width: 35%;
-                 margin: 2% auto;
+                width: 35%;
+                margin: 2% auto;
              }
              .sec2atc4 div:nth-child(2) {
-                 width: 17%;
-                 height: 65px;
-                 margin: auto;
+                width: 17%;
+                height: 65px;
+                margin: auto;
              }
              .sec2atc4 div:nth-child(2) a {
-                 font-size: 18px;
+                font-size: 18px;
              }
              .sec2atc4 div:nth-child(2) i {
-                 font-size: 50px;
-                 padding: 0 auto;
-                 display: table-cell;
+                font-size: 50px;
+                padding: 0 auto;
+                display: table-cell;
+             }
+             .sec3atc1 {
+                font-size: 20px;
+             }
+             .sec3atc1 p:first-child {
+                font-size: 40px;
+                margin: 3%;
+             }
+             .sec3atc1 p:last-child {
+                margin: 0;
+             }
+             .sec3atc2 {
+                height: 750px;
+             }
+             .sec3atc2img {
+                width: 600px;
+                height: 600px;
+             }
+             .movebox p {
+                font-size: 20px;
+                position: absolute;
+                top: 80px;
+             }
+             .movebox b {
+                font-size: 30px;
+             }
+             .movebox a {
+                width: 170px;
+                height: 50px;
+                font-size: 20px;
+                line-height: 50px;
+                position: absolute;
+                top: 220px;
+             }
+             .sec3atc3 {
+                bottom: 35%;
+             }
+             .sec3atc3 div {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: space-between;
+             }
+             .sec3atc3 button {
+                 width: 90px;
+                 height: 90px;
+                 margin: 0 3%;
+                font-size: 35px;
              }
              footer {
                  padding: 3%;
@@ -721,35 +844,36 @@
             </article>
             <article class="sec3atc2 showbox">
                 <div class="movebox">
-                    <div class="sec3atc2img1">
-                        <p><b>시스템 인프라</b></p>
-                        <p>환경 분석 및 리소스 사이징<br>Legacy, Virtualization, HCI 등 요건과 환경에 적합한 인프라 형태 제안</p>
+                    <div>
+                        <div class="sec3atc2img sec3atc2img1"></div>
+                        <p><b>시스템 인프라</b><br>환경 분석 및 리소스 사이징<br>Legacy, Virtualization, HCI 등 요건과 환경에 적합한 인프라 형태 제안</p>
                         <a href="">더 알아보기</a>
                     </div>
-                    <div class="sec3atc2img2">
-                        <p><b>네트워크 인프라</b></p>
-                        <p>통합 IT 관점에서의 현장 분석<br>서비스 목적 및 규모에 따른 효율적인 설계</p>
+                    <div>
+                        <div class="sec3atc2img sec3atc2img2"></div>
+                        <p><b>네트워크 인프라</b><br>통합 IT 관점에서의 현장 분석<br>서비스 목적 및 규모에 따른 효율적인 설계</p>
                         <a href="">더 알아보기</a>
                     </div>
-                    <div class="sec3atc2img3">
-                        <p><b>데이터 보호 대책</b></p>
-                        <p>중요 데이터 자산 보호를 위한 유출 방지 체계 구현<br>시스템 및 네트워크 차원에서의 데이터 이동 통제 방안 제공</p>
+                    <div>
+                        <div class="sec3atc2img sec3atc2img3"></div>
+                        <p><b>데이터 보호 대책</b><br>중요 데이터 자산 보호를 위한 유출 방지 체계 구현<br>시스템 및 네트워크 차원에서의 데이터 이동 통제 방안 제공</p>
                         <a href="">더 알아보기</a>
                     </div>
-                    <div class="sec3atc2img4">
-                        <p><b>보안 시스템</b></p>
-                        <p>엔드포인트 보안 S/W 제공<br>랜섬웨어 등 악의적인 표적 공격을 방어하는 보안 솔루션 제공</p>
+                    <div>
+                        <div class="sec3atc2img sec3atc2img4"></div>
+                        <p><b>보안 시스템</b><br>엔드포인트 보안 S/W 제공<br>랜섬웨어 등 악의적인 표적 공격을 방어하는 보안 솔루션 제공</p>
                         <a href="">더 알아보기</a>
                     </div>
                 </div>
             </article>
             <article class="sec3atc3">
                 <div>
-                    <button class="prev"><i class="fas fa-arrow-left"></i></button>
-                    <button class="next"><i class="fas fa-arrow-right"></i></button>
+                    <button id="prevbtn"><i class="fas fa-arrow-left"></i></button>
+                    <button id="nextbtn"><i class="fas fa-arrow-right"></i></button>
                 </div>
             </article>
         </section>
+
         <section class="page sec4"></section>
         <section class="page sec5"></section>
         <section class="page sec6"></section>
@@ -865,7 +989,7 @@
                 }, 400);
             });
 
-            // sec2 이벤트
+            // sec2 이벤트 - 위로 올라가는 애니메이션
             $(".upDiv").hover(
                 function() {// 올렸을 때
                     $(this).stop().animate({
@@ -884,6 +1008,25 @@
                 $(".upDiv").off();
             }
 
+            // sec3 이벤트 - 슬라이드 애니메이션
+            $("#prevbtn").click(function() {
+                $(".movebox").stop().animate({
+                    left: "-100%"
+                }, 1000, function() {
+                    var x = $(".movebox>div").eq(0).detach();
+                    $(".movebox").css("left", "0");
+                    $(".movebox").append(x);
+                });
+            });
+
+            $("#nextbtn").click(function() {
+                var x = $(".movebox>div").eq(3).detach();
+                $(".movebox").prepend(x);
+                $(".movebox").css("left", "-100%");
+                $(".movebox").stop().animate({
+                    left: "0"
+                }, 1000);
+            });
             
         });
     </script>
