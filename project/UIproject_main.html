@@ -498,12 +498,168 @@
         .sec4atc3 div:hover img {
             mix-blend-mode: normal;
         }
-
         .sec5 {
-            background-color: green;
+            background-image: linear-gradient(rgba(48, 54, 105, 0.5), rgba(48, 54, 105, 0.5)), url("/imgProject/sec5_bg.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-flow: row wrap;
+        }
+        .sec5atc1 {
+            width: 30%;
+            background-color: rgba(50, 207, 50, 0.5);
+            font-size: 14px;
+            color: white;
+            position: relative;
+        }
+        .sec5atc1 div {
+            width: 100%;
+        }
+        .sec5atc1 p {
+            margin: 10%;
+        }
+        .sec5atc1 b {
+            font-size: 30px;
+        }
+        .sec5atc1 .history {
+            width: 50%;
+            height: 200px;
+            margin: 0 10%;
+            margin-top: 70px;
+            white-space: nowrap;
+            overflow-y: scroll;
+            -ms-overflow-style: none;
+        }
+        .history::-webkit-scrollbar {
+            display: none;
+        }
+        .sec5atc1 a {
+            padding: 20%;
+            display: block;
+            color: white;
+        }
+        .sec5atc1 button {
+            font-size: 30px;
+            color: white;
+            border: none;
+            background-color: transparent;
+            position: absolute;
+            left: 20%;
+        }
+        .sec5atc1 .prevbtn2 {
+            bottom: 270px;
+        }
+        .sec5atc1 .nextbtn2 {
+            bottom: 40px;
+        }
+        .sec5atc2 {
+            width: 70%;
+            color: white;
+            position: relative;
+        }
+        .sec5atc2>div:first-child {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 7%;
+        }
+        .sec5atc2>div:nth-child(2) {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 7%;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+        .sec5atc2 .timeline {
+            width: 90%;
+            height: 250px;
+            margin: 70px auto;
+            position: relative;
+            white-space: nowrap;
+            overflow-y: scroll;
+            -ms-overflow-style: none;
+        }
+        .timeline::-webkit-scrollbar {
+            display: none;
+        }
+        .timeline div {
+            width: 100%;
+        }
+        .timeline::after {/*흰색 가운데 줄*/
+            content: "";
+            width: 450%;
+            height: 3px;
+            position: absolute;
+            background-color: white;
+            top: 50%;
+            left: 0;
+            transform: translate(-50%, -50%);
+        }
+        .timeline .container {
+            width: 30%;
+            padding: 30px 0;
+            position: relative;
+            display: inline-block;
+        }
+        .timeline .container::after {/*가운데 동그라미*/
+            content: "";
+            width: 15px;
+            height: 15px;
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+        }
+        .timeline .up::after {
+            top: 117px;
+        }
+        .timeline .down::after {
+            top: -8px
+        }
+        .timeline .up {
+            top: 0;
+        }
+        .timeline .down {
+            top: 50%;
         }
         .sec6 {
-            background-color: purple;
+            font-size: 14px;
+            text-align: center;
+        }
+        .sec6atc1 p {
+            margin: 5%;
+        }
+        .sec6atc1 b {
+            font-size: 30px;
+        }
+        .sec6atc2 {
+            width: 100%;
+            height: 500px;
+            background-image: url("/imgProject/sec6_img.png");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .sec6atc3 {
+            width: 100%;
+            padding-top: 2%;
+            padding-bottom: 8%;
+            font-size: 14px;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        .sec6atc3 table {
+            width: 100%;
+            text-align: left;
+        }
+        .sec6atc3 th {
+            width: 20%;
+            padding: 2%;
+            vertical-align: top;
+        }
+        .sec6atc3 td {
+            padding: 2%;
         }
         footer {
             width: 100%;
@@ -768,6 +924,57 @@
                 width: 50%;
                 height: 40%;
              }
+             .sec5atc1 {
+                font-size: 20px;
+             }
+             .sec5atc1 p {
+                 margin: 5%;
+             }
+             .sec5atc1 b {
+                 font-size: 40px;
+             }
+             .sec5atc1 .history {
+                 margin: 0;
+                 margin-top: 10%;
+             }
+             .sec5atc1 a {
+                 padding: 5%;
+                 padding-left: 10%;
+             }
+             .sec5atc1 button {
+                 left: 7%;
+             }
+             .sec5atc1 .prevbtn2 {
+                 bottom: 320px;
+             }
+             .sec5atc1 .nextbtn2 {
+                 bottom: 80px;
+             }
+             .sec5atc2>div:first-child {
+                 font-size: 40px;
+             }
+             .sec5atc2>div:nth-child(2) {
+                 font-size: 20px;
+             }
+             .sec6 {
+                 font-size: 20px;
+             }
+             .sec6atc1 p {
+                 margin: 2%;
+             }
+             .sec6atc1 b {
+                 font-size: 40px;
+             }
+             .sec6atc3 {
+                 font-size: 16px;
+                 justify-content: center;
+             }
+             .sec6atc3 table {
+                 width: 35%;
+             }
+             .sec6atc3 th {
+                 width: 15%;
+             }
              footer {
                  padding: 3%;
                  padding-bottom: 6%;
@@ -958,8 +1165,96 @@
             </article>
         </section>
 
-        <section class="page sec5"></section>
-        <section class="page sec6"></section>
+        <section class="page sec5">
+            <article class="sec5atc1">
+                <div>
+                    <p><b>연혁</b></p>
+                    <p>INIT은 고객과 함께<br>성장하고 있습니다.</p>
+                </div>
+                <div class="history">
+                    <a href="javascript:void(0);">2019</a>
+                    <a href="javascript:void(0);">2018</a>
+                    <a href="javascript:void(0);">2017</a>
+                    <a href="javascript:void(0);">2016</a>
+                    <a href="javascript:void(0);">2015</a>
+                    <a href="javascript:void(0);">2014</a>
+                    <a href="javascript:void(0);">2013</a>
+                    <a href="javascript:void(0);">2012</a>
+                    <a href="javascript:void(0);">2011</a>
+                </div>
+                <div>
+                    <button class="prevbtn2"><i class="fas fa-chevron-up"></i></button>
+                    <button class="nextbtn2"><i class="fas fa-chevron-down"></i></button>
+                </div>
+            </article>
+            <article class="sec5atc2">
+                <div>2019</div>
+                <div><i class="fas fa-angle-double-left"></i>&nbsp;&nbsp;&nbsp;좌우로 당겨주세요</div>
+                <div class="timeline">
+                    <div class="container down">
+                        <div class="content"><p>비트컴퓨터 HCI 시스템<br>구축</p></div>
+                    </div>
+                    <div class="container up">
+                        <div class="content"><p>쿠팡 HPE서버 유지보수<br>계약</p></div>
+                    </div>
+                    <div class="container down">
+                        <div class="content"><p>태광 전체IT인프라가상화 전환 및<br>통합백업시스템 구축</p></div>
+                    </div>
+                    <div class="container up">
+                        <div class="content"><p>스틱인베스트먼트<br>IT인프라 가상화 전환</p></div>
+                    </div>
+                    <div class="container down">
+                        <div class="content"><p>HP 골드 파트너<br>달성</p></div>
+                    </div>
+                    <div class="container up">
+                        <div class="content"><p>Veeam 실버 파트너<br>달성</p></div>
+                    </div>
+                    <div class="container down">
+                        <div class="content"><p>홈플러스 Symantec<br>보안S/W 계약</p></div>
+                    </div>
+                    <div class="container up">
+                        <div class="content"><p>라이나금융서비스 통합<br>유지보수 계약</p></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <section class="page sec6">
+            <article class="sec6atc1">
+                <p><b>오시는 길</b></p>
+                <p>INIT의 문은 언제나 고객을 향해 열려 있습니다.</p>
+            </article>
+            <article class="sec6atc2 mapImg"></article>
+            <article class="sec6atc3">
+                <table>
+                    <tr>
+                        <th>Address</th>
+                        <td>부산광역시 부산진구 중앙대로 749 혜도빌딩 4층</td>
+                    </tr>
+                    <tr>
+                        <th>Tel</th>
+                        <td>051-715-6224</td>
+                    </tr>
+                    <tr>
+                        <th>Fax</th>
+                        <td>051-715-6224</td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <th>지하철</th>
+                        <td>1, 2호선 서면역 15번 출구에서 70M</td>
+                    </tr>
+                    <tr>
+                        <th>버스</th>
+                        <td>좌석 : 1002, 1000,1004,1010<br>
+                            일반 : 20,24,160,167,169-1,17,23,31,33,583,<br>62,67,68,77,85,87,133,54,63,81,83-1,88,86</td>
+                    </tr>
+                </table>
+            </article>
+            <article class="sec6atc4"></article>
+        </section>
+
         <footer class="page">
             <div class="logo"><img src="/imgProject/logo_white.png" alt="logo"></div>
             <div class="companyInfo">
@@ -971,7 +1266,7 @@
         </footer>
         <button class="goTop"><i class="fas fa-arrow-up"></i></button>
         <!--스크롤 위치 테스트-->
-        <p class="test">scroll</p>
+        <!-- <p class="test">scroll</p> -->
     </div>
 
     <script>
@@ -1130,8 +1425,67 @@
                 });
             }, 3000);
 
+            // sec5 드래그 효과 - 년도 세로 스크롤
+            var isDown = false;
+            var startY = 0;
+            var scrollTop = 0;
+            $(".history").mousedown(function(e) {
+                isDown = true;
+
+                startY = e.pageY;
+                scrollTop = $(".history").scrollTop();
+            });
             
+            $(".history").mousemove(function(e) {
+                if(!isDown) {
+                    return;
+                }
+
+                e.preventDefault();
+
+                var y = e.pageY;
+                var walk = (y - startY) * 1;
+                $(".history").scrollTop(scrollTop - walk);
+            });
+
+            $(".history").mouseup(function() {
+                isDown = false;
+            });
+
+            $(".history").mouseleave(function() {
+                isDown = false;
+            });
+
+            // sec5 드래그 효과 - 타임라인 세로 스크롤
+            var isDown2 = false;
+            var startX = 0;
+            var scrollLeft = 0;
+            $(".timeline").mousedown(function(e) {
+                isDown2 = true;
+
+                startX = e.pageX;
+                scrollLeft = $(".timeline").scrollLeft();
+            });
             
+            $(".timeline").mousemove(function(e) {
+                if(!isDown2) {
+                    return;
+                }
+
+                e.preventDefault();
+
+                var x = e.pageX;
+                var walk2 = (x - startX) * 1;
+                $(".timeline").scrollLeft(scrollLeft - walk2);
+            });
+
+            $(".timeline").mouseup(function() {
+                isDown2 = false;
+            });
+
+            $(".timeline").mouseleave(function() {
+                isDown2 = false;
+            });
         });
     </script>
 </body>
