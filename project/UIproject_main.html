@@ -452,6 +452,7 @@
             background-color: rgba(219, 211, 211, 0.3);
         }
         .sec4 {
+            height: 80vh;
             text-align: center;
             font-size: 14px;
             color: white;
@@ -459,36 +460,43 @@
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+            position: relative;
         }
         .sec4atc1 {
-            margin: 5%;
+            padding-top: 5%;
             font-size: 30px;
             font-weight: bold;
-            background-color: violet;
         }
         .sec4atc2 {
-            background-color: green;
-            margin: 5%;
+            margin: 5% auto;
         }
         .sec4atc3 {
             width: 95%;
-            margin: 0 auto;
-            background-color: greenyellow;
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            opacity: 0;
         }
         .sec4atc3 div {
-            width: 30%;
+            width: 32%;
             height: 110px;
-            margin: 3% auto;
+            margin: 0.5% auto;
             line-height: 100px;
             border: 1px solid rgba(172, 172, 172, 0.541);
             background-color: white;
         }
         .sec4atc3 img {
-            width: 100px;
+            width: 50%;
+            height: 40%;
             vertical-align: middle;
+            mix-blend-mode: luminosity;
+        }
+        .sec4atc3 div:hover img {
+            mix-blend-mode: normal;
         }
 
         .sec5 {
@@ -564,7 +572,7 @@
             font-size: 40px;
         }
         
-        /*반응형*/
+        /*반응형 큰화면*/
         @media (min-width: 1000px) {
             .emptybox {
                 display: none;
@@ -739,6 +747,26 @@
                  height: 90px;
                  margin: 0 3%;
                 font-size: 35px;
+             }
+             .sec4 {
+                 height: 95vh;
+                 font-size: 20px;
+             }
+             .sec4atc1 {
+                 padding-top: 3%;
+                 font-size: 40px;
+             }
+             .sec4atc2 {
+                 margin: 2%;
+             }
+             .sec4atc3 div {
+                width: 24%;
+                height: 160px;
+                line-height: 160px;
+             }
+             .sec4atc3 img {
+                width: 50%;
+                height: 40%;
              }
              footer {
                  padding: 3%;
@@ -994,6 +1022,15 @@
                     }
                 }
 
+                // sec4 이벤트 - 떠오르는 애니메이션
+                if($(window).scrollTop() > 2900){
+                    $(".sec4atc3").animate({
+                        top: "25%",
+                        opacity: "1"
+                    }, 2000);
+                    
+                }
+
             });          
             
             $(window).on("scroll", function(){
@@ -1092,6 +1129,8 @@
                     $(".movebox").append(x);
                 });
             }, 3000);
+
+            
             
         });
     </script>
