@@ -1014,12 +1014,12 @@
         <div class="emptybox"></div>
         <nav>
             <div class="small_nav">
-                <img src="logo_black.png" alt="logo">
+                <img src="logo_black.png" alt="logo" class="logo">
                 <i class="fas fa-bars"></i>
                 <!--메뉴 넣기-->
             </div>
             <div class="big_nav">
-                <img src="logo_black.png" alt="logo">
+                <img src="logo_black.png" alt="logo" class="logo">
                 <ul>
                     <li><a href=""><span>회사소개</span><span class="under"></span></a></li>
                     <li><a href=""><span>프로젝트</span><span class="under"></span></a></li>
@@ -1275,6 +1275,11 @@
             $("header .logo").fadeIn(2000);
             $(".middlebar").animate({width: "70px"}, 1000);
             $(".scroll_down").fadeIn(3000);
+
+            // 로고 누르면 메인 화면으로 이동
+            $(".logo").click(function() {
+                location.href = "UIproject_main.html";
+            });
 
             // 스크롤 관련 이벤트
             $(window).scroll(function() {

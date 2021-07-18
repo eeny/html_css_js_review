@@ -245,7 +245,7 @@
         <div class="emptybox"></div>
         <nav>
             <div class="big_nav">
-                <img src="logo_black.png" alt="logo">
+                <img src="logo_black.png" alt="logo" class="logo">
                 <ul>
                     <li><a href=""><span>회사소개</span><span class="under"></span></a></li>
                     <li><a href=""><span>프로젝트</span><span class="under"></span></a></li>
@@ -289,7 +289,10 @@
 
     <script>
         $(function() {
-
+            // 로고 누르면 메인 화면으로 이동
+            $(".logo").click(function() {
+                location.href = "UIproject_main.html";
+            });
         });
     </script>
 </body>
