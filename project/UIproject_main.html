@@ -449,11 +449,48 @@
         .sec3atc3 button:hover {
             border-color: rgb(50, 207, 50);
             color: rgb(50, 207, 50);
+            background-color: rgba(219, 211, 211, 0.3);
+        }
+        .sec4 {
+            text-align: center;
+            font-size: 14px;
+            color: white;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0,0.7)), url("/imgProject/sec4_bg.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .sec4atc1 {
+            margin: 5%;
+            font-size: 30px;
+            font-weight: bold;
+            background-color: violet;
+        }
+        .sec4atc2 {
+            background-color: green;
+            margin: 5%;
+        }
+        .sec4atc3 {
+            width: 95%;
+            margin: 0 auto;
+            background-color: greenyellow;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+        }
+        .sec4atc3 div {
+            width: 30%;
+            height: 110px;
+            margin: 3% auto;
+            line-height: 100px;
+            border: 1px solid rgba(172, 172, 172, 0.541);
+            background-color: white;
+        }
+        .sec4atc3 img {
+            width: 100px;
+            vertical-align: middle;
         }
 
-        .sec4 {
-            background-color: pink;
-        }
         .sec5 {
             background-color: green;
         }
@@ -875,9 +912,9 @@
         </section>
 
         <section class="page sec4">
-            <article>파트너</article>
-            <article>INIT은 성공적인 파트너쉽으로 인정받고 있습니다.</article>
-            <article class="partners">
+            <article class="sec4atc1">파트너</article>
+            <article class="sec4atc2">INIT은 성공적인 파트너쉽으로 인정받고 있습니다.</article>
+            <article class="sec4atc3">
                 <div class="pt1"><img src="/imgProject/sec4_img1.png" alt=""></div>
                 <div class="pt2"><img src="/imgProject/sec4_img2.png" alt=""></div>
                 <div class="pt3"><img src="/imgProject/sec4_img3.png" alt=""></div>
@@ -892,6 +929,7 @@
                 <div class="pt12"><img src="/imgProject/sec4_img12.png" alt=""></div>
             </article>
         </section>
+
         <section class="page sec5"></section>
         <section class="page sec6"></section>
         <footer class="page">
@@ -905,7 +943,7 @@
         </footer>
         <button class="goTop"><i class="fas fa-arrow-up"></i></button>
         <!--스크롤 위치 테스트-->
-        <!-- <p class="test">scroll</p> -->
+        <p class="test">scroll</p>
     </div>
 
     <script>
