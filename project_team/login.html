@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <style>
         *, html, body {
             margin: 0;
@@ -18,49 +20,53 @@
         }
         html, body {
             font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f4f7f7;
         }
         a {
             text-decoration: none;
         }
         #wrap {
             width: 100%;
-            height: 100vh;
         }
         .loginBox {
             width: 100%;
             height: 660px;
             padding-top: 120px;
+            margin-bottom: 120px;
         }
         form {
             width: 600px;
-            height: 100%;
             margin: 0 auto;
-            padding-top: 45px;
-            padding-bottom: 35px;
+            padding-top: 40px;
+            padding-bottom: 40px;
             border: 1px solid #bbbb;
         }
-        .logoimg {
+        .logo { /* 로고이미지&텍스트 감싸는 div */
             width: 100%;
             height: 50%;
             text-align: center;
         }
-        .logoimg img {
-            height: 60%;
+        .logo img {
+            height: 163px;
         }
-        .logoimg p {
+        .logo p {
             font-family: 'Lato', sans-serif;
             color: #3498db;
-            font-size: 60px;
+            font-size: 50px;
+        }
+        .inputboxes { /* input태그들 감싸는 div */
+            width: 366px;
+            margin: 0 auto;
+            margin-top: 10px;
         }
         .inputboxes input {
-            width: 366px;
+            width: 100%;
             height: 44px;
-            margin: 0 auto;
             margin-top: 5px;
             padding: 10px;
             display: block;
             border: 1px solid #0073c0;
-            background-color: transparent;
+            background-color: white;
         }
         input.id:focus, input.pw:focus {
             background-color: #4eaae723;
@@ -71,9 +77,11 @@
             color: white;
             font-size: 17px;
             font-weight: bolder;
+            border: none;
         }
         input.submit:hover {
             background-color: #3498db;
+            border: none;
         }
         .inputboxes div.alert { /* 유효성 검사시 뜨는 메세지창 */
             width: 366px;
@@ -98,6 +106,9 @@
             font-size: 14px;
             color: #333333;
         }
+        .signup label {
+            cursor: pointer;
+        }
         .signup a {
             color: #0073c0;
             font-weight: bolder;
@@ -108,7 +119,7 @@
     <div id="wrap">
         <div class="loginBox">
             <form action="">
-                <div class="logoimg">
+                <div class="logo">
                     <img src="logo.png" alt="로고">
                     <p>PluckIT</p>
                 </div>
@@ -120,7 +131,7 @@
                 </div>
                 <div class="signup">
                     <div><input type="checkbox" id="chk">&nbsp;&nbsp;<label for="chk">계정 저장</label></div>
-                    <div>계정이 없으신가요? <a href="">가입하기</a></div>
+                    <div>계정이 없으신가요? <a href="signup.html">가입하기</a></div>
                 </div>
             </form>
         </div>
