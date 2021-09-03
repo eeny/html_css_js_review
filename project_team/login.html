@@ -13,6 +13,7 @@
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <style>
+        /* 공통으로 작성해 놓은 CSS 시작*/
         *, html, body {
             margin: 0;
             padding: 0;
@@ -25,15 +26,22 @@
         a {
             text-decoration: none;
         }
-        #wrap {
+        /********************************************************************************/
+        /* 공통으로 작성해 놓은 CSS 끝*/
+
+        #wrap { /*전체를 감싸는 wrap*/
             width: 100%;
         }
+
+        /* 로그인폼 전체를 감싸는 div */
         .loginBox {
             width: 100%;
             height: 660px;
             padding-top: 120px;
             margin-bottom: 120px;
         }
+
+        /* 테두리가 있는 로그인폼 */
         form {
             width: 600px;
             margin: 0 auto;
@@ -41,7 +49,9 @@
             padding-bottom: 40px;
             border: 1px solid #bbbb;
         }
-        .logo { /* 로고이미지&텍스트 감싸는 div */
+
+        /* 로고이미지 & 회사명 감싸는 div */
+        .logo { 
             width: 100%;
             height: 50%;
             text-align: center;
@@ -54,7 +64,9 @@
             color: #3498db;
             font-size: 50px;
         }
-        .inputboxes { /* input태그들 감싸는 div */
+
+        /* input태그들 감싸는 div */
+        .inputboxes { 
             width: 366px;
             margin: 0 auto;
             margin-top: 10px;
@@ -83,7 +95,9 @@
             background-color: #3498db;
             border: none;
         }
-        .inputboxes div.alert { /* 유효성 검사시 뜨는 메세지창 */
+
+        /* 유효성 검사시 뜨는 메세지창 */
+        .inputboxes div.alert { 
             width: 366px;
             height: 44px;
             margin: 0 auto;
@@ -96,6 +110,8 @@
         .alert i {
             color: tomato;
         }
+
+        /* 체크박스 & 가입하기 링크 감싸는 div */
         .signup {
             width: 366px;
             margin: 0 auto;
@@ -119,16 +135,21 @@
     <div id="wrap">
         <div class="loginBox">
             <form action="">
+                <!-- 로고이미지 & 회사명 -->
                 <div class="logo">
                     <img src="logo.png" alt="로고">
                     <p>PluckIT</p>
                 </div>
+
+                <!-- input태그들 -->
                 <div class="inputboxes">
                     <div class="alert"><i class="fas fa-exclamation-circle"></i>&nbsp;&nbsp;사용자 정보가 올바르지 않습니다.</div>
                     <input type="text" class="id" placeholder="사원번호">
                     <input type="password" class="pw" placeholder="비밀번호">
                     <input type="button" class="submit" value="로그인">
                 </div>
+
+                <!-- 체크박스 & 가입하기 링크 -->
                 <div class="signup">
                     <div><input type="checkbox" id="chk">&nbsp;&nbsp;<label for="chk">계정 저장</label></div>
                     <div>계정이 없으신가요? <a href="signup.html">가입하기</a></div>

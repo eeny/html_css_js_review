@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <title>홈화면</title>
+    <title>게시판</title>
     <style>
 
         *,
@@ -182,55 +182,104 @@
             justify-content: space-between;
         }
 
-        .section-left {
-            width: 526px;
-            margin: 30px;
-        }
-
-        .myPage {
-            width: 100%;
-            height: 560px;
-            border: 1px solid #777;
-        }
-
-        .btn-G {
-            width: 100%;
-            height: 200px;
-            margin-top: 30px;
-            border: 1px solid #777;
-        }
-
-        .section-right {
-            width: 1,052px;
-            margin-top: 30px;
-            margin-right: 30px;
-            margin-bottom: 30px;
-        }
-
-        .section-right-top {
-            height: 300px;
-            display: flex;
-            margin-bottom: 30px;
-        }
-        .section-right-top-left {
-            width: 526px;
-            margin-right: 30px;
+        /*************** 여기서부터 추가했음 ******************/
+        /*왼쪽 세부 메뉴*/
+        .main-left {
+            width: 200px;
             height: 100%;
-            border: 1px solid #777;
+            background-color: white;
+            border-right: 1px solid #ccc;
+            position: fixed;
         }
-
-        .section-right-top-right {
-            width: 526px;
+        .main-left ul {
+            width: 100%;
             height: 100%;
-            border: 1px solid #777;
         }
-
-        .section-right-bottom {
-            border: 1px solid #777;
-            height: 460px;
+        .main-left li {
+            border-bottom: 1px solid #ccc;
         }
-
-
+        .main-left a {
+            height: 45px;
+            display: block;
+            color: #333;
+            font-size: 14px;
+            text-align: left;
+            line-height: 45px;
+            padding-left: 10px;
+        }
+        .main-left a:hover {
+            color: white;
+            font-weight: bold;
+            background-color: #0382c2;
+        }
+        
+        /*오른쪽 본문 부분*/
+        .main-right {
+            width: 1520px;
+            height: 100%;
+            padding: 15px 30px;
+        }
+        .main-right h1 { /*게시판 제목 - 공지사항*/
+            color: #333;
+            font-size: 18px;
+        }
+        table.noticeTable { /*테이블*/
+            width: 100%;
+            margin-top: 50px;
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            color: #333;
+            font-size: 12px;
+            text-align: center;
+            background-color: white;
+            table-layout: fixed; /* 테이블 너비 고정 */
+            word-break: break-all; /* 텍스트 자동 줄바꿈 */
+        }
+        .noticeTable th {
+            height: 42px;
+            background-color: blue;
+            color: white;
+        }
+        .noticeTable tbody tr:hover { /* 한줄씩 hover 효과 */
+            background-color: #f4f7f7;
+        }
+        .noticeTable td {
+            height: 32px;
+            border-bottom: 1px solid #ccc;
+        }
+        .noticeTable td:nth-child(2) { /* 제목 컬럼 */
+            text-align: left;
+            padding-left: 15px;
+            color: #0382c2;
+        }
+        .paging { /*페이징*/
+            text-align: center;
+        }
+        .paging span {
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            margin: 30px 3px;
+            border: 1px solid #ccc;
+        }
+        .paging a {
+            font-size: 12px;
+            line-height: 22px;/* 수직 중앙 정렬 */
+            color: #333;
+            display: block;
+        }
+        .buttons { /*버튼들 - 글쓰기*/
+            text-align: right;
+        }
+        a.write {
+            padding: 7px 15px;
+            border-radius: 3px 3px 3px 3px;
+            background-color: #0382c2;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -273,29 +322,57 @@
             </div> <!--상단 메뉴 끝-->
 
             <div class="main-section"> <!-- 메인 페이지 시작 -->
-                <section class="section-left">
-                    <div class="myPage">
-                        마이페이지
-                    </div>
-                    <div class="btn-G">
-                        바로가기 버튼 모음 
-                    </div>
-                </section>
+                <section class="main-left"> <!--왼쪽 세부 메뉴 시작-->
+                    <ul>
+                        <li><a href="board_notice.html">공지사항</a></li>
+                        <li><a href="#">Q&A</a></li>
+                    </ul>
+                </section> <!--왼쪽 세부 메뉴 끝-->
+                
+                <div></div> <!--왼쪽 세부 메뉴 가짜 공간-->
 
-                <section class="section-right">
-                    <div class="section-right-top">
-                        <div class="section-right-top-left">
-                            업무공유
-                        </div>
-                        <div class="section-right-top-right">
-                            일정공유(달력)
-                        </div>
-                    </div>
-
-                    <div class="section-right-bottom">
-                        공지사항
-                    </div>
-                </section>
+                <section class="main-right"> <!--게시판 본문 시작-->
+                    <h1><i class="far fa-file-alt"></i> 공지사항</h1>
+                    <table class="noticeTable">
+                        <colgroup> <!--테이블 컬럼 너비 조절하는 태그-->
+                            <col width="5%"/>
+                            <col width="52%"/>
+                            <col width="10%"/>
+                            <col width="15%"/>
+                            <col width="6%"/>
+                            <col width="6%"/>
+                            <col width="6%"/>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>No.</th><th>제목</th><th>작성자</th><th>작성일</th><th>조회수</th><th>댓글수</th><th>파일</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>555555</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>11</td>
+                            </tr>
+                            <tr>
+                                <td>4</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
+                            </tr>
+                            <tr>
+                                <td>3</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
+                            </tr>
+                            <tr>
+                                <td>2</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
+                            </tr>
+                            <tr>
+                                <td>1</td><td>제목1</td><td>작성자1</td><td>2021-09-03 17:57:00</td><td>1</td><td>1</td><td>0</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="paging"> <!--페이징 시작-->
+                        <span><a href="#">1</a></span><span><a href="#">2</a></span><span><a href="#">3</a></span>
+                    </div> <!--페이징 끝-->
+                    <div class="buttons"> <!--글쓰기 버튼들 시작-->
+                        <a class="write">글쓰기</a>
+                    </div> <!--글쓰기 버튼들 끝-->
+                </section> <!--게시판 본문 끝-->
             </div> <!-- 메인 페이지 끝 -->
         </main>
     </div>
