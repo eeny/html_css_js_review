@@ -237,56 +237,101 @@
         .main-right h1 { /*게시판 제목 - 공지사항*/
             color: #333;
             font-size: 18px;
+            margin-bottom: 30px;
         }
-        table.noticeTable { /*테이블*/
+        .textwrap {
             width: 100%;
-            margin-top: 50px;
-            border: 1px solid #ccc;
-            border-collapse: collapse;
-            color: #333;
-            font-size: 12px;
-            text-align: center;
+            height: 100%;
+            padding: 20px;
+            border: 1px solid #333;
             background-color: white;
-            table-layout: fixed; /* 테이블 너비 고정 */
-            word-break: break-all; /* 텍스트 자동 줄바꿈 */
+            font-size: 14px;
         }
-        .noticeTable th {
-            height: 42px;
-            background-color: blue;
+        .textwrap h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .toptable {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: tomato;
+        }
+        .toptable table {
+            border: 1px solid #333;
+            border-collapse: collapse;
+        }
+        .toptable table td {
+            border: 1px solid #333;
+        }
+        .gray {
+            background-color: #ccc;
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .tableLeft {
+            width: 500px;
+        }
+        .tableLeft td {
+            padding: 5px;
+        }
+        .tableRight {
+            width: 300px;
+        }
+        .tableRight td {
+            padding: 5px;
+        }
+        .meddletable {
+            margin-top: 20px;
+            background-color: yellow;
+        }
+        .meddletable table {
+            width: 100%;
+            border: 1px solid #333;
+            border-collapse: collapse;
+        }
+        .meddletable table td {
+            border: 1px solid #333;
+            padding: 5px;
+        }
+        .bottomtable {
+            margin-top: 20px;        }
+        .bottomtable div {
+            margin: 10px 0;
+            text-align: right;
+            background-color: greenyellow;
+        }
+        .bottomtable button {
+            padding: 3px 5px;
             color: white;
+            background-color: #333;
+            border: none;
+            border-radius: 3px 3px 3px 3px;
         }
-        .noticeTable tbody tr:hover { /* 한줄씩 hover 효과 */
-            background-color: #f4f7f7;
+        .bottomtable button:first-child {
+            margin-right: 10px;
         }
-        .noticeTable td {
-            height: 32px;
-            border-bottom: 1px solid #ccc;
+        .bottomtable table {
+            width: 100%;
+            border: 1px solid #333;
+            border-collapse: collapse;
         }
-        .noticeTable td:nth-child(2) { /* 제목 컬럼 */
-            text-align: left;
-            padding-left: 15px;
-            color: #0382c2;
+        .bottomtable table td {
+            border: 1px solid #333;
+            padding: 5px;
         }
-        .paging { /*페이징*/
+        .bottomtable table tr:last-child td {
             text-align: center;
         }
-        .paging span {
-            width: 25px;
-            height: 25px;
-            display: inline-block;
-            margin: 30px 3px;
-            border: 1px solid #ccc;
-        }
-        .paging a {
-            font-size: 12px;
-            line-height: 22px;/* 수직 중앙 정렬 */
-            color: #333;
-            display: block;
-        }
+
         .buttons { /*버튼들 - 글쓰기*/
-            text-align: right;
+            text-align: center;
+            margin-top: 30px;
+            background-color: pink;
         }
-        a.write {
+        .write {
             padding: 7px 15px;
             border-radius: 3px 3px 3px 3px;
             background-color: #0382c2;
@@ -294,6 +339,7 @@
             font-size: 14px;
             font-weight: bold;
             cursor: pointer;
+            border: none;
         }
     </style>
 </head>
@@ -305,7 +351,7 @@
                     <a href="#"><img src="logo_transparent.png" alt="사이드바_로고"></a>
                 </div>
                 <ul class="gnb-menu">
-                    <li><a href="board_payment.html"><i class="far fa-edit"></i> 전자결재</a></li>
+                    <li><a href="board_payment_spend.html"><i class="far fa-edit"></i> 전자결재</a></li>
                     <li><a href="#"><i class="fas fa-cloud-download-alt"></i> 업무공유</a></li>
                     <li><a href="board_notice.html"><i class="fas fa-table"></i> 게시판</a></li>
                     <li><a href="#"><i class="far fa-building"></i> 오피스</a></li>
@@ -356,11 +402,87 @@
                 <div></div> <!--왼쪽 세부 메뉴 가짜 공간-->
 
                 <section class="main-right"> <!--게시판 본문 시작-->
-                    <h1><i class="far fa-file-alt"></i> 출장보고서</h1>
-                    여기!!!!
-                    <div class="buttons"> <!--글쓰기 버튼들 시작-->
-                        <a class="write">결재요청</a>
-                    </div> <!--글쓰기 버튼들 끝-->
+                    <h1><i class="far fa-file-alt"></i> 출장보고서 - 수정해야함</h1>
+                    <div class="textwrap">
+                        <h3>출장보고서</h3>
+                        <form action="">
+                            <div class="toptable">
+                                <table class="tableLeft">
+                                    <tr>
+                                        <td class="gray">기안자</td><td>관리자</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray">소속</td><td>기획팀</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray">기안일</td><td>2019-10-11(금)</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray">문서번호</td><td></td>
+                                    </tr>
+                                </table>
+                                <table class="tableRight">
+                                    <tr>
+                                        <td rowspan="3" class="gray">승인</td><td>사원</td>
+                                    </tr>
+                                    <tr>
+                                        <td>관리자</td>
+                                    </tr>
+                                    <tr>
+                                        <td>tiskdflsd</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="meddletable">
+                                <table>
+                                    <tr>
+                                        <td class="gray">제목</td><td colspan="3"><input type="text" name="" id=""></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray">작성일자</td><td><input type="date" name="" id=""></td><td class="gray">소속</td><td><input type="text" name="" id="">기획1팀</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray">작성자</td><td><input type="text" name="" id=""></td><td class="gray">금액</td><td><input type="text" name="" id="">여기에 계산해서 뜸</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="gray">지출사유</td><td colspan="3"><textarea name="" id=""></textarea></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="bottomtable">
+                                <div>
+                                    <button class="add">추가</button>
+                                    <button class="delete">삭제</button>
+                                </div>
+                                <table>
+                                    <tr class="gray">
+                                        <td>일자</td><td>분류</td><td>금액</td><td>사용 내역</td><td>비고</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="date"></td>
+                                        <td>
+                                            <select name="" id="">
+                                                <option value="물류구입비">물류구입비</option>
+                                                <option value="회식비">회식비</option>
+                                                <option value="식비">식비</option>
+                                                <option value="교통비">교통비</option>
+                                                <option value="기타">기타</option>
+                                            </select>
+                                        </td>
+                                        <td><input type="text"></td>
+                                        <td><input type="text"></td>
+                                        <td><input type="text"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="5"><span class="bold">합계 : </span><span>여기에 계산해서뜨게</span></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="buttons"> <!--글쓰기 버튼들 시작-->
+                                <input type="button" class="write" value="결제요청">
+                            </div> <!--글쓰기 버튼들 끝-->
+                        </form>
+                    </div>
                 </section> <!--게시판 본문 끝-->
             </div> <!-- 메인 페이지 끝 -->
         </main>
@@ -368,6 +490,7 @@
 
     <script>
         $(function () {
+            /*결재양식 서브메뉴 클릭하면 나타나기*/
             $(".paymentmenu>li:first-child").click(function () {
                 $(".submenu").slideToggle();
                 if($(".paymentmenu>li:first-child>a i").hasClass("fa-angle-down")){

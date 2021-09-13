@@ -256,7 +256,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: tomato;
+            background-color: skyblue;
         }
         .toptable table {
             border: 1px solid #333;
@@ -267,6 +267,7 @@
         }
         .gray {
             background-color: #ccc;
+            text-align: center;
         }
         .bold {
             font-weight: bold;
@@ -277,11 +278,31 @@
         .tableLeft td {
             padding: 5px;
         }
-        .tableRight {
-            width: 300px;
+        .tableRights { /*신청, 승인 테이블을 묶어주는 div*/
+            width: 455px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            background-color: pink;
         }
-        .tableRight td {
+        .tableRightRequest {
+            width: 130px;
+        }
+        .tableRightRequest td {
             padding: 5px;
+        }
+        .tableRightResponse {
+            width: 310px;
+        }
+        .tableRightResponse td {
+            padding: 5px;
+        }
+        .bigtr  { /*신청자, 승인자 이름 부분의 tr태그 - 추후에 체크 아이콘이 추가될 예정 */
+            height: 62px;
+        }
+        .bigtr i { /*신청, 승인시 나타나는 체크 아이콘*/
+            font-size: 30px;
+            color: #ed1c24;
         }
         .meddletable {
             margin-top: 20px;
@@ -329,7 +350,7 @@
         .buttons { /*버튼들 - 글쓰기*/
             text-align: center;
             margin-top: 30px;
-            background-color: pink;
+            background-color: gold;
         }
         .write {
             padding: 7px 15px;
@@ -341,6 +362,17 @@
             cursor: pointer;
             border: none;
         }
+        .cancle {
+            padding: 7px 15px;
+            border-radius: 3px 3px 3px 3px;
+            background-color: #858383;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+
     </style>
 </head>
 <body>
@@ -421,17 +453,30 @@
                                         <td class="gray">문서번호</td><td></td>
                                     </tr>
                                 </table>
-                                <table class="tableRight">
-                                    <tr>
-                                        <td rowspan="3" class="gray">승인</td><td>사원</td>
-                                    </tr>
-                                    <tr>
-                                        <td>관리자</td>
-                                    </tr>
-                                    <tr>
-                                        <td>tiskdflsd</td>
-                                    </tr>
-                                </table>
+                                <div class="tableRights">
+                                    <table class="tableRightRequest">
+                                        <tr>
+                                            <td rowspan="3" class="gray">신청</td><td>사원</td>
+                                        </tr>
+                                        <tr class="bigtr">
+                                            <td><i class="far fa-check-circle"></i><br>김뫄뫄</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2021/09/13</td>
+                                        </tr>
+                                    </table>
+                                    <table class="tableRightResponse">
+                                        <tr>
+                                            <td rowspan="3" class="gray">승인</td><td>과장</td><td>차장</td><td>부장</td>
+                                        </tr>
+                                        <tr class="bigtr">
+                                            <td>강땡땡</td><td>박땡땡</td><td>이땡땡</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2021/09/15</td><td>2021/09/15</td><td>2021/09/15</td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                             <div class="meddletable">
                                 <table>
@@ -480,6 +525,7 @@
                             </div>
                             <div class="buttons"> <!--글쓰기 버튼들 시작-->
                                 <input type="button" class="write" value="결제요청">
+                                <input type="button" class="cancle" value="취소">
                             </div> <!--글쓰기 버튼들 끝-->
                         </form>
                     </div>
@@ -490,6 +536,7 @@
 
     <script>
         $(function () {
+            /*결재양식 서브메뉴 클릭하면 나타나기*/
             $(".paymentmenu>li:first-child").click(function () {
                 $(".submenu").slideToggle();
                 if($(".paymentmenu>li:first-child>a i").hasClass("fa-angle-down")){
