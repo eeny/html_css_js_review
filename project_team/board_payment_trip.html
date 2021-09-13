@@ -239,6 +239,16 @@
             font-size: 18px;
             margin-bottom: 30px;
         }
+        .approval { /*결재선 추가삭제 버튼*/
+            padding: 7px 15px;
+            border-radius: 3px 3px 3px 3px;
+            background-color: #f9c80e;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            margin-bottom: 15px;
+        }
         .textwrap {
             width: 100%;
             height: 100%;
@@ -256,7 +266,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: tomato;
+            background-color: skyblue;
         }
         .toptable table {
             border: 1px solid #333;
@@ -267,21 +277,39 @@
         }
         .gray {
             background-color: #ccc;
+            text-align: center;
         }
         .bold {
             font-weight: bold;
         }
         .tableLeft {
-            width: 500px;
+            width: 400px;
         }
         .tableLeft td {
             padding: 5px;
         }
-        .tableRight {
-            width: 300px;
+        .tableRights { /*신청, 승인 테이블을 묶어주는 div*/
+            width: 455px;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            background-color: pink;
         }
-        .tableRight td {
-            padding: 5px;
+        .tableRights td {
+            padding: 2px;
+        }
+        .tableRightRequest {
+            width: 130px;
+        }
+        .tableRightResponse {
+            width: 310px;
+        }
+        .bigtr  { /*신청자, 승인자 이름 부분의 tr태그 - 여기에 체크 아이콘이 추가될 예정 */
+            height: 74px;
+        }
+        .bigtr i { /*신청, 승인시 나타나는 체크 아이콘*/
+            font-size: 30px;
+            color: #ed1c24;
         }
         .meddletable {
             margin-top: 20px;
@@ -329,7 +357,7 @@
         .buttons { /*버튼들 - 글쓰기*/
             text-align: center;
             margin-top: 30px;
-            background-color: pink;
+            background-color: salmon;
         }
         .write {
             padding: 7px 15px;
@@ -341,6 +369,17 @@
             cursor: pointer;
             border: none;
         }
+        .cancle {
+            padding: 7px 15px;
+            border-radius: 3px 3px 3px 3px;
+            background-color: #9e9e9e;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+        }
+
     </style>
 </head>
 <body>
@@ -402,14 +441,15 @@
                 <div></div> <!--왼쪽 세부 메뉴 가짜 공간-->
 
                 <section class="main-right"> <!--게시판 본문 시작-->
-                    <h1><i class="far fa-file-alt"></i> 출장보고서 - 수정해야함</h1>
+                    <h1><i class="far fa-file-alt"></i> 출장보고서 - 수정 예정</h1>
+                    <button class="approval"><i class="fas fa-user-check"></i> 결재선 정보</button> 클릭하면 모달창이나 sweet alert으로 직원 검색을 할 수 있게 할까?
                     <div class="textwrap">
-                        <h3>출장보고서</h3>
+                        <h3>법인카드 지출결의서</h3>
                         <form action="">
                             <div class="toptable">
                                 <table class="tableLeft">
                                     <tr>
-                                        <td class="gray">기안자</td><td>관리자</td>
+                                        <td class="gray">기안자</td><td>김뫄뫄</td>
                                     </tr>
                                     <tr>
                                         <td class="gray">소속</td><td>기획팀</td>
@@ -421,17 +461,36 @@
                                         <td class="gray">문서번호</td><td></td>
                                     </tr>
                                 </table>
-                                <table class="tableRight">
-                                    <tr>
-                                        <td rowspan="3" class="gray">승인</td><td>사원</td>
-                                    </tr>
-                                    <tr>
-                                        <td>관리자</td>
-                                    </tr>
-                                    <tr>
-                                        <td>tiskdflsd</td>
-                                    </tr>
-                                </table>
+                                <div class="tableRights">
+                                    <table class="tableRightRequest">
+                                        <tr>
+                                            <td rowspan="3" class="gray">신청</td><td>사원</td>
+                                        </tr>
+                                        <tr class="bigtr">
+                                            <td><i class="far fa-check-circle"></i><br>김뫄뫄</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2021/09/13</td>
+                                        </tr>
+                                    </table>
+                                    <table class="tableRightResponse">
+                                        <colgroup> <!--테이블 컬럼 너비 조절하는 태그-->
+                                            <col width="11%"/>
+                                            <col width="29%"/>
+                                            <col width="29%"/>
+                                            <col width="29%"/>
+                                        </colgroup>
+                                        <tr>
+                                            <td rowspan="3" class="gray">승인</td><td>과장</td><td>차장</td><td></td>
+                                        </tr>
+                                        <tr class="bigtr">
+                                            <td>강땡땡</td><td>박땡땡</td><td></td>
+                                        </tr>
+                                        <tr>
+                                            <td>2021/09/15</td><td>2021/09/15</td><td></td>
+                                        </tr>
+                                    </table>
+                                </div>
                             </div>
                             <div class="meddletable">
                                 <table>
@@ -442,7 +501,7 @@
                                         <td class="gray">작성일자</td><td><input type="date" name="" id=""></td><td class="gray">소속</td><td><input type="text" name="" id="">기획1팀</td>
                                     </tr>
                                     <tr>
-                                        <td class="gray">작성자</td><td><input type="text" name="" id=""></td><td class="gray">금액</td><td><input type="text" name="" id="">여기에 계산해서 뜸</td>
+                                        <td class="gray">작성자</td><td><input type="text" name="" id="">김뫄뫄 사원</td><td class="gray">금액</td><td><input type="text" name="" id="">여기에 계산해서 뜸</td>
                                     </tr>
                                     <tr>
                                         <td class="gray">지출사유</td><td colspan="3"><textarea name="" id=""></textarea></td>
@@ -479,7 +538,8 @@
                                 </table>
                             </div>
                             <div class="buttons"> <!--글쓰기 버튼들 시작-->
-                                <input type="button" class="write" value="결제요청">
+                                <input type="button" class="write" value="결재요청">
+                                <input type="button" class="cancle" value="취소">
                             </div> <!--글쓰기 버튼들 끝-->
                         </form>
                     </div>
