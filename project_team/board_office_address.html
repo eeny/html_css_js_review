@@ -13,7 +13,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <title>오피스 - 직원목록</title>
+    <title>오피스 - 주소록(개인주소록)</title>
     <style>
         *,
         html,
@@ -212,7 +212,7 @@
             padding-left: 10px;
         }
 
-        .main-left li:first-child a {
+        .main-left li:last-child a {
             color: white;
             font-weight: bold;
             background-color: #0382c2;
@@ -263,8 +263,32 @@
             cursor: pointer;
         }
 
-
         /*검색 box css 수정 끝*/
+
+        /*주소록등록 form css수정 시작*/
+
+        .update-address {
+            margin-top: 15px;
+        }
+
+        .update-address input {
+            height: 30px;
+            border: 1px solid #ccc;
+            padding: 0 10px;
+            margin-right: 8px;
+        }
+
+        .update-address input::-webkit-input-placeholder {
+            color: #777;
+            font-size: 12px;
+        }
+
+        .update-address>input[type=submit] {
+            cursor: pointer;
+        }
+
+
+        /*주소록등록 form css수정 끝*/
 
         table.noticeTable {
             /*테이블*/
@@ -322,11 +346,6 @@
             /* 수직 중앙 정렬 */
             color: #333;
             display: block;
-        }
-
-        .buttons {
-            /*버튼들 - 글쓰기*/
-            text-align: right;
         }
 
         a.write {
@@ -402,7 +421,7 @@
 
                 <section class="main-right">
                     <!--게시판 본문 시작-->
-                    <h1><i class="far fa-file-alt"></i> 직원목록</h1>
+                    <h1><i class="far fa-file-alt"></i> 주소록</h1>
 
                     <!--검색 box 추가-->
 
@@ -412,9 +431,8 @@
                                 <td>
                                     <select name="select" class="select-kind">
                                         <option value="name">이름</option>
-                                        <option value="number">사번</option>
-                                        <option value="rank">직위</option>
-                                        <option value="team">소속</option>
+                                        <option value="number">번호</option>
+                                        <option value="rank">직장</option>
                                     </select>
                                     <input type="text" placeholder="검색어를 입력하세요">
                                     <button type="submit"><i class="fas fa-search"></i></button>
@@ -423,80 +441,123 @@
                         </table>
                     </form>
 
+                    <form action="#" class="update-address">
+                        <input type="text" placeholder="이름">
+                        <input type="text" placeholder="휴대폰">
+                        <input type="text" placeholder="이메일">
+                        <input type="text" placeholder="주소">
+
+                        <input type="submit" value="+">
+                    </form>
+
                     <table class="noticeTable">
                         <colgroup>
                             <!--테이블 컬럼 너비 조절하는 태그-->
+                            <col width="10%" />
+                            <col width="15%" />
+                            <col width="25%" />
+                            <col width="10%" />
                             <col width="15%" />
                             <col width="15%" />
-                            <col width="20%" />
-                            <col width="20%" />
-                            <col width="10%" />
-                            <col width="10%" />
                             <col width="10%" />
                         </colgroup>
 
-                        <tr>                            
-                            <th>사번</th>
+                        <tr>                                                       
                             <th>이름</th>
+                            <th>휴대폰</th>                            
+                            <th>주소</th>
                             <th>이메일</th>
-                            <th>전화번호</th>
-                            <th>직위</th>
-                            <th>소속</th>
+                            <th>회사이름</th>
+                            <th>메모</th>
                             <th>수정</th>
                         </tr>
-                        <tr>
-                            <td>10010101</td>
-                            <td>김철수</td>
+
+                        <tr>                                                       
+                            <td>김지연</td>
+                            <td>010-2222-3333</td>                            
+                            <td></td>
                             <td>a123@g.com</td>
-                            <td>01011112222</td>
-                            <td>대리</td>
-                            <td>영업팀</td>
-                            <td><button>수정</button></td>
-                        </tr>
-                    
-                        <tr>
-                            <td>20010109</td>
-                            <td>김영희</td>
-                            <td>b123@g.com</td>
-                            <td>01033334444</td>
-                            <td>과장</td>
-                            <td>기획팀</td>
+                            <td></td>
+                            <td></td>
                             <td><button>수정</button></td>
                         </tr>
 
-                        <tr>
-                            <td>20010101</td>
-                            <td>마두기</td>
-                            <td>m123@g.com</td>
-                            <td>01011114444</td>
-                            <td>부장</td>
-                            <td>기획팀</td>
+                        <tr>                                                       
+                            <td>김과장</td>
+                            <td>010-9090-3333</td>                            
+                            <td></td>
+                            <td>qwer12@g.com</td>
+                            <td>PluckIT</td>
+                            <td>과장님</td>
                             <td><button>수정</button></td>
                         </tr>
 
-                        <tr>
-                            <td>90010110</td>
-                            <td>홍길동</td>
-                            <td>h123@g.com</td>
-                            <td>01012124444</td>
-                            <td>사원</td>
-                            <td>인사관리팀</td>
+                        <tr>                                                       
+                            <td>공진무전무</td>
+                            <td>010-9090-3333</td>                            
+                            <td>경북시 예산군 광시면 1218-1</td>
+                            <td>b2@g.com</td>
+                            <td>지운물산</td>
+                            <td>거래처</td>
                             <td><button>수정</button></td>
                         </tr>
+
+                        <tr>                                                       
+                            <td>고은선</td>
+                            <td>010-9090-3333</td>                            
+                            <td>경북시 예산군 광시면 1218-1</td>
+                            <td>hnub2@g.com</td>
+                            <td>(주) 다우기술</td>
+                            <td>거래처</td>
+                            <td><button>수정</button></td>
+                        </tr>
+
+                        <tr>                                                       
+                            <td>동물병원</td>
+                            <td>02-990-3333</td>                            
+                            <td>서울시 어쩌구 뫄뫄동 11-1</td>
+                            <td></td>
+                            <td>사랑동물병원</td>
+                            <td>정기 검진 11일</td>
+                            <td><button>수정</button></td>
+                        </tr>
+
+                        <tr>                                                       
+                            <td>도경수</td>
+                            <td>010-9890-3333</td>                            
+                            <td></td>
+                            <td></td>
+                            <td>SM타운</td>
+                            <td></td>
+                            <td><button>수정</button></td>
+                        </tr>
+
+                        <tr>                                                       
+                            <td>안산</td>
+                            <td>010-8989-9999</td>                            
+                            <td>서울시 구로구 가산동 78-1</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><button>수정</button></td>
+                        </tr>
+
+                        <tr>                                                       
+                            <td>한혜인</td>
+                            <td>010-6666-3333</td>                            
+                            <td></td>
+                            <td>1yearin@g.com</td>
+                            <td></td>
+                            <td></td>
+                            <td><button>수정</button></td>
+                        </tr>
+                        
                     </table>
                     <div class="paging">
                         <!--페이징 시작-->
                         <span><a href="#">1</a></span><span><a href="#">2</a></span><span><a href="#">3</a></span>
                     </div>
                     <!--페이징 끝-->
-                    <div class="buttons">
-                        <!--글쓰기 버튼들 시작-->
-                        <a class="write">글쓰기</a>
-
-                        <!--여기 둬야 되는지 모르겠어서 일단은 그냥 두기로 결정
-                        차후에 수정 필요-->
-                    </div>
-                    <!--글쓰기 버튼들 끝-->
                 </section>
                 <!--게시판 본문 끝-->
             </div> <!-- 메인 페이지 끝 -->

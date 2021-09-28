@@ -13,7 +13,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <title>오피스 - 직원목록</title>
+    <title>오피스 - 거래처관리</title>
     <style>
         *,
         html,
@@ -212,7 +212,7 @@
             padding-left: 10px;
         }
 
-        .main-left li:first-child a {
+        .main-left li:nth-child(2) a {
             color: white;
             font-weight: bold;
             background-color: #0382c2;
@@ -402,7 +402,7 @@
 
                 <section class="main-right">
                     <!--게시판 본문 시작-->
-                    <h1><i class="far fa-file-alt"></i> 직원목록</h1>
+                    <h1><i class="far fa-file-alt"></i> 거래서관리</h1>
 
                     <!--검색 box 추가-->
 
@@ -412,9 +412,8 @@
                                 <td>
                                     <select name="select" class="select-kind">
                                         <option value="name">이름</option>
-                                        <option value="number">사번</option>
-                                        <option value="rank">직위</option>
-                                        <option value="team">소속</option>
+                                        <option value="number">거래처명</option>
+                                        <option value="rank">담당자</option>
                                     </select>
                                     <input type="text" placeholder="검색어를 입력하세요">
                                     <button type="submit"><i class="fas fa-search"></i></button>
@@ -426,63 +425,55 @@
                     <table class="noticeTable">
                         <colgroup>
                             <!--테이블 컬럼 너비 조절하는 태그-->
+                            <col width="5%" />
                             <col width="15%" />
-                            <col width="15%" />
-                            <col width="20%" />
-                            <col width="20%" />
+                            <col width="35%" />
                             <col width="10%" />
+                            <col width="15%" />
                             <col width="10%" />
                             <col width="10%" />
                         </colgroup>
 
-                        <tr>                            
-                            <th>사번</th>
-                            <th>이름</th>
-                            <th>이메일</th>
+                        <tr>                                                       
+                            <th>번호</th>
+                            <th>거래처명</th>                            
+                            <th>주소</th>
                             <th>전화번호</th>
-                            <th>직위</th>
-                            <th>소속</th>
+                            <th>이메일</th>
+                            <th>담당자명</th>
                             <th>수정</th>
                         </tr>
-                        <tr>
-                            <td>10010101</td>
-                            <td>김철수</td>
+
+                        <tr>                                                       
+                            <td>3</td>
+                            <td>김치물산</td>                            
+                            <td>충천남도 예산군 광시면 1218-1</td>
+                            <td>000-777-8888</td>
                             <td>a123@g.com</td>
-                            <td>01011112222</td>
-                            <td>대리</td>
-                            <td>영업팀</td>
-                            <td><button>수정</button></td>
-                        </tr>
-                    
-                        <tr>
-                            <td>20010109</td>
-                            <td>김영희</td>
-                            <td>b123@g.com</td>
-                            <td>01033334444</td>
-                            <td>과장</td>
-                            <td>기획팀</td>
+                            <td>김치산</td>
                             <td><button>수정</button></td>
                         </tr>
 
-                        <tr>
-                            <td>20010101</td>
-                            <td>마두기</td>
-                            <td>m123@g.com</td>
-                            <td>01011114444</td>
-                            <td>부장</td>
-                            <td>기획팀</td>
+                        <tr>                                                       
+                            <td>2</td>
+                            <td>수제비</td>                            
+                            <td>부산시 예산군 광시면 1218-1</td>
+                            <td>000-777-8888</td>
+                            <td>qwer12@g.com</td>
+                            <td>김광동</td>
                             <td><button>수정</button></td>
                         </tr>
 
-                        <tr>
-                            <td>90010110</td>
-                            <td>홍길동</td>
-                            <td>h123@g.com</td>
-                            <td>01012124444</td>
-                            <td>사원</td>
-                            <td>인사관리팀</td>
+                        <tr>                                                       
+                            <td>1</td>
+                            <td>동구 우체국</td>                            
+                            <td></td>
+                            <td>080-777-8888</td>
+                            <td></td>
+                            <td></td>
                             <td><button>수정</button></td>
                         </tr>
+                        
                     </table>
                     <div class="paging">
                         <!--페이징 시작-->
@@ -491,10 +482,7 @@
                     <!--페이징 끝-->
                     <div class="buttons">
                         <!--글쓰기 버튼들 시작-->
-                        <a class="write">글쓰기</a>
-
-                        <!--여기 둬야 되는지 모르겠어서 일단은 그냥 두기로 결정
-                        차후에 수정 필요-->
+                        <a class="write">거래처 등록</a>
                     </div>
                     <!--글쓰기 버튼들 끝-->
                 </section>
