@@ -12,6 +12,9 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <title>홈화면</title>
+    <!-- Sweet Alert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <style>
 
         *,
@@ -126,6 +129,10 @@
             margin-left: 30px;
         }
 
+        .user-name p i {
+            font-size: 22px;
+        }
+
         .main-top-icon {
             display: flex;
         }        
@@ -145,6 +152,11 @@
             margin-right: 30px;
             width: 250px;
             color: #333;
+        }
+
+        /* 사용자 메뉴 추가함 */
+        #userMenu {
+            background-color: pink;
         }
 
         .f {
@@ -256,7 +268,7 @@
         <main>
             <div class="main-top"> <!--상단 메뉴 시작-->
                 <div class="user-name">
-                    <p>김뫄뫄 사원</p>
+                    <p><i class="fas fa-user-circle"></i>&nbsp;김뫄뫄 사원</p>
                 </div>
 
                 <div class="main-top-icon">
@@ -268,7 +280,7 @@
                     </div>
                     <i class="fas fa-bullhorn"></i>
                     <i class="fas fa-home"></i>
-                    <i class="far fa-user-circle"></i>
+                    <i class="fas fa-power-off" onclick="Confirm('로그아웃 하시겠습니까?')"></i>
                 </div>
             </div> <!--상단 메뉴 끝-->
 
@@ -300,5 +312,44 @@
         </main>
     </div>
 
+    <script>
+        // Sweet Alert 설정
+        var alert = function(msg, type) {
+            swal({
+                title : '',
+                text : msg,
+                type : type,
+                timer : 1500,
+                customClass : 'sweet-size',
+                showConfirmButton : false
+            });
+        }
+
+        var confirm = function(msg, title, resvNum) {
+            swal({
+                title : title,
+                text : msg,
+                type : "warning",
+                showCancelButton : true,
+                confirmButtonClass : "btn-danger",
+                confirmButtonText : "예",
+                cancelButtonText : "아니오",
+                closeOnConfirm : false,
+                closeOnCancel : true
+            }, function(isConfirm) {
+                if (isConfirm) {
+                    //swal('', '로그아웃 하셨습니다', "success");
+                    location.href = "login.html";
+                }
+            });
+        }
+
+        function Alert(msg) {
+            alert(msg, 'success');
+        }
+        function Confirm(msg) {
+            confirm('', msg);
+        }
+    </script>
 </body>
 </html>

@@ -4,14 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>회원가입</title>
+    <title>회원가입</title>   
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- jQuery -->
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<!-- Datepicker -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- toastr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <style>
         /* 공통으로 작성해 놓은 CSS 시작*/
         *, html, body {
@@ -19,16 +27,17 @@
             padding: 0;
             box-sizing: border-box;
         }
+
         html, body {
             font-family: 'Noto Sans KR', sans-serif;
             background-color: #f4f7f7;
         }
+
         a {
             text-decoration: none;
         }
         /********************************************************************************/
         /* 공통으로 작성해 놓은 CSS 끝*/
-        
         #wrap { /*전체를 감싸는 wrap*/
             width: 100%;
         }
@@ -49,6 +58,7 @@
             padding-bottom: 50px;
             border: 1px solid #bbbb;
         }
+
         p {
             font-family: 'Lato', sans-serif;
             color: #3498db;
@@ -58,7 +68,7 @@
         }
 
         /* 유효성 검사시 뜨는 메세지창 */
-        div.alert { 
+        .alert {
             width: 90%;
             height: 44px;
             margin: 0 auto;
@@ -66,8 +76,9 @@
             text-align: center;
             line-height: 44px;
             color: white;
-            /* display: none; */
+            display: none;
         }
+
         .alert i {
             color: tomato;
         }
@@ -80,14 +91,17 @@
             border-collapse: separate;
             font-size: 17px;
         }
+
         th, td {
             height: 44px;
             border: 1px solid #bbbbbb;
         }
-        th { 
+
+        th {
             border-right: none; /* th, td 가운데 겹치는 선 없애기 */
             background-color: #e0e0e0;
         }
+
         select, input {
             width: 100%;
             height: 100%;
@@ -110,6 +124,7 @@
             font-weight: bolder;
             border: none;
         }
+
         input.submit:hover {
             background-color: #3498db;
             border: none;
@@ -121,87 +136,181 @@
             text-align: center;
             font-size: 14px;
         }
+
         .login a {
             color: #0073c0;
             font-weight: bolder;
+        }
+
+        /* Datepicker 모양 */
+        .hasDatepicker {
+            cursor: pointer;
+        }
+
+        /* 달력 아이콘 */
+        .birthTd {
+            position: relative;
+        }
+
+        .fa-calendar-alt {
+            color: #333333;
+            font-size: 25px;
+            position: absolute;
+            display: inline-block;
+            right: 10px;
+            top: 9px;
         }
     </style>
 </head>
 <body>
     <div id="wrap">
         <div class="signupBox">
-            <form action="">
+            <form action="SignupProc.do" method="post" name="signupForm">
                 <p>Sign Up</p>
 
                 <!-- 유효성 검사 div -->
-                <div class="alert"><i class="fas fa-exclamation-circle"></i>&nbsp;&nbsp;사용자 정보가 올바르지 않습니다.</div>
+                <div class="alert" id="alert"><i class="fas fa-exclamation-circle"></i>&nbsp;&nbsp;사용자 정보가 올바르지 않습니다.</div>
                 
                 <!-- 정보 입력 table -->
                 <table>
                     <tr>
                         <th>소속</th>
                         <td>
-                            <select name="department" id="dept">
-                                <option value="인사">인사</option>
-                                <option value="영업">영업</option>
-                                <option value="마케팅">마케팅</option>
-                                <option value="총무회계">총무회계</option>
-                                <option value="기술지원">기술지원</option>
-                                <option value="전략기획">전략기획</option>
+                            <select name="dept_id" id="dept">
+                                <option value="100">인사</option>
+                                <option value="200">영업</option>
+                                <option value="300">마케팅</option>
+                                <option value="400">총무회계</option>
+                                <option value="500">기술지원</option>
+                                <option value="600">전략기획</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
                         <th>직급</th>
                         <td>
-                            <select name="rank" id="rank">
-                                <option value="사장">사장</option>
-                                <option value="전무">전무</option>
-                                <option value="이사">이사</option>
-                                <option value="부장">부장</option>
-                                <option value="차장">차장</option>
-                                <option value="과장">과장</option>
-                                <option value="대리">대리</option>
-                                <option value="사원" selected>사원</option>
+                            <select name="rank_id" id="rank">
+                                <option value="8">사장</option>
+                                <option value="7">전무</option>
+                                <option value="6">이사</option>
+                                <option value="5">부장</option>
+                                <option value="4">차장</option>
+                                <option value="3">과장</option>
+                                <option value="2">대리</option>
+                                <option value="1" selected>사원</option>
                             </select>
                         </td>
                     </tr>
                     <tr>
-                        <th>입사일</th>
-                        <td>
-                            <input type="date" name="" id="">
+                        <th>생년월일</th>
+                        <td class="birthTd">
+                            <input type="text" name="emp_birth" id="datepicker" placeholder="YYYY-MM-DD" readonly="readonly">
+                            <i class="far fa-calendar-alt"></i>
                         </td>
                     </tr>
-                        <th>사원번호</th>
-                        <td>
-                            <input type="text" name="" id="">
-                        </td>
-                    </tr>
-                    </tr>
+                    <tr>
                         <th>사원명</th>
                         <td>
-                            <input type="text" name="" id="">
+                            <input type="text" name="emp_name" id="empName">
                         </td>
                     </tr>
-                    </tr>
+                    <tr>
                         <th>비밀번호</th>
                         <td>
-                            <input type="password" name="" id="">
+                            <input type="password" name="emp_pw" id="empPw" placeholder="영문대소문자/숫자/특수문자 포함, 8자 이상">
                         </td>
                     </tr>
-                    </tr>
+                    <tr>
                         <th>비밀번호 확인</th>
                         <td>
-                            <input type="password" name="" id="">
+                            <input type="password" id="empPwChk">
                         </td>
                     </tr>
                 </table>
 
-                <input type="button" name="" class="submit" value="가입하기">
+                <input type="button" class="submit" value="가입하기" onclick="signup()">
                 
-                <div class="login">이미 계정이 있으신가요? <a href="login.html">로그인</a></div>
+                <div class="login">이미 계정이 있으신가요? <a href="Login.do">로그인</a></div>
             </form>
         </div>
     </div>
+    
+    <script type="text/javascript">
+    	// toastr 설정
+    	toastr.options = {
+		  "closeButton": false,
+		  "debug": false,
+		  "newestOnTop": false,
+		  "progressBar": false,
+		  "positionClass": "toast-bottom-right",
+		  "preventDuplicates": false,
+		  "onclick": null,
+		  "showDuration": "300",
+		  "hideDuration": "1000",
+		  "timeOut": "1000",
+		  "extendedTimeOut": "1000",
+		  "showEasing": "swing",
+		  "hideEasing": "linear",
+		  "showMethod": "fadeIn",
+		  "hideMethod": "fadeOut"
+		}
+    	
+    	// Datepicker 설정	
+    	$(function() {
+    		$.datepicker.setDefaults({
+                dateFormat: 'yy-mm-dd'
+                , showOtherMonths: true 
+                , showMonthAfterYear: true 
+                , changeYear: true 
+                , changeMonth: true              
+                , yearSuffix: "년"
+                , yearRange: "1920:2030"
+                , monthNamesShort: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
+                , monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'] 
+                , dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'] 
+                , dayNames: ['일요일', '월요일', '화요일', '수요일', '목요일', '금요일', '토요일'] 
+            });
+            
+            // 생년월일 input을 datepicker로 선언
+	    	$("#datepicker").datepicker();
+        });
+    
+        // 회원가입폼 유효성 검사 후 submit
+    	function signup() {
+			var signupForm = document.signupForm;
+			var alert = document.getElementById("alert");
+			
+			var dept = document.getElementById("dept").value;
+			var rank = document.getElementById("rank").value;
+			var birth = document.getElementById("datepicker").value;
+			var empName = document.getElementById("empName").value;
+			var empPw = document.getElementById("empPw").value;
+			var empPwChk = document.getElementById("empPwChk").value;
+			
+			var reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
+			 			
+			//toastr.warning(dept + "/" + rank + "/" + birth + "/" + empName + "/" + empPw + "/" + empPwChk);
+			
+			if (birth.length <= 0 ) {
+				alert.style.display = "block";
+                return false;
+			} else if (empName.trim().length <= 0 || empName.search(/\s/) !== -1) {
+				alert.style.display = "block";	
+                return false;			
+			} else if (reg.test(empPw) === false) {
+				alert.style.display = "block";
+                return false;											
+			} else if (empPwChk != empPw) {
+				alert.style.display = "block";	
+                toastr.warning("비밀번호가 일치하지 않습니다");	
+                return false;	
+            } else {
+                alert.style.display = "none";
+                toastr.success("됐다");
+                //signupForm.submit();
+            }
+			
+		}
+    </script>
 </body>
 </html>
