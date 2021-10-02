@@ -324,8 +324,9 @@
             <div class="main-section"> <!-- 메인 페이지 시작 -->
                 <section class="main-left"> <!--왼쪽 세부 메뉴 시작-->
                     <ul>
-                        <li><a href="board_notice.html">공지사항</a></li>
-                        <li><a href="board_qna.html">Q&A</a></li>
+                        <li><a href="board_notice.html" class="maxTitle">공지사항</a></li>
+                        <li><a href="board_qna.html" class="maxTitle">Q&A</a></li>
+                        <li><a href="board_qna.html" class="maxTitle">아아아아아아아아아아아아아아아아아아</a></li>
                     </ul>
                 </section> <!--왼쪽 세부 메뉴 끝-->
                 
@@ -376,6 +377,15 @@
             </div> <!-- 메인 페이지 끝 -->
         </main>
     </div>
+
+    <script>
+        // 게시판 제목 길이 제한 (13자 넘으면 잘림)
+        var titleArray = document.getElementsByClassName("maxTitle");
+        for (var i = 0; i < titleArray.length; i++) {
+            var shortTitle = titleArray[i].innerText.substr(0, 13);
+            titleArray[i].innerText = shortTitle;
+        }
+    </script>
 
 </body>
 </html>
