@@ -66,6 +66,7 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+            position: relative;
         }
 
         /*사이드 바 CSS 시작*/
@@ -301,6 +302,7 @@
             height: 42px;
             background-color: blue;
             color: white;
+            border-bottom: 1px solid #ccc;
         }
 
         .makeBoardTable td {
@@ -424,6 +426,80 @@
             font-weight: bold;
             cursor: pointer;
             background-color: red;
+        }
+
+        /* 버튼 눌렀을 때 나타나는 모달창 */
+        .pop {
+            width: 1200px;
+            height: 267px;
+            position: absolute;
+            background-color: white;
+            top: 230px;
+            left: 50%;
+            transform: translate(-50%);
+            z-index: 6;
+            /* display: none; */
+        }
+
+        #layer {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 5;
+            /* display: none; */
+        }
+
+        .pop h1 {
+            font-size: 18px;
+            margin: 20px;
+        }
+
+        /********************** 게시판 수정 테이블 ***********************/
+        table.popBoardTable {
+            /*테이블*/
+            width: 96.5%;
+            margin: 0px auto 20px;
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            color: #333;
+            font-size: 12px;
+            text-align: center;
+            background-color: white;
+            table-layout: fixed;
+            /* 테이블 너비 고정 */
+            word-break: break-all;
+            /* 텍스트 자동 줄바꿈 */
+        }
+
+        .popBoardTable th {
+            height: 42px;
+            background-color: magenta;
+            color: white;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .popBoardTable td {
+            height: 32px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .popBoardTable td:nth-child(2) {
+            /* 제목 컬럼 */
+            text-align: center;
+        }
+
+        .popBoardTable input, .popBoardTable select {
+            width: 100%;
+            height: 100%;
+            border: none;
+            padding: 0 10px;
+        }
+
+        .popBoardTable select {
+            text-align: center;
         }
     </style>
 </head>
@@ -651,7 +727,90 @@
                 <!--게시판 본문 끝-->
             </div> <!-- 메인 페이지 끝 -->
         </main>
+
+        <!-- 모달창 시작 -->
+        <div class="pop">
+            <h1><i class="far fa-file-alt"></i> 게시판 수정</h1>
+                    
+            <form action="#" name="modForm">
+                <table class="popBoardTable">
+                    <colgroup>
+                        <!--테이블 컬럼 너비 조절하는 태그-->
+                        <col width="12.5%" />
+                        <col width="12.5%" />
+                        <col width="12.5%" />
+                        <col width="12.5%" />
+                        <col width="12.5%" />
+                        <col width="12.5%" />
+                        <col width="12.5%" />
+                        <col width="12.5%" />
+                    </colgroup>
+                    
+                    <tr>
+                        <th>게시판 코드</th>
+                        <td colspan="3"><input type="text" name="b_id" id="mod_b_id" placeholder="영어로 입력" oninput="chkEng(this)"></td>
+                        <th>담당부서</th>
+                        <td colspan="3">
+                            <select name="dept_id" id="mod_dept_id">
+                                <option value="100" selected>인사</option>
+                                <option value="200">영업</option>
+                                <option value="300">마케팅</option>
+                                <option value="400">총무회계</option>
+                                <option value="500">기술지원</option>
+                                <option value="600">전략기획</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>게시판 생성자</th>
+                        <td colspan="3"><input type="text" name="b_writer" id="mod_b_writer"></td>
+                        <th>게시판 제목</th>
+                        <td colspan="3"><input type="text" name="b_title" id="mod_b_title"></td>
+                    </tr>
+
+                    <tr>
+                        <th>읽기권한</th>
+                        <td>
+                            <select name="b_readAuth" id="mod_b_readAuth">
+                                <option value="0" selected>모두</option>
+                                <option value="1">직원</option>
+                            </select>
+                        </td>
+                        <th>쓰기권한</th>
+                        <td>
+                            <select name="b_writeAuth" id="mod_b_writeAuth">
+                                <option value="0" selected>모두</option>
+                                <option value="1">직원</option>
+                            </select>
+                        </td>
+                        <th>댓글권한</th>
+                        <td>
+                            <select name="b_replyAuth" id="mod_b_replyAuth">
+                                <option value="0" selected>모두</option>
+                                <option value="1">직원</option>
+                            </select>
+                        </td>
+                        <th>다운권한</th>
+                        <td>
+                            <select name="b_downAuth" id="mod_b_downAuth">
+                                <option value="0" selected>모두</option>
+                                <option value="1">직원</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <div class="buttons">
+                    <input type="button" value="게시판수정" onclick="modifyBoard()">
+                    <input type="reset" value="취소">
+                </div>
+            </form>
+        </div>
+
+        <div id="layer"></div><!-- 모달 배경 레이어 -->
+        <!-- 모달창 끝 -->
     </div>
+
 
     <script>
         // toastr 설정
@@ -680,7 +839,6 @@
 
         // 게시판 등록하기
         var mbForm = document.mbForm;
-
         var bId = document.getElementById("b_id");
         var bWriter = document.getElementById("b_writer");
         var bTitle = document.getElementById("b_title");
@@ -698,6 +856,42 @@
             } else {
                 //toastr.success("게시판이 생성 되었습니다");
                 mbForm.submit();
+            }
+        }
+
+        // 모달창 나타나기 & 사라지기
+        $(function() {
+            $(".mod").click(function() {
+                $("#layer").fadeIn(300, function() {
+                    $(".pop").fadeIn(200);
+                });
+            });
+
+            $("#layer").click(function () {
+                $(".pop").css("display", "none");
+                $("#layer").fadeOut(100);
+            });         
+        });
+
+        // 게시판 정보 수정하기
+        var modForm = document.modForm;
+        var modBId = document.getElementById("mod_b_id");
+        var modBWriter = document.getElementById("mod_b_writer");
+        var modBTitle = document.getElementById("mod_b_title");
+
+        function modifyBoard() {
+            if (modBId.value.trim().length <= 0) {
+                toastr.warning("게시판 코드를 입력해 주세요");
+                return false;
+            } else if (modBWriter.value.trim().length <= 0) {
+                toastr.warning("게시판 생성자를 입력해 주세요");
+                return false;
+            } else if (modBTitle.value.trim().length <= 0) {
+                toastr.warning("게시판 제목을 입력해 주세요");
+                return false;
+            } else {
+                //toastr.success("게시판이 수정 되었습니다");
+                modForm.submit();
             }
         }
     </script>
