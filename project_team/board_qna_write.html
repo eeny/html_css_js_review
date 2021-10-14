@@ -224,39 +224,7 @@
             color: #333;
             font-size: 18px;
             margin-bottom: 30px;
-        }
-        /*검색 box css 수정 시작*/
-
-        .search-box {
-            height: 30px;
-            background-color: #fff;
-            border-collapse: collapse;
-            border: 1px solid #ccc;
-        }
-
-        .select-kind {
-            height: 30px;
-            border: none;
-            border-right: 1px solid #ccc;
-            color: #333;
-        }
-
-        .search-box  input[type=text] {
-            height: 30px;
-            border: none;
-            padding: 0 10px;
-        }
-
-        .search-box button {
-            border: none;
-            color: #333; 
-            width: 30px;
-            height: 30px;
-            
-            cursor: pointer;
-        }
-        /*검색 box css 수정 끝*/
-        
+        }      
         table.noticeTable { /*테이블*/
             width: 100%;
             margin-top: 30px;
@@ -264,58 +232,17 @@
             border-collapse: collapse;
             color: #333;
             font-size: 12px;
-            text-align: center;
+            text-align: left;
             background-color: white;
             table-layout: fixed; /* 테이블 너비 고정 */
             word-break: break-all; /* 텍스트 자동 줄바꿈 */
-        }
-        .noticeTable th {
-            height: 42px;
-            background-color: blue;
-            color: white;
-        }
-        .noticeTable tbody tr:hover { /* 한줄씩 hover 효과 */
-            background-color: #f4f7f7;
-        }
+        }   
         .noticeTable td {
             height: 32px;
-            border-bottom: 1px solid #ccc;
-        }
-        .noticeTable td:nth-child(2) { /* 제목 컬럼 */
-            text-align: left;
             padding-left: 15px;
-            color: #0382c2;
-        }
-        .paging { /*페이징*/
-            text-align: center;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: center;
-        }
-        .paging span {
-            width: 25px;
-            height: 25px;
-            display: inline-block;
-            margin: 30px 3px;
             border: 1px solid #ccc;
         }
-        .paging a {
-            width: 100%;
-            height: 100%;
-            font-size: 12px;
-            line-height: 22px;/* 수직 중앙 정렬 */
-            color: #333;
-            display: block;
-        }
-        span.nowPage {
-            border: none;
-        }
-        a.nowPage {
-            background-color: blue;
-            color: white;
-            font-weight: 600;
-            line-height: 23px;
-        }
+        
         .buttons { /*버튼들 - 글쓰기*/
             text-align: right;
         }
@@ -383,23 +310,6 @@
                 <section class="main-right"> <!--게시판 본문 시작-->
                     <h1><i class="far fa-file-alt"></i> 공지사항</h1>
 
-                    <!--검색 box 추가-->
-
-                    <form action="#">
-                        <table class="search-box">
-                            <tr>
-                                <td>
-                                    <select name="select" class="select-kind">
-                                        <option value="bm_title">제목</option>
-                                        <option value="bm_writer">작성자</option>
-                                    </select>
-                                    <input type="text" placeholder="검색어를 입력하세요">
-                                    <button type="submit"><i class="fas fa-search"></i></button>
-                                </td>
-                            </tr>
-                        </table>
-                    </form>
-
                     <table class="noticeTable">
                         <colgroup> <!--테이블 컬럼 너비 조절하는 태그-->
                             <col width="5%"/>
@@ -410,34 +320,17 @@
                             <col width="6%"/>
                             <col width="6%"/>
                         </colgroup>
-                        <thead>
-                            <tr>
-                                <th>No.</th><th>제목</th><th>작성자</th><th>작성일</th><th>조회수</th><th>댓글수</th><th>파일</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>555555</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>11</td>
-                            </tr>
-                            <tr>
-                                <td>4</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
-                            </tr>
-                            <tr>
-                                <td>3</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
-                            </tr>
-                            <tr>
-                                <td>2</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
-                            </tr>
-                            <tr>
-                                <td>1</td><td>제목1</td><td>작성자1</td><td>2021-09-03 17:57:00</td><td>1</td><td>1</td><td>0</td>
-                            </tr>
-                        </tbody>
+                        <tr>
+                            <td>555555</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>11</td>
+                        </tr>
+                        <tr>
+                            <td>4</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
+                        </tr>
+                        <tr>
+                            <td>3</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
+                        </tr>
                     </table>
-                    <div class="paging"> <!--페이징 시작-->
-                        <span><a href="#"><i class="fas fa-angle-double-left"></i></a></span><span><a href="#"><i class="fas fa-angle-left"></i></a></span>
-                        <span><a href="#">1</a></span><span class="nowPage"><a href="#" class="nowPage">2</a></span><span><a href="#">3</a></span>
-                        <span><a href="#"><i class="fas fa-angle-right"></i></a></span><span><a href="#"><i class="fas fa-angle-double-right"></i></a></span>
-                    </div> <!--페이징 끝-->
+
                     <div class="buttons"> <!--글쓰기 버튼들 시작-->
                         <a class="write">글쓰기</a>
                     </div> <!--글쓰기 버튼들 끝-->
