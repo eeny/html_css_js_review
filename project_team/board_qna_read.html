@@ -305,7 +305,7 @@
         .replyBox textarea:focus {
             outline: none;
         }
-        .replyBox input[type='submit'] {
+        .replyBox input[type='button'] {
             width: 90px;
             height: 75px;
             border: none;
@@ -391,6 +391,16 @@
         }
         .replyTop a:hover {
             text-decoration: underline;
+        }
+        /* 댓글 수정시 나타나는 textarea */
+        .replyContent textarea {
+            width: 100%;
+            padding: 2px 5px;
+            border: 1px solid #cacaca;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .replyContent textarea:focus {
+            outline: none;
         }
     </style>
 </head>
@@ -483,7 +493,7 @@
                                 <input type="hidden" name="bm_num" value="">
                                 <input type="hidden" name="r_writer" value="">
                                 <textarea name="r_content"></textarea>
-                                <input type="submit" value="댓글작성">
+                                <input type="button" value="댓글작성">
                             </div>
                         </form>
 
@@ -496,7 +506,7 @@
                                     <p class="replyTop">
                                         <span>김철수 부장</span>
                                         <span>2021-10-22 11:55:33</span>
-                                        <span>
+                                        <span style="visibility: hidden;">
                                             <a href="#">수정</a>
                                             <a href="#">삭제</a>
                                         </span>
@@ -507,43 +517,17 @@
                             <li>
                                 <div><img src="user.png" alt="user"></div>
                                 <div class="replyContent">
-                                    <p class="replyTop">
-                                        <span>김철수 부장</span>
-                                        <span>2021-10-22 11:55:33</span>
-                                        <span>
-                                            <a href="#">수정</a>
-                                            <a href="#">삭제</a>
-                                        </span>
-                                    </p>
-                                    <p class="replyBottom">내용입니다ㅏㅏㅏㅏㅏㅏ</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div><img src="user.png" alt="user"></div>
-                                <div class="replyContent">
-                                    <p class="replyTop">
-                                        <span>김철수 부장</span>
-                                        <span>2021-10-22 11:55:33</span>
-                                        <span>
-                                            <a href="#">수정</a>
-                                            <a href="#">삭제</a>
-                                        </span>
-                                    </p>
-                                    <p class="replyBottom">내용입니다ㅏㅏㅏㅏㅏㅏ</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div><img src="user.png" alt="user"></div>
-                                <div class="replyContent">
-                                    <p class="replyTop">
-                                        <span>김철수 부장</span>
-                                        <span>2021-10-22 11:55:33</span>
-                                        <span>
-                                            <a href="#">수정</a>
-                                            <a href="#">삭제</a>
-                                        </span>
-                                    </p>
-                                    <p class="replyBottom">내용입니다ㅏㅏㅏㅏㅏㅏ</p>
+                                    <form action="#" method="post">
+                                        <p class="replyTop">
+                                            <span>김철수 부장</span>
+                                            <span>2021-10-22 11:55:33</span>
+                                            <span>
+                                                <a href="#">저장</a>
+                                                <a href="#">취소</a>
+                                            </span>
+                                        </p>
+                                        <textarea name="r_content" id="modContent">수정폼</textarea>
+                                    </form>
                                 </div>
                             </li>
                         </ul>

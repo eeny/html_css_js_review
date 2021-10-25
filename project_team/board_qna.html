@@ -288,7 +288,14 @@
         }
         .noticeTable td:nth-child(2):hover { /* 제목 컬럼 hover 커서 */
             cursor: pointer;
+        }
+        .noticeTable td:nth-child(2):hover a { /* 제목 컬럼 hover 효과 */
             text-decoration: underline;
+        }
+        img.answer { /* 답변글 제목의 화살표 이미지 */
+            width: 11px;
+            display: inline-block;
+            vertical-align: middle;
         }
         .paging { /*페이징*/
             text-align: center;
@@ -421,19 +428,19 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>555555</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>11</td>
+                                <td>555555</td><td><a>제목2</a></td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>11</td>
                             </tr>
                             <tr>
-                                <td>4</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
+                                <td>4</td><td>&nbsp;&nbsp;&nbsp;&nbsp;<img src="answer.png" alt="answer" class="answer">&nbsp;&nbsp;<a>제목2</a></td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
                             </tr>
                             <tr>
-                                <td>3</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
+                                <td>3</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="answer.png" alt="answer" class="answer">&nbsp;&nbsp;<a>제목2</a></td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
                             </tr>
                             <tr>
-                                <td>2</td><td>제목2</td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
+                                <td>2</td><td><a>제목2</a></td><td>작성자2</td><td>2021-09-03 17:57:25</td><td>0</td><td>0</td><td>1</td>
                             </tr>
                             <tr>
-                                <td>1</td><td>제목1</td><td>작성자1</td><td>2021-09-03 17:57:00</td><td>1</td><td>1</td><td>0</td>
+                                <td>1</td><td><a>제목2</a></td><td>작성자1</td><td>2021-09-03 17:57:00</td><td>1</td><td>1</td><td>0</td>
                             </tr>
                         </tbody>
                     </table>
