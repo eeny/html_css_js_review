@@ -457,7 +457,7 @@
             margin: 20px;
         }
 
-        /********************** 게시판 수정 테이블 ***********************/
+        /********************** 사원 조회 테이블 ***********************/
         table.popBoardTable {
             /*테이블*/
             width: 96.5%;
@@ -802,7 +802,7 @@
                 </table>
                 <div class="buttons">
                     <input type="button" value="게시판수정" onclick="modifyBoard()">
-                    <input type="reset" value="취소">
+                    <input type="reset" class="closePop" value="취소">
                 </div>
             </form>
         </div>
@@ -870,7 +870,12 @@
             $("#layer").click(function () {
                 $(".pop").css("display", "none");
                 $("#layer").fadeOut(100);
-            });         
+            }); 
+            
+            $(".closePop").click(function() {
+				$(".pop").css("display", "none");
+				$("#layer").fadeOut(100);
+			});
         });
 
         // 게시판 정보 수정하기

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>관리자메뉴 - 인사관리</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Datepicker -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- toastr -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+        integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Sweet Alert -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <style>
+        *,
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 공통으로 작성해 놓은 CSS 시작*/
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            width: 1920px;
+            height: 100%;
+            background-color: #f4f7f7;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+
+        input,
+        select {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        /********************************************************************************/
+        /* 공통으로 작성해 놓은 CSS 끝*/
+
+        #wrap {
+            /*전체를 감싸는 wrap*/
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /*사이드 바 CSS 시작*/
+
+        nav {
+            width: 200px;
+            height: 100%;
+        }
+
+        .gnb-align {
+            width: 200px;
+            height: 100%;
+            background-color: #0091EA;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+
+        .logo {
+            text-align: center;
+            background-color: #0091EA;
+        }
+
+        .gnb-menu li {
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .gnb-menu li:hover {
+            background-color: #0382c2;
+        }
+
+        .gnb-menu li:first-child {
+            margin-top: 0;
+        }
+
+        .gnb-menu li a {
+            color: #efefef;
+            font-size: 16px;
+        }
+
+        .gnb-menu li a i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+
+        /********************************************************************************/
+        /*사이드 바 CSS 끝*/
+
+        main {
+            /*사이드 바 제외 main css*/
+            width: 1720px;
+            height: 100%;
+            background-color: #f4f7f7;
+        }
+
+        /*상단 메뉴 CSS 시작*/
+        .main-top {
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .user-name p {
+            color: #333;
+            font-size: 20px;
+            font-weight: 600;
+            margin-left: 30px;
+        }
+
+        .main-top-icon {
+            display: flex;
+        }
+
+        .main-top-icon i {
+            font-size: 28px;
+            margin-right: 30px;
+            padding-top: 6px;
+            color: #333;
+
+            cursor: pointer;
+        }
+
+        .search {
+            border: 3px solid #0091EA;
+            padding: 5px;
+            margin-right: 30px;
+            width: 250px;
+            color: #333;
+        }
+
+        .f {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .f>input[type=search] {
+            background-color: transparent;
+            border: none;
+        }
+
+        input::-webkit-input-placeholder {
+            color: #333;
+            font-size: 12px;
+        }
+
+        .f>button {
+            background-color: transparent;
+            border: none;
+        }
+
+        .f>button>i {
+            font-size: 20px;
+            margin-right: 0;
+            padding-top: 0;
+            padding: 0 10px;
+        }
+
+        /********************************************************************************/
+        /*상단 메뉴 CSS 끝*/
+
+        .main-section {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /*************** 여기서부터 추가했음 ******************/
+        /*왼쪽 세부 메뉴*/
+        .main-left {
+            width: 200px;
+            height: 100%;
+            background-color: white;
+            border-right: 1px solid #ccc;
+            position: fixed;
+        }
+
+        .main-left ul {
+            width: 100%;
+            height: 100%;
+        }
+
+        .main-left li {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .main-left a {
+            height: 45px;
+            display: block;
+            color: #333;
+            font-size: 14px;
+            text-align: left;
+            line-height: 45px;
+            padding-left: 10px;
+        }
+
+        /*왼쪽 세부 메뉴 중 클릭시 색 변경*/
+        a.clickBtn {
+            color: white;
+            font-weight: bold;
+            background-color: #0382c2;
+        }
+
+        a.clickMenu {
+            font-weight: bold;
+        }
+        .paymentmenu>li:nth-child(2)>a i {
+            padding-left: 116px;
+        }
+
+        .menuClose {
+            display: none;
+        }
+
+        .submenu li {
+            border: none;
+        }
+
+        .submenu li a {
+            padding-left: 30px;
+        }
+
+        .submenu li a i {
+            font-size: 12px;
+        }
+
+        /*오른쪽 본문 부분*/
+        .main-right {
+            width: 1520px;
+            height: 100%;
+            padding: 15px 30px;
+        }
+
+        .main-right h1 {
+            /*게시판 제목 - 공지사항*/
+            color: #333;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /********************** 사원 목록 테이블 ***********************/
+        table.empListTable {
+            /*테이블*/
+            width: 100%;
+            margin-top: 30px;
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+            color: #333;
+            font-size: 12px;
+            text-align: center;
+            background-color: white;
+            table-layout: fixed;
+            /* 테이블 너비 고정 */
+            word-break: break-all;
+            /* 텍스트 자동 줄바꿈 */
+        }
+
+        .empListTable th {
+            height: 42px;
+            background-color: blue;
+            color: white;
+        }
+
+        .empListTable tbody tr:hover {
+            /* 한줄씩 hover 효과 */
+            background-color: #f4f7f7;
+        }
+
+        .empListTable td {
+            height: 32px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .empListTable div.empPhoto {
+            width: 170px;
+            margin: 7px auto;
+        }
+
+        .empListTable label {
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .empListTable input[type='file'] {
+            display: none;
+        }
+
+        .empListTable td input, select {
+            width: 100%;
+            height: 100%;
+            border: none;
+            text-align: center;
+        }
+
+        h4 { /* 추가 사항 제목 */
+            margin: 20px 0 5px 0;
+        }
+
+        div.moreDetails { /* 추가 사항 입력틀 */
+            width: 100%;
+        }
+
+        .moreDetails textarea {
+            width: 100%;
+            height: 200px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            /* 버튼들 - 게시판 등록 & 취소 */
+            text-align: center;
+        }
+
+        .buttons input {
+            border: none;
+            padding: 7px 15px;
+            border-radius: 3px 3px 3px 3px;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .buttons input[type=button] {
+            background-color: #0382c2;
+        }
+
+        .buttons input[type=reset] {
+            background-color: #8a959b;
+        }
+
+        button.mod {
+            /* 수정 버튼 */
+            border: none;
+            padding: 3px 3px;
+            border-radius: 3px 3px 3px 3px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: green;
+        }
+
+        button.del {
+            /* 삭제 버튼 */
+            border: none;
+            padding: 3px 3px;
+            border-radius: 3px 3px 3px 3px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: red;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <!--전체 페이지 감싸는 div-->
+        <nav>
+            <!--사이드 바(gnbmenu) 시작-->
+            <div class="gnb-align">
+                <div class="logo">
+                    <a href="#"><img src="logo_transparent.png" alt="사이드바_로고"></a>
+                </div>
+                <ul class="gnb-menu">
+                    <li><a href="board_payment_spend.html"><i class="far fa-edit"></i> 전자결재</a></li>
+                    <li><a href="board_share_receive.html"><i class="fas fa-cloud-download-alt"></i> 업무공유</a></li>
+                    <li><a href="board_notice.html"><i class="fas fa-table"></i> 게시판</a></li>
+                    <li><a href="board_office_employee.html"><i class="far fa-building"></i> 오피스</a></li>
+                    <li><a href="#"><i class="far fa-id-badge"></i> 근태관리</a></li>
+                    <li><a href="#"><i class="fas fa-tasks"></i> 설문</a></li>
+                    <li><a href="#"><i class="far fa-calendar-alt"></i> 일정관리</a></li>
+                    <li><a href="#"><i class="fas fa-cogs"></i> 관리자메뉴</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--사이드 바(gnbmenu) 끝-->
+
+        <main>
+            <div class="main-top">
+                <!--상단 메뉴 시작-->
+                <div class="user-name">
+                    <p>김뫄뫄 사원</p>
+                </div>
+
+                <div class="main-top-icon">
+                    <div class="search">
+                        <form action="" name=f class="f">
+                            <input type="search" placeholder="직원 검색" name="search">
+                            <button type="submit"><i class="fas fa-search"></i></button>
+                        </form>
+                    </div>
+                    <i class="fas fa-bullhorn"></i>
+                    <i class="fas fa-home"></i>
+                    <i class="far fa-user-circle"></i>
+                </div>
+            </div>
+            <!--상단 메뉴 끝-->
+
+            <div class="main-section">
+                <!-- 메인 페이지 시작 -->
+                <section class="main-left">
+                    <!--왼쪽 세부 메뉴 시작-->
+                    <ul class="paymentmenu">
+                        <li><a href="#">게시판관리</a></li>
+                        <li>
+                            <a href="#" class="clickBtn">인사관리<i class="fas fa-angle-down"></i></a>
+                            <ul class="submenu">
+                                <li><a href="#" class="clickMenu"><i class="fas fa-angle-right"></i> 사원목록</a></li>
+                                <li><a href="#"><i class="fas fa-angle-right"></i> 입사처리</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">회사정보관리</a></li>
+                    </ul>
+                </section>
+                <!--왼쪽 세부 메뉴 끝-->
+
+                <div></div>
+                <!--왼쪽 세부 메뉴 가짜 공간-->
+
+                <section class="main-right">
+                    <!--게시판 본문 시작-->
+                    <h1><i class="far fa-file-alt"></i> 인사 관리 <i class="fas fa-angle-right"></i> 사원 정보 수정</h1>
+
+
+                    <table class="empListTable">
+                        <colgroup>
+                            <!--테이블 컬럼 너비 조절하는 태그-->
+                            <col width="16%" />
+                            <col width="16%" />
+                            <col width="26%" />
+                            <col width="16%" />
+                            <col width="26%" />
+                        </colgroup>
+
+                        <tr>
+                            <td rowspan="9">
+                                <div class="empPhoto">
+                                    <img src="증사2.png" alt="emplyee">
+                                </div>
+                                <label for="empPhoto"><i class="fas fa-paperclip"></i> 사진 선택</label>
+                                <input type="file" name="emp_photo" id="empPhoto">
+                            </td>
+                            <th>사원번호</th>
+                            <td><input type="text" name="emp_num" id=""></td>
+                            <th>입사일자</th>
+                            <td><input type="date" name="emp_hire" id=""></td>
+                        </tr>
+
+                        <tr>
+                            <th>성명</th>
+                            <td><input type="text" name="emp_name" id=""></td>
+                            <th>영문성명</th>
+                            <td><input type="date" name="emp_ename" id=""></td>
+                        </tr>
+
+                        <tr>
+                            <th>성명</th>
+                            <td><input type="text" name="emp_name" id=""></td>
+                            <th>영문성명</th>
+                            <td><input type="date" name="emp_ename" id=""></td>
+                        </tr>
+
+                        <tr>
+                            <th>성명</th>
+                            <td><input type="text" name="emp_name" id=""></td>
+                            <th>영문성명</th>
+                            <td><input type="date" name="emp_ename" id=""></td>
+                        </tr>
+
+                        <tr>
+                            <th>성명</th>
+                            <td><input type="text" name="emp_name" id=""></td>
+                            <th>영문성명</th>
+                            <td><input type="date" name="emp_ename" id=""></td>
+                        </tr>
+
+                        <tr>
+                            <th>성명</th>
+                            <td><input type="text" name="emp_name" id=""></td>
+                            <th>영문성명</th>
+                            <td><input type="date" name="emp_ename" id=""></td>
+                        </tr>
+
+                        <tr>
+                            <th>성명</th>
+                            <td><input type="text" name="emp_name" id=""></td>
+                            <th>영문성명</th>
+                            <td><input type="date" name="emp_ename" id=""></td>
+                        </tr>
+
+                        <tr>
+                            <th>성명</th>
+                            <td><input type="text" name="emp_name" id=""></td>
+                            <th>영문성명</th>
+                            <td><input type="date" name="emp_ename" id=""></td>
+                        </tr>
+
+                        <tr>
+                            <th>성명</th>
+                            <td><input type="text" name="emp_name" id=""></td>
+                            <th>영문성명</th>
+                            <td><input type="date" name="emp_ename" id=""></td>
+                        </tr>
+
+                    </table>
+
+                    <h4>추가 사항 </h4>
+                    <div class="moreDetails">
+                        <textarea name="" id=""></textarea>
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="저장">
+                        <input type="reset" class="closePop" value="취소">
+                    </div>
+                </section>
+                <!--게시판 본문 끝-->
+            </div> <!-- 메인 페이지 끝 -->
+        </main>
+
+    </div>
+
+
+    <script>
+        // toastr 설정
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": false,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "300",
+            "hideDuration": "1000",
+            "timeOut": "1000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+
+        $(function () {
+            // 왼쪽 세부메뉴 토글 (클릭하면 나타나거나 사라지기)
+            $(".paymentmenu>li:nth-child(2)").click(function () {
+                $(".submenu").slideToggle();
+                if ($(".paymentmenu>li:nth-child(2)>a i").hasClass("fa-angle-down")) {
+                    $(".paymentmenu>li:nth-child(2)>a i").removeClass("fa-angle-down").addClass("fa-angle-up");
+                } else {
+                    $(".paymentmenu>li:nth-child(2)>a i").removeClass("fa-angle-up").addClass("fa-angle-down");
+                }
+            }
+            );
+        });
+    </script>
+</body>
+
+</html>
