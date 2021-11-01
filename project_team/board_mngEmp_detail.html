@@ -627,7 +627,7 @@
                         </div>
                         <div class="buttons">
                             <input type="button" value="저장" onclick="submitForm()">
-                            <input type="button" class="print" value="인쇄" onclick="">
+                            <input type="button" class="print" value="인쇄" onclick="printEmp()">
                             <input type="button" class="close" value="취소" onclick="cancelBoard()">
                         </div>
                     </form>
@@ -878,12 +878,13 @@
         }
 
         // 사원 정보 인쇄하기
-        // var div;
-        // var initBody;
 
-        // function print(id) {
-            
-        // }
+        function printEmp(id) {
+            var url = "";
+            var name = "printPop";
+            var size = "width=1050, height=900";
+            window.open(url, name, size);
+        }
     </script>
 </body>
 
