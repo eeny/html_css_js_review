@@ -19,11 +19,15 @@
     <!-- Datepicker -->
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <!-- toastr -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css"
+        integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+        integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Sweet Alert -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <style>
         *,
         html,
@@ -258,7 +262,8 @@
             border-radius: 5px 5px 5px 5px;
         }
 
-        div.tabBox { /* 마이페이지 - 탭버튼 */
+        div.tabBox {
+            /* 마이페이지 - 탭버튼 */
             margin-top: 10px;
             display: flex;
             font-size: 15px;
@@ -298,7 +303,8 @@
             background-color: #01579b;
         }
 
-        div.clock { /* 마이페이지 - 시계 */
+        div.clock {
+            /* 마이페이지 - 시계 */
             width: 400px;
             height: 60px;
             margin: 13px 74px;
@@ -333,16 +339,20 @@
             padding: 7px;
         }
 
-        .clockTime span:first-child, .clockTime span:nth-child(2) { /* 시간, 분 */
+        .clockTime span:first-child,
+        .clockTime span:nth-child(2) {
+            /* 시간, 분 */
             color: #333;
         }
 
-        .clockTime span:last-child { /* 초 */
+        .clockTime span:last-child {
+            /* 초 */
             color: #333;
             font-weight: lighter;
         }
 
-        div.commute { /* 마이페이지 - 출퇴근시간 */
+        div.commute {
+            /* 마이페이지 - 출퇴근시간 */
             position: relative;
         }
 
@@ -374,14 +384,16 @@
             text-align: center;
         }
 
-        .commute div p, .commute div a {
+        .commute div p,
+        .commute div a {
             width: 25%;
             line-height: 57px;
             font-size: 15px;
             background-color: #f6f8f9;
         }
 
-        .commute div a { /* 출근, 퇴근 버튼 */
+        .commute div a {
+            /* 출근, 퇴근 버튼 */
             color: #01579b;
             font-weight: bold;
             background-color: #ebf0f3;
@@ -391,12 +403,13 @@
         .commute div a:first-child {
             border-radius: 10px 0 0 10px;
         }
-        
+
         .commute div p:last-child {
             border-radius: 0 10px 10px 0;
         }
 
-        div.condition { /* 마이페이지 - 근무상태변경 */
+        div.condition {
+            /* 마이페이지 - 근무상태변경 */
             text-align: center;
             width: 400px;
             height: 55px;
@@ -405,7 +418,7 @@
             border-radius: 10px;
         }
 
-        div.condition select { 
+        div.condition select {
             width: 60%;
             height: 100%;
             border: none;
@@ -418,7 +431,8 @@
             cursor: pointer;
         }
 
-        .btn-G { /* 바로가기 버튼 모음 */
+        .btn-G {
+            /* 바로가기 버튼 모음 */
             width: 100%;
             height: 200px;
             margin-top: 30px;
@@ -426,6 +440,54 @@
             border-radius: 5px;
             background-color: white;
             box-shadow: 3px 3px 10px #ccc;
+        }
+
+        div.gButtons { /* 바로가기 버튼 */
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .gButtons a {
+            padding: 13px 30px;
+            margin-top: 23px;
+            background-color: #ebf0f3;
+            color: #01579b;
+            text-align: center;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .gCounts {
+            padding: 30px 100px 0 0;
+            text-align: right;
+            font-size: 13px;
+        }
+
+        .gCounts p span {
+            width: 10px;
+            height: 10px;
+            background-color: #777;
+            margin-right: 5px;
+            display: inline-block;
+        }
+
+        .gCounts p:nth-child(2) span {
+            background-color: #b1b1b1;
+        }
+        
+        .gCounts p:nth-child(3) span {
+            background-color: #01579b;
+        }
+        
+        .gCounts p:nth-child(4) span {
+            background-color: #0382c2;
+        }
+
+        .gCounts a {
+            padding: 0 5px;
+            color: red;
+            text-decoration: underline;
         }
 
         .section-right {
@@ -537,7 +599,8 @@
                         </div>
                         <div class="condition">
                             <select name="" id="">
-                                <option option hidden="" disabled="disabled" selected="selected" value="">근무상태변경</option>
+                                <option option hidden="" disabled="disabled" selected="selected" value="">근무상태변경
+                                </option>
                                 <option value="">근무중</option>
                                 <option value="">휴식</option>
                                 <option value="">외근</option>
@@ -548,7 +611,18 @@
 
                     </div> <!-- 마이페이지 끝 -->
                     <div class="btn-G">
-                        바로가기 버튼 모음
+                        <div class="gButtons">
+                            <a class="g1">전자결재</a>
+                            <a class="g2">업무공유</a>
+                            <a class="g3">설문등록</a>
+                            <a class="g4">일정등록</a>
+                        </div>
+                        <div class="gCounts">
+                            <p><span></span> 전자결재 <a href="">0</a> 건</p>
+                            <p><span></span> 업무공유 <a href="">0</a> 건</p>
+                            <p><span></span> 설문 <a href="">0</a> 건</p>
+                            <p><span></span> 일정 <a href="">0</a> 건</p>
+                        </div>
                     </div>
                 </section>
 
