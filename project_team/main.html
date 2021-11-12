@@ -278,15 +278,15 @@
             cursor: pointer;
         }
 
-        .tabBox div.tab1 {
+        .tabBox div.tabbtn1 {
             position: relative;
         }
 
-        .tabBox div.tab2 {
+        .tabBox div.tabbtn2 {
             position: relative;
         }
 
-        .tab {
+        .tab { /* 탭메뉴 버튼 */
             color: #01579b;
             font-weight: bold;
         }
@@ -429,6 +429,48 @@
             font-family: 'Noto Sans KR', sans-serif;
             letter-spacing: 5px;
             cursor: pointer;
+        }
+
+        .tab1 { /* 근태정보를 클릭하면 나타나는 내용 */
+            /* display: none; */
+        }
+
+        div.vacation { /* 휴가정보 메뉴 */
+            width: 400px;
+            margin: 0 auto;
+            padding-top: 30px;
+        }
+
+        .vacation h5 {
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
+
+        .vacation div {
+            width: 100%;
+            height: 38px;
+            margin-bottom: 10px;
+            border: 1px solid #b1b1b1;
+            border-radius: 30px;
+            background-color: #f6f8f9;
+            font-size: 14px;
+            text-align: center;
+            display: flex;
+        }
+        
+        .vacation div b {
+            width: 50%;
+            line-height: 34px;
+            color: #01579b;
+        }
+        
+        .vacation div span {
+            width: 50%;
+            line-height: 34px;
+        }
+
+        .tab2 { /* 휴가정보를 클릭하면 나타나는 내용 */
+            /* display: none; */
         }
 
         .btn-G {
@@ -581,14 +623,15 @@
                             <p class="empAuth"><span>권한</span> 1</p>
                         </div>
                         <div class="tabBox">
-                            <div class="tab1 tab">근태정보</div>
-                            <div class="tab2">휴가정보</div>
+                            <div class="tabbtn1 tab">근태정보</div>
+                            <div class="tabbtn2">휴가정보</div>
                         </div>
-                        <div class="clock">
-                            <p class="clockDate">2021-11-11 (목)</p>
-                            <p class="clockTime"><span>23</span>:<span>07</span>:<span>12</span></p>
+                        <!--근태정보 메뉴 시작-->
+                        <div class="clock tab1">
+                            <p class="clockDate tab1">2021-11-11 (목)</p>
+                            <p class="clockTime tab1"><span>23</span>:<span>07</span>:<span>12</span></p>
                         </div>
-                        <div class="commute">
+                        <div class="commute tab1">
                             <h5>출·퇴근시간</h5>
                             <div>
                                 <a>출근</a>
@@ -597,7 +640,7 @@
                                 <p>18:00:00</p>
                             </div>
                         </div>
-                        <div class="condition">
+                        <div class="condition tab1">
                             <select name="" id="">
                                 <option option hidden="" disabled="disabled" selected="selected" value="">근무상태변경
                                 </option>
@@ -608,7 +651,17 @@
                                 <option value="">출장</option>
                             </select>
                         </div>
-
+                        <!--근태정보 메뉴 끝-->
+                        
+                        <!--휴가정보 메뉴 시작-->
+                        <div class="vacation tab2">
+                            <h5>내 휴가 정보</h5>
+                            <div><b>입사일</b><span>2021-11-11</span></div>
+                            <div><b>연차휴가</b><span>18일 0시간</span></div>
+                            <div><b>사용연차</b><span>6일 6시간</span></div>
+                            <div><b>휴가 잔여일</b><span>11일 2시간</span></div>
+                        </div>
+                        <!--휴가정보 메뉴 끝-->
                     </div> <!-- 마이페이지 끝 -->
                     <div class="btn-G">
                         <div class="gButtons">
@@ -682,6 +735,27 @@
         function Confirm(msg) {
             confirm('', msg);
         }
+
+        // 근태정보, 휴가정보 탭메뉴 클릭시 나타나는 화면 변경
+        $(function () {
+            $(".tabbtn1").click(function() {
+                $(".tabbtn1").addClass("tab");
+                $(".tabbtn2").removeClass("tab");
+                $(".tab2").css("display", "none");
+                $(".tab1").css("display", "block");
+                $(".clock").css("display", "inline-table");
+                $(".clockDate").css("display", "inline-block");
+                $(".clockTime").css("display", "inline-block");
+            });
+
+            $(".tabbtn2").click(function() {
+                $(".tabbtn2").addClass("tab");
+                $(".tabbtn1").removeClass("tab");
+                $(".tab1").css("display", "none");
+                $(".tab2").css("display", "block");
+            });
+        });
+
     </script>
 </body>
 
