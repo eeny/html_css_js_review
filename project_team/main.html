@@ -82,6 +82,7 @@
             position: fixed;
             top: 0;
             left: 0;
+            z-index: 2;
         }
 
         .logo {
@@ -219,13 +220,16 @@
             border-radius: 5px;
             background-color: white;
             box-shadow: 3px 3px 10px #ccc;
+            color: #333;
         }
 
         div.myPhoto {
             /* 마이페이지 - 사진 */
             width: 120px;
             height: 120px;
-            margin: 20px auto;
+            margin: 0 auto;
+            margin-top: 20px;
+            margin-bottom: 10px;
             border-radius: 70%;
             overflow: hidden;
         }
@@ -249,7 +253,7 @@
         p.empNum,
         p.empAuth {
             font-size: 13px;
-            margin-top: 5px;
+            margin-top: 7px;
             color: #777;
         }
 
@@ -286,7 +290,8 @@
             position: relative;
         }
 
-        .tab { /* 탭메뉴 버튼 */
+        .tab {
+            /* 탭메뉴 버튼 */
             color: #01579b;
             font-weight: bold;
         }
@@ -307,7 +312,7 @@
             /* 마이페이지 - 시계 */
             width: 400px;
             height: 60px;
-            margin: 13px 74px;
+            margin: 15px 74px;
             border: 1px solid #b1b1b1;
             border-radius: 30px;
             text-align: center;
@@ -413,7 +418,7 @@
             text-align: center;
             width: 400px;
             height: 55px;
-            margin: 20px auto;
+            margin: 21px auto;
             border: 1px solid #01579b;
             border-radius: 10px;
         }
@@ -431,11 +436,17 @@
             cursor: pointer;
         }
 
-        .tab1 { /* 근태정보를 클릭하면 나타나는 내용 */
+        .condition select:focus {
+            outline: none;
+        }
+
+        .tab1 {
+            /* 근태정보를 클릭하면 나타나는 내용 */
             /* display: none; */
         }
 
-        div.vacation { /* 휴가정보 메뉴 */
+        div.vacation {
+            /* 휴가정보 메뉴 */
             width: 400px;
             margin: 0 auto;
             padding-top: 30px;
@@ -457,20 +468,21 @@
             text-align: center;
             display: flex;
         }
-        
+
         .vacation div b {
             width: 50%;
             line-height: 34px;
             color: #01579b;
         }
-        
+
         .vacation div span {
             width: 50%;
             line-height: 34px;
         }
 
-        .tab2 { /* 휴가정보를 클릭하면 나타나는 내용 */
-            /* display: none; */
+        .tab2 {
+            /* 휴가정보를 클릭하면 나타나는 내용 */
+            display: none;
         }
 
         .btn-G {
@@ -482,9 +494,11 @@
             border-radius: 5px;
             background-color: white;
             box-shadow: 3px 3px 10px #ccc;
+            color: #333;
         }
 
-        div.gButtons { /* 바로가기 버튼 */
+        div.gButtons {
+            /* 바로가기 버튼 */
             display: flex;
             justify-content: space-evenly;
         }
@@ -500,7 +514,8 @@
             cursor: pointer;
         }
 
-        .gCounts {
+        div.gCounts {
+            /* 바로가기 건수 */
             padding: 30px 100px 0 0;
             text-align: right;
             font-size: 13px;
@@ -517,11 +532,11 @@
         .gCounts p:nth-child(2) span {
             background-color: #b1b1b1;
         }
-        
+
         .gCounts p:nth-child(3) span {
             background-color: #01579b;
         }
-        
+
         .gCounts p:nth-child(4) span {
             background-color: #0382c2;
         }
@@ -546,21 +561,147 @@
         }
 
         .section-right-top-left {
+            /* 업무공유 */
             width: 526px;
             margin-right: 30px;
             height: 100%;
-            border: 1px solid #777;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 3px 3px 10px #ccc;
+        }
+
+        .section-right-top-left div.shareTitle {
+            /* 업무공유 상단 제목 */
+            display: flex;
+            padding: 20px;
+        }
+
+        .shareTitle h3 {
+            width: 50%;
+            color: #333;
+        }
+
+        .shareTitle i {
+            width: 50%;
+            font-size: larger;
+            line-height: 26px;
+            text-align: right;
+            color: #0382c2;
+            cursor: pointer;
+        }
+
+        table.shareTbl {
+            /* 업무공유 테이블 */
+            width: 485px;
+            margin: 0 auto;
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .shareTbl tr {
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .shareTbl th {
+            padding: 5px;
+        }
+
+        .shareTbl tr.noData {
+            /* 등록된 게시물이 없을 경우 꽉 차게 */
+            height: 170px;
+            color: #777;
+        }
+
+        tr.noData i {
+            color: #b1b1b1;
         }
 
         .section-right-top-right {
+            /* 일정공유(달력) */
             width: 526px;
             height: 100%;
-            border: 1px solid #777;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 3px 3px 10px #ccc;
+        }
+
+        .section-right-top-right div.eventsTitle {
+            /* 일정공유 상단 제목 */
+            display: flex;
+            padding: 20px 20px 10px 20px;
+        }
+
+        .eventsTitle h3 {
+            width: 50%;
+            color: #333;
+        }
+
+        .eventsTitle i {
+            width: 50%;
+            font-size: larger;
+            line-height: 26px;
+            text-align: right;
+            color: #0382c2;
+            cursor: pointer;
+        }
+
+        table.calendarTbl {
+            /* 달력 테이블 */
+            width: 485px;
+            margin: 0 auto;
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .calendarTbl th, .calendarTbl td {
+            padding: 4px;
+        }
+
+        .calendarTbl tr:first-child {
+            font-size: 20px;
+        }
+
+        .calendarTbl td:hover {
+            background-color: #f6f8f9;
+        }
+
+        .calendarTbl button { /* 이전달, 다음달 버튼 */
+            border: 1px solid #dfe8f3;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .calendarTbl button i {
+            color: #0382c2;
+            padding: 3px 7px;
+        }
+
+        .calendarTbl tr.days {
+            border-bottom: 1px solid #ccc;
+        }
+
+        .days th:first-child {
+            color: crimson;
+        }
+
+        .days th:last-child {
+            color: mediumblue;
         }
 
         .section-right-bottom {
-            border: 1px solid #777;
+            /* 공지사항 게시글 */
             height: 460px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 3px 3px 10px #ccc;
         }
     </style>
 </head>
@@ -602,9 +743,9 @@
                             <button type="submit"><i class="fas fa-search"></i></button>
                         </form>
                     </div>
-                    <i class="fas fa-bullhorn"></i>
-                    <i class="fas fa-home"></i>
-                    <i class="fas fa-power-off" onclick="Confirm('로그아웃 하시겠습니까?')"></i>
+                    <i class="fas fa-bullhorn" title="공지사항"></i>
+                    <i class="fas fa-home" title="메인홈페이지"></i>
+                    <i class="fas fa-power-off" title="로그아웃" onclick="Confirm('로그아웃 하시겠습니까?')"></i>
                 </div>
             </div>
             <!--상단 메뉴 끝-->
@@ -615,7 +756,7 @@
                     <div class="myPage">
                         <!-- 마이페이지 시작 -->
                         <div class="myPhoto">
-                            <img src="증사1.jpeg" alt="">
+                            <img src="main_user.png" alt="">
                         </div>
                         <div class="myInfo">
                             <p>영업팀 <b>장그래</b> 사원</p>
@@ -652,7 +793,7 @@
                             </select>
                         </div>
                         <!--근태정보 메뉴 끝-->
-                        
+
                         <!--휴가정보 메뉴 시작-->
                         <div class="vacation tab2">
                             <h5>내 휴가 정보</h5>
@@ -682,15 +823,80 @@
                 <section class="section-right">
                     <div class="section-right-top">
                         <div class="section-right-top-left">
-                            업무공유
+                            <div class="shareTitle">
+                                <h3>업무공유</h3><i class="fas fa-plus-circle"></i>
+                            </div>
+                            <table class="shareTbl">
+                                <tr>
+                                    <th>제목</th>
+                                    <th>발신인</th>
+                                    <th>등록일</th>
+                                </tr>
+                                <tr class="noData">
+                                    <td colspan="3"><i class="fas fa-exclamation-circle"></i> 등록된 게시물이 없습니다.</td>
+                                </tr>
+                            </table>
                         </div>
                         <div class="section-right-top-right">
-                            일정공유(달력)
+                            <div class="eventsTitle">
+                                <h3>일정</h3><i class="fas fa-plus-circle"></i>
+                            </div>
+                            <div class="events">
+                                <table class="calendarTbl" id="calendar">
+                                    <colgroup>
+                                        <!--테이블 컬럼 너비 조절하는 태그-->
+                                        <col width="14%" />
+                                        <col width="14%" />
+                                        <col width="14%" />
+                                        <col width="14%" />
+                                        <col width="14%" />
+                                        <col width="14%" />
+                                        <col width="14%" />
+                                    </colgroup>
+                                    <thead>
+                                        <tr>
+                                            <th><button name="preMon"><i class="fas fa-angle-left"></i></button></th>
+                                            <th colspan="5" class="year_mon"></th>
+                                            <th><button name="nextMon"><i class="fas fa-angle-right"></i></button></th>
+                                        </tr>
+                                        <tr class="days">
+                                            <th>일</th>
+                                            <th>월</th>
+                                            <th>화</th>
+                                            <th>수</th>
+                                            <th>목</th>
+                                            <th>금</th>
+                                            <th>토</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
 
                     <div class="section-right-bottom">
-                        공지사항
+                        <div class="boardTitle">
+                            <h3>전사 공지</h3><i class="fas fa-plus-circle"></i>
+                        </div>
+                        <table class=""boardTbl">
+                            <tr>
+                                <th>제목</th>
+                                <th>작성자</th>
+                                <th>조회수</th>
+                                <th>등록일자</th>
+                            </tr>
+                            <tr class="noDataBoard">
+                                <td colspan="3"><i class="fas fa-exclamation-circle"></i> 등록된 게시물이 없습니다.</td>
+                            </tr>
+                            <tr>
+                                <td>공지사항입니다</td>
+                                <td>관리자</td>
+                                <td>10</td>
+                                <td>2021-11-11</td>
+                            </tr>
+                        </table>
                     </div>
                 </section>
             </div> <!-- 메인 페이지 끝 -->
@@ -738,7 +944,7 @@
 
         // 근태정보, 휴가정보 탭메뉴 클릭시 나타나는 화면 변경
         $(function () {
-            $(".tabbtn1").click(function() {
+            $(".tabbtn1").click(function () {
                 $(".tabbtn1").addClass("tab");
                 $(".tabbtn2").removeClass("tab");
                 $(".tab2").css("display", "none");
@@ -748,12 +954,66 @@
                 $(".clockTime").css("display", "inline-block");
             });
 
-            $(".tabbtn2").click(function() {
+            $(".tabbtn2").click(function () {
                 $(".tabbtn2").addClass("tab");
                 $(".tabbtn1").removeClass("tab");
                 $(".tab1").css("display", "none");
                 $(".tab2").css("display", "block");
             });
+
+            // 일정관리 달력 - 출처 (https://ieme.tistory.com/m/17)
+            var today = new Date();
+            var date = new Date();
+    
+            $("button[name=preMon]").click(function () { // 이전달
+                $("#calendar > tbody > td").remove();
+                $("#calendar > tbody > tr").remove();
+                today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
+                buildCalendar();
+            })
+    
+            $("button[name=nextMon]").click(function () { //다음달
+                $("#calendar > tbody > td").remove();
+                $("#calendar > tbody > tr").remove();
+                today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+                buildCalendar();
+            })
+    
+            function buildCalendar() {
+                nowYear = today.getFullYear();
+                nowMonth = today.getMonth();
+                firstDate = new Date(nowYear, nowMonth, 1).getDate();
+                firstDay = new Date(nowYear, nowMonth, 1).getDay(); //1st의 요일
+                lastDate = new Date(nowYear, nowMonth + 1, 0).getDate();
+    
+                if ((nowYear % 4 === 0 && nowYear % 100 !== 0) || nowYear % 400 === 0) { //윤년 적용
+                    lastDate[1] = 29;
+                }
+    
+                $(".year_mon").text(nowYear + "년 " + (nowMonth + 1) + "월");
+    
+                for (i = 0; i < firstDay; i++) { //첫번째 줄 빈칸
+                    $("#calendar tbody:last").append("<td></td>");
+                }
+                for (i = 1; i <= lastDate; i++) { // 날짜 채우기
+                    plusDate = new Date(nowYear, nowMonth, i).getDay();
+                    if (plusDate == 0) {
+                        $("#calendar tbody:last").append("<tr></tr>");
+                    }
+                    $("#calendar tbody:last").append("<td class='date'>" + i + "</td>");
+                }
+                if ($("#calendar > tbody > td").length % 7 != 0) { //마지막 줄 빈칸
+                    for (i = 1; i <= $("#calendar > tbody > td").length % 7; i++) {
+                        $("#calendar tbody:last").append("<td></td>");
+                    }
+                }
+                $(".date").each(function (index) { // 오늘 날짜 표시
+                    if (nowYear == date.getFullYear() && nowMonth == date.getMonth() && $(".date").eq(index).text() == date.getDate()) {
+                        $(".date").eq(index).addClass('colToday');
+                    }
+                })
+            }
+            buildCalendar();
         });
 
     </script>
