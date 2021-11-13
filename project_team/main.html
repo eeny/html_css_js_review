@@ -703,6 +703,65 @@
             background-color: white;
             box-shadow: 3px 3px 10px #ccc;
         }
+
+        .section-right-bottom div.boardTitle {
+            /* 전사공지 상단 제목 */
+            display: flex;
+            padding: 20px;
+        }
+
+        .boardTitle h3 {
+            width: 50%;
+            color: #333;
+        }
+
+        .boardTitle i {
+            width: 50%;
+            font-size: larger;
+            line-height: 26px;
+            text-align: right;
+            color: #0382c2;
+            cursor: pointer;
+        }     
+        
+        table.boardTbl {
+            /* 전사공지 테이블 */
+            width: 1040px;
+            margin: 0 auto;
+            text-align: center;
+            border-collapse: collapse;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .boardTbl tr {
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .boardTbl th {
+            padding: 13px;
+        }
+
+        .boardTbl td {
+            padding: 11px;
+        }
+
+        .boardTbl tr.noDataBoard {
+            /* 등록된 게시물이 없을 경우 꽉 차게 */
+            height: 315px;
+            color: #777;
+            display: none;
+        }
+
+        tr.noDataBoard i {
+            color: #b1b1b1;
+        }
+
+        .boardTbl img { /* 공지 확성기 이미지 */
+            width: 20px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 
@@ -804,7 +863,7 @@
                         </div>
                         <!--휴가정보 메뉴 끝-->
                     </div> <!-- 마이페이지 끝 -->
-                    <div class="btn-G">
+                    <div class="btn-G"> <!--바로가기 메뉴 시작-->
                         <div class="gButtons">
                             <a class="g1">전자결재</a>
                             <a class="g2">업무공유</a>
@@ -817,12 +876,12 @@
                             <p><span></span> 설문 <a href="">0</a> 건</p>
                             <p><span></span> 일정 <a href="">0</a> 건</p>
                         </div>
-                    </div>
+                    </div> <!--바로가기 메뉴 끝-->
                 </section>
 
                 <section class="section-right">
                     <div class="section-right-top">
-                        <div class="section-right-top-left">
+                        <div class="section-right-top-left"> <!--업무공유 시작-->
                             <div class="shareTitle">
                                 <h3>업무공유</h3><i class="fas fa-plus-circle"></i>
                             </div>
@@ -836,8 +895,8 @@
                                     <td colspan="3"><i class="fas fa-exclamation-circle"></i> 등록된 게시물이 없습니다.</td>
                                 </tr>
                             </table>
-                        </div>
-                        <div class="section-right-top-right">
+                        </div> <!--업무공유 끝-->
+                        <div class="section-right-top-right"> <!--일정 시작-->
                             <div class="eventsTitle">
                                 <h3>일정</h3><i class="fas fa-plus-circle"></i>
                             </div>
@@ -873,31 +932,78 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div>
+                        </div> <!--일정 끝-->
                     </div>
 
-                    <div class="section-right-bottom">
+                    <div class="section-right-bottom"> <!--전사공지 시작-->
                         <div class="boardTitle">
                             <h3>전사 공지</h3><i class="fas fa-plus-circle"></i>
                         </div>
-                        <table class=""boardTbl">
-                            <tr>
-                                <th>제목</th>
-                                <th>작성자</th>
-                                <th>조회수</th>
-                                <th>등록일자</th>
-                            </tr>
-                            <tr class="noDataBoard">
-                                <td colspan="3"><i class="fas fa-exclamation-circle"></i> 등록된 게시물이 없습니다.</td>
-                            </tr>
-                            <tr>
-                                <td>공지사항입니다</td>
-                                <td>관리자</td>
-                                <td>10</td>
-                                <td>2021-11-11</td>
-                            </tr>
+                        <table class="boardTbl">
+                            <colgroup>
+                                <!--테이블 컬럼 너비 조절하는 태그-->
+                                <col width="10%" />
+                                <col width="40%" />
+                                <col width="25%" />
+                                <col width="25%" />
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>제목</th>
+                                    <th>작성자</th>
+                                    <th>등록일자</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="noDataBoard">
+                                    <td colspan="3"><i class="fas fa-exclamation-circle"></i> 등록된 게시물이 없습니다.</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="megaphone.png" alt=""></td>
+                                    <td>공지사항입니다</td>
+                                    <td>관리자</td>
+                                    <td>2021-11-11</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="megaphone.png" alt=""></td>
+                                    <td>공지사항입니다</td>
+                                    <td>관리자</td>
+                                    <td>2021-11-11</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="megaphone.png" alt=""></td>
+                                    <td>공지사항입니다</td>
+                                    <td>관리자</td>
+                                    <td>2021-11-11</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="megaphone.png" alt=""></td>
+                                    <td>공지사항입니다</td>
+                                    <td>관리자</td>
+                                    <td>2021-11-11</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="megaphone.png" alt=""></td>
+                                    <td>공지사항입니다</td>
+                                    <td>관리자</td>
+                                    <td>2021-11-11</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="megaphone.png" alt=""></td>
+                                    <td>공지사항입니다</td>
+                                    <td>관리자</td>
+                                    <td>2021-11-11</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="megaphone.png" alt=""></td>
+                                    <td>공지사항입니다</td>
+                                    <td>관리자</td>
+                                    <td>2021-11-11</td>
+                                </tr>
+                            </tbody>
                         </table>
-                    </div>
+                    </div> <!--전사공지 끝-->
                 </section>
             </div> <!-- 메인 페이지 끝 -->
         </main>
@@ -961,7 +1067,7 @@
                 $(".tab2").css("display", "block");
             });
 
-            // 일정관리 달력 - 출처 (https://ieme.tistory.com/m/17)
+            // 일정관리 달력
             var today = new Date();
             var date = new Date();
     
