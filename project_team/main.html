@@ -514,6 +514,12 @@
             cursor: pointer;
         }
 
+        .gButtons a:hover {
+            background-color: #01579b;
+            color: white;
+            transition: all 0.5s;
+        }
+
         div.gCounts {
             /* 바로가기 건수 */
             padding: 30px 100px 0 0;
@@ -660,7 +666,8 @@
             color: #333;
         }
 
-        .calendarTbl th, .calendarTbl td {
+        .calendarTbl th,
+        .calendarTbl td {
             padding: 4px;
         }
 
@@ -672,7 +679,8 @@
             background-color: #f6f8f9;
         }
 
-        .calendarTbl button { /* 이전달, 다음달 버튼 */
+        .calendarTbl button {
+            /* 이전달, 다음달 버튼 */
             border: 1px solid #dfe8f3;
             background-color: transparent;
             cursor: pointer;
@@ -722,8 +730,8 @@
             text-align: right;
             color: #0382c2;
             cursor: pointer;
-        }     
-        
+        }
+
         table.boardTbl {
             /* 전사공지 테이블 */
             width: 1040px;
@@ -758,7 +766,8 @@
             color: #b1b1b1;
         }
 
-        .boardTbl img { /* 공지 확성기 이미지 */
+        .boardTbl img {
+            /* 공지 확성기 이미지 */
             width: 20px;
             margin: 0 auto;
         }
@@ -828,16 +837,20 @@
                         </div>
                         <!--근태정보 메뉴 시작-->
                         <div class="clock tab1">
-                            <p class="clockDate tab1">2021-11-11 (목)</p>
-                            <p class="clockTime tab1"><span>23</span>:<span>07</span>:<span>12</span></p>
+                            <p class="clockDate tab1"></p>
+                            <p class="clockTime tab1">
+                                <span class="ctHour"></span>
+                                :<span class="ctMinute"></span>
+                                :<span class="ctSecond"></span>
+                            </p>
                         </div>
                         <div class="commute tab1">
                             <h5>출·퇴근시간</h5>
                             <div>
-                                <a>출근</a>
-                                <p>09:00:00</p>
-                                <a>퇴근</a>
-                                <p>18:00:00</p>
+                                <a onclick="setTime('go')">출근</a>
+                                <p class="goToWork"></p>
+                                <a onclick="setTime('off')">퇴근</a>
+                                <p class="offWork"></p>
                             </div>
                         </div>
                         <div class="condition tab1">
@@ -863,7 +876,8 @@
                         </div>
                         <!--휴가정보 메뉴 끝-->
                     </div> <!-- 마이페이지 끝 -->
-                    <div class="btn-G"> <!--바로가기 메뉴 시작-->
+                    <div class="btn-G">
+                        <!--바로가기 메뉴 시작-->
                         <div class="gButtons">
                             <a class="g1">전자결재</a>
                             <a class="g2">업무공유</a>
@@ -871,17 +885,19 @@
                             <a class="g4">일정등록</a>
                         </div>
                         <div class="gCounts">
-                            <p><span></span> 전자결재 <a href="">0</a> 건</p>
-                            <p><span></span> 업무공유 <a href="">0</a> 건</p>
-                            <p><span></span> 설문 <a href="">0</a> 건</p>
-                            <p><span></span> 일정 <a href="">0</a> 건</p>
+                            <p><span></span> 전자결재 <a href="">1</a> 건</p>
+                            <p><span></span> 업무공유 <a href="">5</a> 건</p>
+                            <p><span></span> 설문 <a href="">3</a> 건</p>
+                            <p><span></span> 일정 <a href="">7</a> 건</p>
                         </div>
-                    </div> <!--바로가기 메뉴 끝-->
+                    </div>
+                    <!--바로가기 메뉴 끝-->
                 </section>
 
                 <section class="section-right">
                     <div class="section-right-top">
-                        <div class="section-right-top-left"> <!--업무공유 시작-->
+                        <div class="section-right-top-left">
+                            <!--업무공유 시작-->
                             <div class="shareTitle">
                                 <h3>업무공유</h3><i class="fas fa-plus-circle"></i>
                             </div>
@@ -895,8 +911,10 @@
                                     <td colspan="3"><i class="fas fa-exclamation-circle"></i> 등록된 게시물이 없습니다.</td>
                                 </tr>
                             </table>
-                        </div> <!--업무공유 끝-->
-                        <div class="section-right-top-right"> <!--일정 시작-->
+                        </div>
+                        <!--업무공유 끝-->
+                        <div class="section-right-top-right">
+                            <!--일정 시작-->
                             <div class="eventsTitle">
                                 <h3>일정</h3><i class="fas fa-plus-circle"></i>
                             </div>
@@ -932,10 +950,12 @@
                                     </tbody>
                                 </table>
                             </div>
-                        </div> <!--일정 끝-->
+                        </div>
+                        <!--일정 끝-->
                     </div>
 
-                    <div class="section-right-bottom"> <!--전사공지 시작-->
+                    <div class="section-right-bottom">
+                        <!--전사공지 시작-->
                         <div class="boardTitle">
                             <h3>전사 공지</h3><i class="fas fa-plus-circle"></i>
                         </div>
@@ -965,45 +985,10 @@
                                     <td>관리자</td>
                                     <td>2021-11-11</td>
                                 </tr>
-                                <tr>
-                                    <td><img src="megaphone.png" alt=""></td>
-                                    <td>공지사항입니다</td>
-                                    <td>관리자</td>
-                                    <td>2021-11-11</td>
-                                </tr>
-                                <tr>
-                                    <td><img src="megaphone.png" alt=""></td>
-                                    <td>공지사항입니다</td>
-                                    <td>관리자</td>
-                                    <td>2021-11-11</td>
-                                </tr>
-                                <tr>
-                                    <td><img src="megaphone.png" alt=""></td>
-                                    <td>공지사항입니다</td>
-                                    <td>관리자</td>
-                                    <td>2021-11-11</td>
-                                </tr>
-                                <tr>
-                                    <td><img src="megaphone.png" alt=""></td>
-                                    <td>공지사항입니다</td>
-                                    <td>관리자</td>
-                                    <td>2021-11-11</td>
-                                </tr>
-                                <tr>
-                                    <td><img src="megaphone.png" alt=""></td>
-                                    <td>공지사항입니다</td>
-                                    <td>관리자</td>
-                                    <td>2021-11-11</td>
-                                </tr>
-                                <tr>
-                                    <td><img src="megaphone.png" alt=""></td>
-                                    <td>공지사항입니다</td>
-                                    <td>관리자</td>
-                                    <td>2021-11-11</td>
-                                </tr>
                             </tbody>
                         </table>
-                    </div> <!--전사공지 끝-->
+                    </div>
+                    <!--전사공지 끝-->
                 </section>
             </div> <!-- 메인 페이지 끝 -->
         </main>
@@ -1070,34 +1055,34 @@
             // 일정관리 달력
             var today = new Date();
             var date = new Date();
-    
+
             $("button[name=preMon]").click(function () { // 이전달
                 $("#calendar > tbody > td").remove();
                 $("#calendar > tbody > tr").remove();
                 today = new Date(today.getFullYear(), today.getMonth() - 1, today.getDate());
                 buildCalendar();
             })
-    
+
             $("button[name=nextMon]").click(function () { //다음달
                 $("#calendar > tbody > td").remove();
                 $("#calendar > tbody > tr").remove();
                 today = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
                 buildCalendar();
             })
-    
+
             function buildCalendar() {
                 nowYear = today.getFullYear();
                 nowMonth = today.getMonth();
                 firstDate = new Date(nowYear, nowMonth, 1).getDate();
                 firstDay = new Date(nowYear, nowMonth, 1).getDay(); //1st의 요일
                 lastDate = new Date(nowYear, nowMonth + 1, 0).getDate();
-    
+
                 if ((nowYear % 4 === 0 && nowYear % 100 !== 0) || nowYear % 400 === 0) { //윤년 적용
                     lastDate[1] = 29;
                 }
-    
+
                 $(".year_mon").text(nowYear + "년 " + (nowMonth + 1) + "월");
-    
+
                 for (i = 0; i < firstDay; i++) { //첫번째 줄 빈칸
                     $("#calendar tbody:last").append("<td></td>");
                 }
@@ -1122,6 +1107,62 @@
             buildCalendar();
         });
 
+        
+        function Clock() {        
+            // 날짜, 시계 만들기
+            var date = new Date();
+            var YYYY = String(date.getFullYear());
+            var MM = String(date.getMonth() + 1);
+            var DD = Zero(date.getDate());
+            var hh = Zero(date.getHours());
+            var mm = Zero(date.getMinutes());
+            var ss = Zero(date.getSeconds());
+            var Week = Weekday();
+            
+            //시계에 1의자리수가 나올때 0을 넣어주는 함수 (ex : 1초 -> 01초)
+            function Zero(num) {
+                return (num < 10 ? '0' + num : '' + num);
+            }
+
+            //요일을 추가해주는 함수
+            function Weekday() {
+                var Week = ['일', '월', '화', '수', '목', '금', '토'];
+                var Weekday = date.getDay();
+                return Week[Weekday];
+            }
+            
+            //시계부분을 써주는 함수
+            function Write(YYYY, MM, DD, hh, mm, ss, Week) {
+                $(".clockDate").text(YYYY + "-" + MM + "-" + DD + " (" + Week + ")");
+                $(".ctHour").text(hh);
+                $(".ctMinute").text(mm);
+                $(".ctSecond").text(ss);
+            }
+            
+            Write(YYYY, MM, DD, hh, mm, ss, Week);
+        }
+
+        setInterval(Clock, 1000); //1초(1000)마다 Clock함수를 재실행 한다
+
+        // 출퇴근시간 클릭시 시간띄우기
+        function setTime(e) {
+            var date = new Date();
+            var hh = Zero(date.getHours());
+            var mm = Zero(date.getMinutes());
+            var ss = Zero(date.getSeconds());
+            
+            function Zero(num) {
+                return (num < 10 ? '0' + num : '' + num);
+            }
+
+            if (e == 'go') {
+                $(".goToWork").text(hh + ":" + mm + ":" + ss);
+            }
+
+            if (e == 'off') {
+                $(".offWork").text(hh + ":" + mm + ":" + ss);
+            }
+        }
     </script>
 </body>
 
