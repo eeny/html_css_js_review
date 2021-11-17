@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Error</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <style>
+         /* 공통으로 작성해 놓은 CSS 시작*/
+         *, html, body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            font-family: 'Noto Sans KR', sans-serif;
+            color: #333;
+        }
+        a {
+            text-decoration: none;
+        }
+        #wrap { /*전체를 감싸는 wrap*/
+            width: 100%;
+        }
+        div.errorImg {
+            width: 700px;
+            height: 500px;
+            margin: 0 auto;
+            margin-top: 30px;
+        }
+        .errorImg img {
+            width: 100%;
+            height: 100%;
+        }
+        div.errorNotice {
+            width: 700px;
+            margin: 0 auto;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .errorNotice h1 {
+            color: #629afa;
+        }
+        div.moveBtn {
+            width: 700px;
+            margin: 0 auto;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        .moveBtn button {
+            width: 100px;
+            height: 30px;
+            padding: 5px 10px;
+            margin: 5px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #629afa;
+            color: white;
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="errorImg">
+            <img src="error404.png" alt="">
+        </div>
+        <div class="errorNotice">
+            <h1>페이지를 찾을 수 없습니다.</h1>
+            <p>페이지가 존재하지 않거나, 사용할 수 없는 페이지입니다.</p>
+            <p>입력하신 주소가 정확한지 다시 한번 확인해주세요.</p>
+        </div>
+        <div class="moveBtn">
+            <button onclick="history.back()">이전 페이지</button><button onclick="location.href='Home.do'">홈으로 이동</button>
+        </div>
+    </div>
+</body>
+</html>
